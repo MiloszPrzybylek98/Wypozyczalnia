@@ -49,6 +49,7 @@
             this.btnModPracownika.TabIndex = 1;
             this.btnModPracownika.Text = "Moduł pracownika";
             this.btnModPracownika.UseVisualStyleBackColor = true;
+            this.btnModPracownika.Click += new System.EventHandler(this.btnModPracownika_Click);
             // 
             // formWybor
             // 

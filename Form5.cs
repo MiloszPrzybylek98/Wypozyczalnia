@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Wypozyczalnia
 {
-    public partial class Form5 : Form
+    public partial class FormAdmin : Form
     {
-        public Form5()
+        public FormAdmin()
         {
             InitializeComponent();
         }
