@@ -36,10 +36,11 @@ namespace Wypozyczalnia
 
             string typ = dropKategorie.SelectedItem.ToString();
             
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nazwa, Typ, Rozmiar  FROM SprzetNarciarski WHERE Typ = '" + typ + "'"+"AND Dostępność = 1", connectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            //SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nazwa, Typ, Rozmiar  FROM SprzetNarciarski WHERE Typ = '" + typ + "'"+"AND Dostępność = 1", connectionString);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
+            Connector connector = new Connector();
+            dataGridView1.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
 
         }
 
