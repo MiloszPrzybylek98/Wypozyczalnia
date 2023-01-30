@@ -39,7 +39,13 @@ namespace Wypozyczalnia
 
 
         }
-        
+
+        private void btnModKlienta_Click(object sender, EventArgs e)
+        {
+            formEkranKlienta form1 = new formEkranKlienta();
+            form1.Show();
+            this.Hide();
+        }
     }
 
 }

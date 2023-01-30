@@ -25,7 +25,7 @@ namespace Wypozyczalnia
 
         }
 
-        string connectionString = "Data Source=DESKTOP-O35IPPN;Initial Catalog=WypozyczalniaSprzetuNarciarskiego;Integrated Security=True";
+        string connectionString = $"Data Source={Environment.MachineName};Initial Catalog=WypozyczalniaSprzetuNarciarskiego;Integrated Security=True";
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,22 +33,27 @@ namespace Wypozyczalnia
             string login = textBox1.Text;
             string password = textBox2.Text;
 
-            bool isValid = ValidateCredentials(login, password, connectionString);
+            string isValid = ValidateCredentials(login, password, connectionString);
 
-            if (isValid)
+            if (isValid == "A")
             {
                 // logowanie zakończone powodzeniem
-                MessageBox.Show("Zalogowano pomyślnie!");
                 // tutaj można przejść do kolejnej formy lub wykonać inne operacje
+                FormAdmin form5 = new FormAdmin();
+                form5.Show();
+                this.Hide();
             }
-            else
+            if (isValid == "B")
             {
-                // logowanie nie powiodło się
-                MessageBox.Show("Niepoprawny login lub hasło.");
+                // logowanie zakończone powodzeniem
+                // tutaj można przejść do kolejnej formy lub wykonać inne operacje
+                formPracownik form4 = new formPracownik();
+                form4.Show();
+                this.Hide();
             }
 
         }
-        private bool ValidateCredentials(string login, string password, string connectionString)
+        private string ValidateCredentials(string login, string password, string connectionString)
         {
             // tutaj należy wykonać połączenie z bazą danych i sprawdzić czy podany login i hasło istnieją
             // przykładowo:
@@ -57,16 +62,25 @@ namespace Wypozyczalnia
                 connection.Open();
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Pracownicy WHERE Login=@login AND Hasło=@password", connection))
                 {
+                    string A = "A";
+                    string B = "B";
+                    string C = "C";
                     command.Parameters.AddWithValue("@login", login);
                     command.Parameters.AddWithValue("@password", password);
                     int result = (int)command.ExecuteScalar();
-                    if (result > 0)
+                    if (result > 0 && login == "jkowalski")
                     {
-                        return true;
+
+
+                        return A;
+                    }
+                    if(result >0 && login != "jkowalski")
+                    {
+                        return B;
                     }
                     else
                     {
-                        return false;
+                        return C;
                     }
                 }
 

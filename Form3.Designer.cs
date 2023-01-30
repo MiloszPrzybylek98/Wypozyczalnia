@@ -40,6 +40,7 @@
             this.btnModKlienta.TabIndex = 0;
             this.btnModKlienta.Text = "Moduł klienta";
             this.btnModKlienta.UseVisualStyleBackColor = true;
+            this.btnModKlienta.Click += new System.EventHandler(this.btnModKlienta_Click);
             // 
             // btnModPracownika
             // 
@@ -55,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(790, 460);
             this.Controls.Add(this.btnModPracownika);
             this.Controls.Add(this.btnModKlienta);
             this.Name = "formWybor";

@@ -51,7 +51,7 @@
             // 
             // txtImie
             // 
-            this.txtImie.Location = new System.Drawing.Point(12, 502);
+            this.txtImie.Location = new System.Drawing.Point(12, 491);
             this.txtImie.Name = "txtImie";
             this.txtImie.Size = new System.Drawing.Size(164, 20);
             this.txtImie.TabIndex = 0;
@@ -59,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 483);
+            this.label1.Location = new System.Drawing.Point(12, 472);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 1;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 538);
+            this.label2.Location = new System.Drawing.Point(12, 527);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // txtNazwisko
             // 
-            this.txtNazwisko.Location = new System.Drawing.Point(12, 557);
+            this.txtNazwisko.Location = new System.Drawing.Point(12, 546);
             this.txtNazwisko.Name = "txtNazwisko";
             this.txtNazwisko.Size = new System.Drawing.Size(164, 20);
             this.txtNazwisko.TabIndex = 2;
@@ -84,7 +84,7 @@
             // txtPesel
             // 
             this.txtPesel.AutoSize = true;
-            this.txtPesel.Location = new System.Drawing.Point(12, 597);
+            this.txtPesel.Location = new System.Drawing.Point(12, 586);
             this.txtPesel.Name = "txtPesel";
             this.txtPesel.Size = new System.Drawing.Size(33, 13);
             this.txtPesel.TabIndex = 5;
@@ -92,7 +92,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 616);
+            this.textBox3.Location = new System.Drawing.Point(12, 605);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(164, 20);
             this.textBox3.TabIndex = 4;
@@ -100,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 659);
+            this.label4.Location = new System.Drawing.Point(12, 648);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             // txtNrKontaktowy
             // 
-            this.txtNrKontaktowy.Location = new System.Drawing.Point(12, 678);
+            this.txtNrKontaktowy.Location = new System.Drawing.Point(12, 667);
             this.txtNrKontaktowy.Name = "txtNrKontaktowy";
             this.txtNrKontaktowy.Size = new System.Drawing.Size(164, 20);
             this.txtNrKontaktowy.TabIndex = 6;
@@ -172,7 +172,7 @@
             // 
             this.dropCzasWypozyczenia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropCzasWypozyczenia.FormattingEnabled = true;
-            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(293, 502);
+            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(293, 491);
             this.dropCzasWypozyczenia.Name = "dropCzasWypozyczenia";
             this.dropCzasWypozyczenia.Size = new System.Drawing.Size(149, 21);
             this.dropCzasWypozyczenia.TabIndex = 14;
@@ -180,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(293, 483);
+            this.label5.Location = new System.Drawing.Point(293, 472);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 13);
             this.label5.TabIndex = 15;
@@ -189,7 +189,7 @@
             // btnWypozycz
             // 
             this.btnWypozycz.BackColor = System.Drawing.Color.Lime;
-            this.btnWypozycz.Location = new System.Drawing.Point(293, 557);
+            this.btnWypozycz.Location = new System.Drawing.Point(293, 546);
             this.btnWypozycz.Name = "btnWypozycz";
             this.btnWypozycz.Size = new System.Drawing.Size(149, 61);
             this.btnWypozycz.TabIndex = 16;

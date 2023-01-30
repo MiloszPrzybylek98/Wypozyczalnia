@@ -19,7 +19,7 @@ namespace Wypozyczalnia
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new formWybor());
 
-            string connection = "Data Source=DESKTOP-O35IPPN;Initial Catalog=WypozyczalniaSprzetuNarciarskiego;Integrated Security=True";
+            string connection = $"Data Source={Environment.MachineName};Initial Catalog=WypozyczalniaSprzetuNarciarskiego;Integrated Security=True";
         }
     }
 }
