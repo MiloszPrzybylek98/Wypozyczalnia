@@ -115,9 +115,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 110);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(479, 332);
             this.dataGridView1.TabIndex = 8;
             // 
@@ -125,13 +131,11 @@
             // 
             this.dropKategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropKategorie.FormattingEnabled = true;
-            this.dropKategorie.Items.AddRange(new object[] {
-            "szit",
-            "szrot"});
             this.dropKategorie.Location = new System.Drawing.Point(12, 45);
             this.dropKategorie.Name = "dropKategorie";
             this.dropKategorie.Size = new System.Drawing.Size(176, 21);
             this.dropKategorie.TabIndex = 9;
+            this.dropKategorie.SelectedValueChanged += new System.EventHandler(this.dropKategorie_SelectedValueChanged);
             // 
             // label3
             // 
@@ -158,6 +162,7 @@
             this.btnDodajDoZamowienia.TabIndex = 12;
             this.btnDodajDoZamowienia.Text = ">>>";
             this.btnDodajDoZamowienia.UseVisualStyleBackColor = true;
+            this.btnDodajDoZamowienia.Click += new System.EventHandler(this.btnDodajDoZamowienia_Click);
             // 
             // btnUsunZzamowienia
             // 
@@ -220,6 +225,7 @@
             this.Controls.Add(this.txtImie);
             this.Name = "formEkranKlienta";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.formEkranKlienta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
