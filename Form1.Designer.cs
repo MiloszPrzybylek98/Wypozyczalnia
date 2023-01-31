@@ -136,6 +136,7 @@
             this.dropKategorie.Name = "dropKategorie";
             this.dropKategorie.Size = new System.Drawing.Size(176, 21);
             this.dropKategorie.TabIndex = 9;
+            this.dropKategorie.SelectedIndexChanged += new System.EventHandler(this.dropKategorie_SelectedIndexChanged);
             this.dropKategorie.SelectedValueChanged += new System.EventHandler(this.dropKategorie_SelectedValueChanged);
             // 
             // label3
@@ -149,6 +150,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(603, 110);
             this.dataGridView2.Name = "dataGridView2";
@@ -247,12 +249,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox dropKategorie;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnDodajDoZamowienia;
         private System.Windows.Forms.Button btnUsunZzamowienia;
         private System.Windows.Forms.ComboBox dropCzasWypozyczenia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnWypozycz;
+        public System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 
