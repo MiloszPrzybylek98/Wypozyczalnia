@@ -30,25 +30,27 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtRozmiarDodaj = new System.Windows.Forms.TextBox();
+            this.txtNazwaDodaj = new System.Windows.Forms.TextBox();
             this.btnUsunSprzetZmagazynu = new System.Windows.Forms.Button();
             this.btnDodajSprzetDoMagazynu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboTypDodaj = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboTypP = new System.Windows.Forms.ComboBox();
+            this.dgvMagazynP = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
-            this.btnSzukajZamowienia = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnUsunZamowienie = new System.Windows.Forms.Button();
+            this.btnAktualizuj = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSzukajZamowienia = new System.Windows.Forms.Button();
+            this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnAktualizuj = new System.Windows.Forms.Button();
-            this.btnUsunZamowienie = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnWypozycz = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dropCzasWypozyczenia = new System.Windows.Forms.ComboBox();
@@ -66,15 +68,19 @@
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
+            this.numRegalDodaj = new System.Windows.Forms.NumericUpDown();
+            this.numPolkaDodaj = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynP)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -90,21 +96,39 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.numPolkaDodaj);
+            this.tabPage1.Controls.Add(this.numRegalDodaj);
+            this.tabPage1.Controls.Add(this.txtRozmiarDodaj);
+            this.tabPage1.Controls.Add(this.txtNazwaDodaj);
             this.tabPage1.Controls.Add(this.btnUsunSprzetZmagazynu);
             this.tabPage1.Controls.Add(this.btnDodajSprzetDoMagazynu);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.comboTypDodaj);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.comboTypP);
+            this.tabPage1.Controls.Add(this.dgvMagazynP);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1028, 672);
+            this.tabPage1.Size = new System.Drawing.Size(1091, 709);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Magazyn";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtRozmiarDodaj
+            // 
+            this.txtRozmiarDodaj.Location = new System.Drawing.Point(12, 512);
+            this.txtRozmiarDodaj.Name = "txtRozmiarDodaj";
+            this.txtRozmiarDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtRozmiarDodaj.TabIndex = 18;
+            // 
+            // txtNazwaDodaj
+            // 
+            this.txtNazwaDodaj.Location = new System.Drawing.Point(12, 486);
+            this.txtNazwaDodaj.Name = "txtNazwaDodaj";
+            this.txtNazwaDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwaDodaj.TabIndex = 17;
             // 
             // btnUsunSprzetZmagazynu
             // 
@@ -123,28 +147,30 @@
             this.btnDodajSprzetDoMagazynu.TabIndex = 15;
             this.btnDodajSprzetDoMagazynu.Text = "Dodaj sprzęt do magazynu";
             this.btnDodajSprzetDoMagazynu.UseVisualStyleBackColor = true;
+            this.btnDodajSprzetDoMagazynu.Click += new System.EventHandler(this.btnDodajSprzetDoMagazynu_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 479);
+            this.label2.Location = new System.Drawing.Point(9, 443);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "Kategoria";
             // 
-            // comboBox2
+            // comboTypDodaj
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(9, 495);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 13;
+            this.comboTypDodaj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTypDodaj.FormattingEnabled = true;
+            this.comboTypDodaj.Location = new System.Drawing.Point(12, 459);
+            this.comboTypDodaj.Name = "comboTypDodaj";
+            this.comboTypDodaj.Size = new System.Drawing.Size(121, 21);
+            this.comboTypDodaj.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 454);
+            this.label1.Location = new System.Drawing.Point(9, 418);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 12;
@@ -159,21 +185,30 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Wybierz kategorię sprzętu";
             // 
-            // comboBox1
+            // comboTypP
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboTypP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTypP.FormattingEnabled = true;
+            this.comboTypP.Location = new System.Drawing.Point(9, 32);
+            this.comboTypP.Name = "comboTypP";
+            this.comboTypP.Size = new System.Drawing.Size(121, 21);
+            this.comboTypP.TabIndex = 1;
+            this.comboTypP.SelectedIndexChanged += new System.EventHandler(this.comboTypP_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvMagazynP
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(731, 372);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMagazynP.AllowUserToAddRows = false;
+            this.dgvMagazynP.AllowUserToDeleteRows = false;
+            this.dgvMagazynP.AllowUserToResizeColumns = false;
+            this.dgvMagazynP.AllowUserToResizeRows = false;
+            this.dgvMagazynP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMagazynP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazynP.Location = new System.Drawing.Point(9, 68);
+            this.dgvMagazynP.MultiSelect = false;
+            this.dgvMagazynP.Name = "dgvMagazynP";
+            this.dgvMagazynP.ReadOnly = true;
+            this.dgvMagazynP.Size = new System.Drawing.Size(731, 332);
+            this.dgvMagazynP.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -191,6 +226,78 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Aktywne Zamówienia";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(38, 335);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(704, 211);
+            this.dataGridView3.TabIndex = 6;
+            // 
+            // btnUsunZamowienie
+            // 
+            this.btnUsunZamowienie.Location = new System.Drawing.Point(204, 572);
+            this.btnUsunZamowienie.Name = "btnUsunZamowienie";
+            this.btnUsunZamowienie.Size = new System.Drawing.Size(144, 23);
+            this.btnUsunZamowienie.TabIndex = 5;
+            this.btnUsunZamowienie.Text = "Usuń zamówienie";
+            this.btnUsunZamowienie.UseVisualStyleBackColor = true;
+            // 
+            // btnAktualizuj
+            // 
+            this.btnAktualizuj.Location = new System.Drawing.Point(38, 572);
+            this.btnAktualizuj.Name = "btnAktualizuj";
+            this.btnAktualizuj.Size = new System.Drawing.Size(144, 23);
+            this.btnAktualizuj.TabIndex = 4;
+            this.btnAktualizuj.Text = "Aktualizuj zamówienie";
+            this.btnAktualizuj.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(790, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Wyszukiwanie zamówienia po numerze";
+            // 
+            // btnSzukajZamowienia
+            // 
+            this.btnSzukajZamowienia.Location = new System.Drawing.Point(793, 118);
+            this.btnSzukajZamowienia.Name = "btnSzukajZamowienia";
+            this.btnSzukajZamowienia.Size = new System.Drawing.Size(100, 28);
+            this.btnSzukajZamowienia.TabIndex = 2;
+            this.btnSzukajZamowienia.Text = "Szukaj";
+            this.btnSzukajZamowienia.UseVisualStyleBackColor = true;
+            // 
+            // txtWyszukajAktywne
+            // 
+            this.txtWyszukajAktywne.Location = new System.Drawing.Point(793, 72);
+            this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
+            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
+            this.txtWyszukajAktywne.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col1,
+            this.Column1});
+            this.dataGridView2.Location = new System.Drawing.Point(38, 56);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(704, 222);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // col1
+            // 
+            this.col1.HeaderText = "Column1";
+            this.col1.Name = "col1";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // tabPage3
             // 
@@ -218,78 +325,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tworzenie zamówienia";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col1,
-            this.Column1});
-            this.dataGridView2.Location = new System.Drawing.Point(38, 56);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(704, 222);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // txtWyszukajAktywne
-            // 
-            this.txtWyszukajAktywne.Location = new System.Drawing.Point(793, 72);
-            this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
-            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
-            this.txtWyszukajAktywne.TabIndex = 1;
-            // 
-            // btnSzukajZamowienia
-            // 
-            this.btnSzukajZamowienia.Location = new System.Drawing.Point(793, 118);
-            this.btnSzukajZamowienia.Name = "btnSzukajZamowienia";
-            this.btnSzukajZamowienia.Size = new System.Drawing.Size(100, 28);
-            this.btnSzukajZamowienia.TabIndex = 2;
-            this.btnSzukajZamowienia.Text = "Szukaj";
-            this.btnSzukajZamowienia.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(790, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Wyszukiwanie zamówienia po numerze";
-            // 
-            // col1
-            // 
-            this.col1.HeaderText = "Column1";
-            this.col1.Name = "col1";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // btnAktualizuj
-            // 
-            this.btnAktualizuj.Location = new System.Drawing.Point(38, 572);
-            this.btnAktualizuj.Name = "btnAktualizuj";
-            this.btnAktualizuj.Size = new System.Drawing.Size(144, 23);
-            this.btnAktualizuj.TabIndex = 4;
-            this.btnAktualizuj.Text = "Aktualizuj zamówienie";
-            this.btnAktualizuj.UseVisualStyleBackColor = true;
-            // 
-            // btnUsunZamowienie
-            // 
-            this.btnUsunZamowienie.Location = new System.Drawing.Point(204, 572);
-            this.btnUsunZamowienie.Name = "btnUsunZamowienie";
-            this.btnUsunZamowienie.Size = new System.Drawing.Size(144, 23);
-            this.btnUsunZamowienie.TabIndex = 5;
-            this.btnUsunZamowienie.Text = "Usuń zamówienie";
-            this.btnUsunZamowienie.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(38, 335);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(704, 211);
-            this.dataGridView3.TabIndex = 6;
             // 
             // btnWypozycz
             // 
@@ -438,6 +473,20 @@
             this.txtImie.Size = new System.Drawing.Size(164, 20);
             this.txtImie.TabIndex = 17;
             // 
+            // numRegalDodaj
+            // 
+            this.numRegalDodaj.Location = new System.Drawing.Point(12, 538);
+            this.numRegalDodaj.Name = "numRegalDodaj";
+            this.numRegalDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numRegalDodaj.TabIndex = 19;
+            // 
+            // numPolkaDodaj
+            // 
+            this.numPolkaDodaj.Location = new System.Drawing.Point(13, 564);
+            this.numPolkaDodaj.Name = "numPolkaDodaj";
+            this.numPolkaDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numPolkaDodaj.TabIndex = 20;
+            // 
             // formPracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,18 +495,21 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "formPracownik";
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.formPracownik_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynP)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,12 +520,12 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboTypP;
+        private System.Windows.Forms.DataGridView dgvMagazynP;
         private System.Windows.Forms.Button btnUsunSprzetZmagazynu;
         private System.Windows.Forms.Button btnDodajSprzetDoMagazynu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboTypDodaj;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -502,5 +554,9 @@
         private System.Windows.Forms.TextBox txtNazwisko;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtImie;
+        private System.Windows.Forms.TextBox txtRozmiarDodaj;
+        private System.Windows.Forms.TextBox txtNazwaDodaj;
+        private System.Windows.Forms.NumericUpDown numPolkaDodaj;
+        private System.Windows.Forms.NumericUpDown numRegalDodaj;
     }
 }
