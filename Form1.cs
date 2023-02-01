@@ -32,6 +32,27 @@ namespace Wypozyczalnia
             Connector connector = new Connector();
             connector.UzupelnijTypy(dropKategorie);
 
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("INSERT INTO Wypozyczenia DEFAULT VALUES", connection))
+                {
+
+                    //command.Parameters.AddWithValue("@Nazwa", nazwa);
+                    //command.Parameters.AddWithValue("@Typ", typ);
+                    //command.Parameters.AddWithValue("@Dostępność", dostepnosc);
+                    //command.Parameters.AddWithValue("@Rozmiar", rozmiar);
+                    //command.Parameters.AddWithValue("@Regal", regal);
+                    //command.Parameters.AddWithValue("@Polka", polka);
+                    int result = command.ExecuteNonQuery();
+
+                }
+
+            }
+
+
+
         }
 
         private void dropKategorie_SelectedValueChanged(object sender, EventArgs e)

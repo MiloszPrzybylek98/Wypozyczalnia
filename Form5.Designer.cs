@@ -72,23 +72,29 @@
             this.label18 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTelefonP = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKodPocztaP = new System.Windows.Forms.TextBox();
+            this.txtUlicaP = new System.Windows.Forms.TextBox();
+            this.txtMiastoP = new System.Windows.Forms.TextBox();
+            this.txtPeselP = new System.Windows.Forms.TextBox();
+            this.txtNazwiskoP = new System.Windows.Forms.TextBox();
+            this.txtImieP = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dgvPracownicy = new System.Windows.Forms.DataGridView();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtNrDomuP = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtLoginP = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtHasloP = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,7 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPracownicy)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -476,27 +482,33 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label21);
+            this.tabPage4.Controls.Add(this.txtHasloP);
+            this.tabPage4.Controls.Add(this.label20);
+            this.tabPage4.Controls.Add(this.txtLoginP);
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.txtNrDomuP);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.textBox9);
             this.tabPage4.Controls.Add(this.label17);
-            this.tabPage4.Controls.Add(this.textBox8);
+            this.tabPage4.Controls.Add(this.txtTelefonP);
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label12);
             this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.textBox7);
-            this.tabPage4.Controls.Add(this.textBox6);
-            this.tabPage4.Controls.Add(this.textBox5);
-            this.tabPage4.Controls.Add(this.textBox4);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.txtKodPocztaP);
+            this.tabPage4.Controls.Add(this.txtUlicaP);
+            this.tabPage4.Controls.Add(this.txtMiastoP);
+            this.tabPage4.Controls.Add(this.txtPeselP);
+            this.tabPage4.Controls.Add(this.txtNazwiskoP);
+            this.tabPage4.Controls.Add(this.txtImieP);
             this.tabPage4.Controls.Add(this.button3);
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.dataGridView6);
+            this.tabPage4.Controls.Add(this.dgvPracownicy);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -507,7 +519,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(819, 147);
+            this.button4.Location = new System.Drawing.Point(193, 37);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 23);
             this.button4.TabIndex = 20;
@@ -517,7 +529,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(816, 74);
+            this.label18.Location = new System.Drawing.Point(54, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(75, 13);
             this.label18.TabIndex = 19;
@@ -525,7 +537,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(819, 97);
+            this.textBox9.Location = new System.Drawing.Point(57, 39);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 18;
@@ -539,12 +551,12 @@
             this.label17.TabIndex = 17;
             this.label17.Text = "Nr kontaktowy";
             // 
-            // textBox8
+            // txtTelefonP
             // 
-            this.textBox8.Location = new System.Drawing.Point(228, 554);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 16;
+            this.txtTelefonP.Location = new System.Drawing.Point(228, 554);
+            this.txtTelefonP.Name = "txtTelefonP";
+            this.txtTelefonP.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonP.TabIndex = 16;
             // 
             // label16
             // 
@@ -600,47 +612,47 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "Imię";
             // 
-            // textBox7
+            // txtKodPocztaP
             // 
-            this.textBox7.Location = new System.Drawing.Point(228, 492);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 9;
+            this.txtKodPocztaP.Location = new System.Drawing.Point(228, 492);
+            this.txtKodPocztaP.Name = "txtKodPocztaP";
+            this.txtKodPocztaP.Size = new System.Drawing.Size(100, 20);
+            this.txtKodPocztaP.TabIndex = 9;
             // 
-            // textBox6
+            // txtUlicaP
             // 
-            this.textBox6.Location = new System.Drawing.Point(71, 650);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 8;
+            this.txtUlicaP.Location = new System.Drawing.Point(71, 650);
+            this.txtUlicaP.Name = "txtUlicaP";
+            this.txtUlicaP.Size = new System.Drawing.Size(100, 20);
+            this.txtUlicaP.TabIndex = 8;
             // 
-            // textBox5
+            // txtMiastoP
             // 
-            this.textBox5.Location = new System.Drawing.Point(71, 613);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 7;
+            this.txtMiastoP.Location = new System.Drawing.Point(71, 613);
+            this.txtMiastoP.Name = "txtMiastoP";
+            this.txtMiastoP.Size = new System.Drawing.Size(100, 20);
+            this.txtMiastoP.TabIndex = 7;
             // 
-            // textBox4
+            // txtPeselP
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 573);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 6;
+            this.txtPeselP.Location = new System.Drawing.Point(71, 573);
+            this.txtPeselP.Name = "txtPeselP";
+            this.txtPeselP.Size = new System.Drawing.Size(100, 20);
+            this.txtPeselP.TabIndex = 6;
             // 
-            // textBox2
+            // txtNazwiskoP
             // 
-            this.textBox2.Location = new System.Drawing.Point(71, 531);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtNazwiskoP.Location = new System.Drawing.Point(71, 531);
+            this.txtNazwiskoP.Name = "txtNazwiskoP";
+            this.txtNazwiskoP.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwiskoP.TabIndex = 5;
             // 
-            // textBox1
+            // txtImieP
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 492);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtImieP.Location = new System.Drawing.Point(71, 492);
+            this.txtImieP.Name = "txtImieP";
+            this.txtImieP.Size = new System.Drawing.Size(100, 20);
+            this.txtImieP.TabIndex = 4;
             // 
             // button3
             // 
@@ -668,14 +680,63 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Dodaj pracownika";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView6
+            // dgvPracownicy
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(51, 74);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(709, 372);
-            this.dataGridView6.TabIndex = 0;
+            this.dgvPracownicy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPracownicy.Location = new System.Drawing.Point(51, 74);
+            this.dgvPracownicy.Name = "dgvPracownicy";
+            this.dgvPracownicy.Size = new System.Drawing.Size(988, 372);
+            this.dgvPracownicy.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(225, 590);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(47, 13);
+            this.label19.TabIndex = 22;
+            this.label19.Text = "Nr domu";
+            // 
+            // txtNrDomuP
+            // 
+            this.txtNrDomuP.Location = new System.Drawing.Point(228, 613);
+            this.txtNrDomuP.Name = "txtNrDomuP";
+            this.txtNrDomuP.Size = new System.Drawing.Size(100, 20);
+            this.txtNrDomuP.TabIndex = 21;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(392, 469);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(33, 13);
+            this.label20.TabIndex = 24;
+            this.label20.Text = "Login";
+            // 
+            // txtLoginP
+            // 
+            this.txtLoginP.Location = new System.Drawing.Point(395, 492);
+            this.txtLoginP.Name = "txtLoginP";
+            this.txtLoginP.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginP.TabIndex = 23;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(392, 531);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(36, 13);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "Hasło";
+            // 
+            // txtHasloP
+            // 
+            this.txtHasloP.Location = new System.Drawing.Point(395, 554);
+            this.txtHasloP.Name = "txtHasloP";
+            this.txtHasloP.Size = new System.Drawing.Size(100, 20);
+            this.txtHasloP.TabIndex = 25;
             // 
             // FormAdmin
             // 
@@ -685,6 +746,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormAdmin";
             this.Text = "Panel Admina";
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -699,7 +761,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPracownicy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -750,22 +812,28 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtTelefonP;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtKodPocztaP;
+        private System.Windows.Forms.TextBox txtUlicaP;
+        private System.Windows.Forms.TextBox txtMiastoP;
+        private System.Windows.Forms.TextBox txtPeselP;
+        private System.Windows.Forms.TextBox txtNazwiskoP;
+        private System.Windows.Forms.TextBox txtImieP;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView dgvPracownicy;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtHasloP;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtLoginP;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtNrDomuP;
     }
 }

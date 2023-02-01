@@ -28,6 +28,9 @@ namespace Wypozyczalnia
 
             Connector connector2 = new Connector();          
             dgvMagazynP.DataSource = connector2.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka", "SprzetNarciarski", ";");
+
+
+            dgvAktywneZamP.DataSource = connector2.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", ";");
         }
 
         private void comboTypP_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +75,31 @@ namespace Wypozyczalnia
 
             }
 
+
+        }
+
+        private void dgvAktywneZamP_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvAktywneZamP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAktywneZamP.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = dgvAktywneZamP.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgvAktywneZamP.Rows[selectedRowIndex];
+                int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
+                Connector connector = new Connector();
+                dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+
+
+            }
+
+        }
+
+        private void btnSzukajZamowienia_Click(object sender, EventArgs e)
+        {
 
         }
     }
