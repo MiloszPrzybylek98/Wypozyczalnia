@@ -34,11 +34,11 @@
             this.btnUsunSprzetZmagazynu = new System.Windows.Forms.Button();
             this.btnDodajSprzetDoMagazynu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboTypDodajA = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboTypA = new System.Windows.Forms.ComboBox();
+            this.dgvMagazynA = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnUsunZamowienie = new System.Windows.Forms.Button();
@@ -68,6 +68,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtHasloP = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtLoginP = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtNrDomuP = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -89,15 +95,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvPracownicy = new System.Windows.Forms.DataGridView();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtNrDomuP = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtLoginP = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtHasloP = new System.Windows.Forms.TextBox();
+            this.txtNazwaDodaj = new System.Windows.Forms.TextBox();
+            this.txtRozmiarDodaj = new System.Windows.Forms.TextBox();
+            this.numRegalDodaj = new System.Windows.Forms.NumericUpDown();
+            this.numPolkaDodaj = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynA)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -106,6 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPracownicy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -114,7 +120,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(13, 13);
+            this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1095, 784);
@@ -122,15 +128,19 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.numPolkaDodaj);
+            this.tabPage1.Controls.Add(this.numRegalDodaj);
+            this.tabPage1.Controls.Add(this.txtRozmiarDodaj);
+            this.tabPage1.Controls.Add(this.txtNazwaDodaj);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.btnUsunSprzetZmagazynu);
             this.tabPage1.Controls.Add(this.btnDodajSprzetDoMagazynu);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.comboTypDodajA);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.comboTypA);
+            this.tabPage1.Controls.Add(this.dgvMagazynA);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -156,15 +166,17 @@
             this.btnUsunSprzetZmagazynu.TabIndex = 24;
             this.btnUsunSprzetZmagazynu.Text = "Usuń zaznaczony sprzęt";
             this.btnUsunSprzetZmagazynu.UseVisualStyleBackColor = true;
+            this.btnUsunSprzetZmagazynu.Click += new System.EventHandler(this.btnUsunSprzetZmagazynu_Click);
             // 
             // btnDodajSprzetDoMagazynu
             // 
-            this.btnDodajSprzetDoMagazynu.Location = new System.Drawing.Point(258, 470);
+            this.btnDodajSprzetDoMagazynu.Location = new System.Drawing.Point(363, 585);
             this.btnDodajSprzetDoMagazynu.Name = "btnDodajSprzetDoMagazynu";
             this.btnDodajSprzetDoMagazynu.Size = new System.Drawing.Size(148, 23);
             this.btnDodajSprzetDoMagazynu.TabIndex = 23;
             this.btnDodajSprzetDoMagazynu.Text = "Dodaj sprzęt do magazynu";
             this.btnDodajSprzetDoMagazynu.UseVisualStyleBackColor = true;
+            this.btnDodajSprzetDoMagazynu.Click += new System.EventHandler(this.btnDodajSprzetDoMagazynu_Click);
             // 
             // label2
             // 
@@ -175,13 +187,13 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Kategoria";
             // 
-            // comboBox2
+            // comboTypDodajA
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(16, 511);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 21;
+            this.comboTypDodajA.FormattingEnabled = true;
+            this.comboTypDodajA.Location = new System.Drawing.Point(16, 511);
+            this.comboTypDodajA.Name = "comboTypDodajA";
+            this.comboTypDodajA.Size = new System.Drawing.Size(121, 21);
+            this.comboTypDodajA.TabIndex = 21;
             // 
             // label1
             // 
@@ -201,21 +213,22 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Wybierz kategorię sprzętu";
             // 
-            // comboBox1
+            // comboTypA
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 18;
+            this.comboTypA.FormattingEnabled = true;
+            this.comboTypA.Location = new System.Drawing.Point(16, 48);
+            this.comboTypA.Name = "comboTypA";
+            this.comboTypA.Size = new System.Drawing.Size(121, 21);
+            this.comboTypA.TabIndex = 18;
+            this.comboTypA.SelectedIndexChanged += new System.EventHandler(this.comboTypA_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvMagazynA
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(731, 372);
-            this.dataGridView1.TabIndex = 17;
+            this.dgvMagazynA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazynA.Location = new System.Drawing.Point(16, 84);
+            this.dgvMagazynA.Name = "dgvMagazynA";
+            this.dgvMagazynA.Size = new System.Drawing.Size(731, 372);
+            this.dgvMagazynA.TabIndex = 17;
             // 
             // tabPage2
             // 
@@ -231,7 +244,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1087, 758);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Aktywne zamówienia";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
@@ -330,7 +343,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1087, 758);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Tworzenie zamówienia";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnWypozycz
@@ -517,6 +530,54 @@
             this.tabPage4.Text = "Pracownicy";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(392, 531);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(36, 13);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "Hasło";
+            // 
+            // txtHasloP
+            // 
+            this.txtHasloP.Location = new System.Drawing.Point(395, 554);
+            this.txtHasloP.Name = "txtHasloP";
+            this.txtHasloP.Size = new System.Drawing.Size(100, 20);
+            this.txtHasloP.TabIndex = 25;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(392, 469);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(33, 13);
+            this.label20.TabIndex = 24;
+            this.label20.Text = "Login";
+            // 
+            // txtLoginP
+            // 
+            this.txtLoginP.Location = new System.Drawing.Point(395, 492);
+            this.txtLoginP.Name = "txtLoginP";
+            this.txtLoginP.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginP.TabIndex = 23;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(225, 590);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(47, 13);
+            this.label19.TabIndex = 22;
+            this.label19.Text = "Nr domu";
+            // 
+            // txtNrDomuP
+            // 
+            this.txtNrDomuP.Location = new System.Drawing.Point(228, 613);
+            this.txtNrDomuP.Name = "txtNrDomuP";
+            this.txtNrDomuP.Size = new System.Drawing.Size(100, 20);
+            this.txtNrDomuP.TabIndex = 21;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(193, 37);
@@ -690,53 +751,33 @@
             this.dgvPracownicy.Size = new System.Drawing.Size(988, 372);
             this.dgvPracownicy.TabIndex = 0;
             // 
-            // label19
+            // txtNazwaDodaj
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(225, 590);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 13);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "Nr domu";
+            this.txtNazwaDodaj.Location = new System.Drawing.Point(16, 548);
+            this.txtNazwaDodaj.Name = "txtNazwaDodaj";
+            this.txtNazwaDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwaDodaj.TabIndex = 26;
             // 
-            // txtNrDomuP
+            // txtRozmiarDodaj
             // 
-            this.txtNrDomuP.Location = new System.Drawing.Point(228, 613);
-            this.txtNrDomuP.Name = "txtNrDomuP";
-            this.txtNrDomuP.Size = new System.Drawing.Size(100, 20);
-            this.txtNrDomuP.TabIndex = 21;
+            this.txtRozmiarDodaj.Location = new System.Drawing.Point(16, 585);
+            this.txtRozmiarDodaj.Name = "txtRozmiarDodaj";
+            this.txtRozmiarDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtRozmiarDodaj.TabIndex = 27;
             // 
-            // label20
+            // numRegalDodaj
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(392, 469);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 13);
-            this.label20.TabIndex = 24;
-            this.label20.Text = "Login";
+            this.numRegalDodaj.Location = new System.Drawing.Point(16, 624);
+            this.numRegalDodaj.Name = "numRegalDodaj";
+            this.numRegalDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numRegalDodaj.TabIndex = 28;
             // 
-            // txtLoginP
+            // numPolkaDodaj
             // 
-            this.txtLoginP.Location = new System.Drawing.Point(395, 492);
-            this.txtLoginP.Name = "txtLoginP";
-            this.txtLoginP.Size = new System.Drawing.Size(100, 20);
-            this.txtLoginP.TabIndex = 23;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(392, 531);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(36, 13);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "Hasło";
-            // 
-            // txtHasloP
-            // 
-            this.txtHasloP.Location = new System.Drawing.Point(395, 554);
-            this.txtHasloP.Name = "txtHasloP";
-            this.txtHasloP.Size = new System.Drawing.Size(100, 20);
-            this.txtHasloP.TabIndex = 25;
+            this.numPolkaDodaj.Location = new System.Drawing.Point(16, 650);
+            this.numPolkaDodaj.Name = "numPolkaDodaj";
+            this.numPolkaDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numPolkaDodaj.TabIndex = 29;
             // 
             // FormAdmin
             // 
@@ -750,7 +791,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynA)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -762,6 +803,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPracownicy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -776,11 +819,11 @@
         private System.Windows.Forms.Button btnUsunSprzetZmagazynu;
         private System.Windows.Forms.Button btnDodajSprzetDoMagazynu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboTypDodajA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboTypA;
+        private System.Windows.Forms.DataGridView dgvMagazynA;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button btnUsunZamowienie;
@@ -835,5 +878,9 @@
         private System.Windows.Forms.TextBox txtLoginP;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtNrDomuP;
+        private System.Windows.Forms.NumericUpDown numPolkaDodaj;
+        private System.Windows.Forms.NumericUpDown numRegalDodaj;
+        private System.Windows.Forms.TextBox txtRozmiarDodaj;
+        private System.Windows.Forms.TextBox txtNazwaDodaj;
     }
 }

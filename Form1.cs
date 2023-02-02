@@ -109,41 +109,7 @@ namespace Wypozyczalnia
             dt2.Columns.RemoveAt(0);
             dataGridView2.DataSource = dt2;
             
-            
-
-
-
-            //foreach(DataRow row in dt.Rows)
-            //{
-            //    if (row.Table.Rows.IndexOf(row) == 1)
-            //    {
-            //        row.Table.Rows.Remove(row);
-            //    }
-            //}
-
-            //DataTable dr = dt.Clone();
-            // dr.NewRow();
-            // var data = dt.Rows()
-            // dr.Rows.Add(new object[] { dt.Rows[selectedRow] });
-            //dr.Table.Rows.Add((DataRow)dt.Rows[selectedRow].); 
-
-
-            //(DataRow)
-
-
-            //if (dataGridView1.SelectedRows.Count > 0)
-            //{
-            //    
-
-            //}
-
-            //DataTable dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
-            //foreach (DataRow row in dt.Rows)
-            //{
-            //    if ((int)row["IdSprzet"] == 10)
-            //    {
-            //        MessageBox.Show("siema");
-            //    }
+          
 
 
 
