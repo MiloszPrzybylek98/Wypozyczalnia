@@ -154,6 +154,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(603, 110);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(479, 332);
             this.dataGridView2.TabIndex = 11;
             // 
@@ -175,6 +176,7 @@
             this.btnUsunZzamowienia.TabIndex = 13;
             this.btnUsunZzamowienia.Text = "<<<";
             this.btnUsunZzamowienia.UseVisualStyleBackColor = true;
+            this.btnUsunZzamowienia.Click += new System.EventHandler(this.btnUsunZzamowienia_Click);
             // 
             // dropCzasWypozyczenia
             // 
