@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.numPolkaDodaj = new System.Windows.Forms.NumericUpDown();
+            this.numRegalDodaj = new System.Windows.Forms.NumericUpDown();
+            this.txtRozmiarDodaj = new System.Windows.Forms.TextBox();
+            this.txtNazwaDodaj = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnUsunSprzetZmagazynu = new System.Windows.Forms.Button();
             this.btnDodajSprzetDoMagazynu = new System.Windows.Forms.Button();
@@ -78,29 +82,32 @@
             this.label18 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtTelefonP = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtKodPocztaP = new System.Windows.Forms.TextBox();
             this.txtUlicaP = new System.Windows.Forms.TextBox();
             this.txtMiastoP = new System.Windows.Forms.TextBox();
             this.txtPeselP = new System.Windows.Forms.TextBox();
             this.txtNazwiskoP = new System.Windows.Forms.TextBox();
             this.txtImieP = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModifikujPracownika = new System.Windows.Forms.Button();
+            this.btnUsunPracownika = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvPracownicy = new System.Windows.Forms.DataGridView();
-            this.txtNazwaDodaj = new System.Windows.Forms.TextBox();
-            this.txtRozmiarDodaj = new System.Windows.Forms.TextBox();
-            this.numRegalDodaj = new System.Windows.Forms.NumericUpDown();
-            this.numPolkaDodaj = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtPowHasloA = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtHasloA = new System.Windows.Forms.TextBox();
+            this.btnZmienHaslo = new System.Windows.Forms.Button();
+            this.txtTelefonP = new System.Windows.Forms.MaskedTextBox();
+            this.txtKodPocztaP = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynA)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -110,8 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPracownicy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -148,6 +153,34 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Magazyn";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // numPolkaDodaj
+            // 
+            this.numPolkaDodaj.Location = new System.Drawing.Point(16, 650);
+            this.numPolkaDodaj.Name = "numPolkaDodaj";
+            this.numPolkaDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numPolkaDodaj.TabIndex = 29;
+            // 
+            // numRegalDodaj
+            // 
+            this.numRegalDodaj.Location = new System.Drawing.Point(16, 624);
+            this.numRegalDodaj.Name = "numRegalDodaj";
+            this.numRegalDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numRegalDodaj.TabIndex = 28;
+            // 
+            // txtRozmiarDodaj
+            // 
+            this.txtRozmiarDodaj.Location = new System.Drawing.Point(16, 585);
+            this.txtRozmiarDodaj.Name = "txtRozmiarDodaj";
+            this.txtRozmiarDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtRozmiarDodaj.TabIndex = 27;
+            // 
+            // txtNazwaDodaj
+            // 
+            this.txtNazwaDodaj.Location = new System.Drawing.Point(16, 548);
+            this.txtNazwaDodaj.Name = "txtNazwaDodaj";
+            this.txtNazwaDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwaDodaj.TabIndex = 26;
             // 
             // label4
             // 
@@ -495,6 +528,13 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txtKodPocztaP);
+            this.tabPage4.Controls.Add(this.txtTelefonP);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Controls.Add(this.txtPowHasloA);
+            this.tabPage4.Controls.Add(this.label26);
+            this.tabPage4.Controls.Add(this.txtHasloA);
+            this.tabPage4.Controls.Add(this.btnZmienHaslo);
             this.tabPage4.Controls.Add(this.label21);
             this.tabPage4.Controls.Add(this.txtHasloP);
             this.tabPage4.Controls.Add(this.label20);
@@ -505,21 +545,19 @@
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.textBox9);
             this.tabPage4.Controls.Add(this.label17);
-            this.tabPage4.Controls.Add(this.txtTelefonP);
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label12);
             this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.txtKodPocztaP);
             this.tabPage4.Controls.Add(this.txtUlicaP);
             this.tabPage4.Controls.Add(this.txtMiastoP);
             this.tabPage4.Controls.Add(this.txtPeselP);
             this.tabPage4.Controls.Add(this.txtNazwiskoP);
             this.tabPage4.Controls.Add(this.txtImieP);
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.btnModifikujPracownika);
+            this.tabPage4.Controls.Add(this.btnUsunPracownika);
             this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.dgvPracownicy);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -612,13 +650,6 @@
             this.label17.TabIndex = 17;
             this.label17.Text = "Nr kontaktowy";
             // 
-            // txtTelefonP
-            // 
-            this.txtTelefonP.Location = new System.Drawing.Point(228, 554);
-            this.txtTelefonP.Name = "txtTelefonP";
-            this.txtTelefonP.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefonP.TabIndex = 16;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -673,13 +704,6 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "Imię";
             // 
-            // txtKodPocztaP
-            // 
-            this.txtKodPocztaP.Location = new System.Drawing.Point(228, 492);
-            this.txtKodPocztaP.Name = "txtKodPocztaP";
-            this.txtKodPocztaP.Size = new System.Drawing.Size(100, 20);
-            this.txtKodPocztaP.TabIndex = 9;
-            // 
             // txtUlicaP
             // 
             this.txtUlicaP.Location = new System.Drawing.Point(71, 650);
@@ -715,23 +739,25 @@
             this.txtImieP.Size = new System.Drawing.Size(100, 20);
             this.txtImieP.TabIndex = 4;
             // 
-            // button3
+            // btnModifikujPracownika
             // 
-            this.button3.Location = new System.Drawing.Point(374, 676);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Modyfikuj dane";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnModifikujPracownika.Location = new System.Drawing.Point(374, 676);
+            this.btnModifikujPracownika.Name = "btnModifikujPracownika";
+            this.btnModifikujPracownika.Size = new System.Drawing.Size(106, 23);
+            this.btnModifikujPracownika.TabIndex = 3;
+            this.btnModifikujPracownika.Text = "Modyfikuj dane";
+            this.btnModifikujPracownika.UseVisualStyleBackColor = true;
+            this.btnModifikujPracownika.Click += new System.EventHandler(this.btnModifikujPracownika_Click);
             // 
-            // button2
+            // btnUsunPracownika
             // 
-            this.button2.Location = new System.Drawing.Point(222, 676);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Usuń pracownika";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUsunPracownika.Location = new System.Drawing.Point(222, 676);
+            this.btnUsunPracownika.Name = "btnUsunPracownika";
+            this.btnUsunPracownika.Size = new System.Drawing.Size(106, 23);
+            this.btnUsunPracownika.TabIndex = 2;
+            this.btnUsunPracownika.Text = "Usuń pracownika";
+            this.btnUsunPracownika.UseVisualStyleBackColor = true;
+            this.btnUsunPracownika.Click += new System.EventHandler(this.btnUsunPracownika_Click);
             // 
             // button1
             // 
@@ -750,34 +776,67 @@
             this.dgvPracownicy.Name = "dgvPracownicy";
             this.dgvPracownicy.Size = new System.Drawing.Size(988, 372);
             this.dgvPracownicy.TabIndex = 0;
+            this.dgvPracownicy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPracownicy_CellClick);
             // 
-            // txtNazwaDodaj
+            // label25
             // 
-            this.txtNazwaDodaj.Location = new System.Drawing.Point(16, 548);
-            this.txtNazwaDodaj.Name = "txtNazwaDodaj";
-            this.txtNazwaDodaj.Size = new System.Drawing.Size(100, 20);
-            this.txtNazwaDodaj.TabIndex = 26;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(735, 524);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(112, 13);
+            this.label25.TabIndex = 38;
+            this.label25.Text = "Potwierdź nowe hasło";
             // 
-            // txtRozmiarDodaj
+            // txtPowHasloA
             // 
-            this.txtRozmiarDodaj.Location = new System.Drawing.Point(16, 585);
-            this.txtRozmiarDodaj.Name = "txtRozmiarDodaj";
-            this.txtRozmiarDodaj.Size = new System.Drawing.Size(100, 20);
-            this.txtRozmiarDodaj.TabIndex = 27;
+            this.txtPowHasloA.Location = new System.Drawing.Point(738, 540);
+            this.txtPowHasloA.Name = "txtPowHasloA";
+            this.txtPowHasloA.PasswordChar = '*';
+            this.txtPowHasloA.Size = new System.Drawing.Size(186, 20);
+            this.txtPowHasloA.TabIndex = 37;
             // 
-            // numRegalDodaj
+            // label26
             // 
-            this.numRegalDodaj.Location = new System.Drawing.Point(16, 624);
-            this.numRegalDodaj.Name = "numRegalDodaj";
-            this.numRegalDodaj.Size = new System.Drawing.Size(120, 20);
-            this.numRegalDodaj.TabIndex = 28;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(735, 474);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(93, 13);
+            this.label26.TabIndex = 36;
+            this.label26.Text = "Podaj nowe hasło";
             // 
-            // numPolkaDodaj
+            // txtHasloA
             // 
-            this.numPolkaDodaj.Location = new System.Drawing.Point(16, 650);
-            this.numPolkaDodaj.Name = "numPolkaDodaj";
-            this.numPolkaDodaj.Size = new System.Drawing.Size(120, 20);
-            this.numPolkaDodaj.TabIndex = 29;
+            this.txtHasloA.Location = new System.Drawing.Point(738, 490);
+            this.txtHasloA.Name = "txtHasloA";
+            this.txtHasloA.PasswordChar = '*';
+            this.txtHasloA.Size = new System.Drawing.Size(186, 20);
+            this.txtHasloA.TabIndex = 35;
+            // 
+            // btnZmienHaslo
+            // 
+            this.btnZmienHaslo.Location = new System.Drawing.Point(755, 576);
+            this.btnZmienHaslo.Name = "btnZmienHaslo";
+            this.btnZmienHaslo.Size = new System.Drawing.Size(156, 23);
+            this.btnZmienHaslo.TabIndex = 34;
+            this.btnZmienHaslo.Text = "Zmień Hasło";
+            this.btnZmienHaslo.UseVisualStyleBackColor = true;
+            this.btnZmienHaslo.Click += new System.EventHandler(this.btnZmienHaslo_Click);
+            // 
+            // txtTelefonP
+            // 
+            this.txtTelefonP.Location = new System.Drawing.Point(228, 557);
+            this.txtTelefonP.Mask = "000-000-000";
+            this.txtTelefonP.Name = "txtTelefonP";
+            this.txtTelefonP.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonP.TabIndex = 41;
+            // 
+            // txtKodPocztaP
+            // 
+            this.txtKodPocztaP.Location = new System.Drawing.Point(228, 492);
+            this.txtKodPocztaP.Mask = "00-000";
+            this.txtKodPocztaP.Name = "txtKodPocztaP";
+            this.txtKodPocztaP.Size = new System.Drawing.Size(100, 20);
+            this.txtKodPocztaP.TabIndex = 42;
             // 
             // FormAdmin
             // 
@@ -791,6 +850,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynA)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -803,8 +864,6 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPracownicy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -855,21 +914,19 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtTelefonP;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtKodPocztaP;
         private System.Windows.Forms.TextBox txtUlicaP;
         private System.Windows.Forms.TextBox txtMiastoP;
         private System.Windows.Forms.TextBox txtPeselP;
         private System.Windows.Forms.TextBox txtNazwiskoP;
         private System.Windows.Forms.TextBox txtImieP;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModifikujPracownika;
+        private System.Windows.Forms.Button btnUsunPracownika;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvPracownicy;
         private System.Windows.Forms.Label label21;
@@ -882,5 +939,12 @@
         private System.Windows.Forms.NumericUpDown numRegalDodaj;
         private System.Windows.Forms.TextBox txtRozmiarDodaj;
         private System.Windows.Forms.TextBox txtNazwaDodaj;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtPowHasloA;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtHasloA;
+        private System.Windows.Forms.Button btnZmienHaslo;
+        private System.Windows.Forms.MaskedTextBox txtTelefonP;
+        private System.Windows.Forms.MaskedTextBox txtKodPocztaP;
     }
 }
