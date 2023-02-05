@@ -16,6 +16,7 @@ namespace Wypozyczalnia
     public partial class formEkranKlienta : Form
     {
         public int ZamowienieId = 0;
+        public int IDKlienta = 0;
 
 
         public formEkranKlienta()
@@ -205,6 +206,9 @@ namespace Wypozyczalnia
 
             int IdWypozyczenia = (int)dt2.Rows[0][0];
             int IdSprzetu = (int)dt2.Rows[0][1];
+
+            
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -222,6 +226,8 @@ namespace Wypozyczalnia
 
             int dost = 1;
 
+
+            
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -253,32 +259,67 @@ namespace Wypozyczalnia
             
             Connector connector = new Connector();
 
-            string imie = txtImie.Text;
-            string nazwisko = txtNazwisko.Text;
-            string pesel = txtPeselK.Text;
-            string nrTel = txtNrKontaktowy.Text;
+            
+
+            string Imie = txtImie.Text;
+            string Nazwisko = txtNazwisko.Text;
+            string Pesel = txtPeselK.Text;
+            string Telefon = txtNrKontaktowy.Text;
             int dni = (int)dropCzasWypozyczenia.SelectedItem;
             DateTime data = DateTime.Now;
             DateTime dataOddania = data.AddDays(dni);
             int KwotaZamowienia = connector.PobierzCeneZamowieniaZWorka(ZamowienieId);
+            int Płatność = KwotaZamowienia * dni;
+            int CzyRozliczone = 0;
+            int CzyWydane = 0;
+            
 
-            if(pesel.Length == 11 && nrTel.Length == 9)
+            //List<string> Sprzęt = new List<string>() { Imie,Nazwisko,Pesel, Telefon}; proba dodania za pomoca metody z connectora
+
+
+            if (Pesel.Length == 11 && Telefon.Length == 9)
             {
+
+                
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand("INSERT INTO Klienci (Imie, Nazwisko, Pesel, Telefon) VALUES(@Imię, @Nazwisko, @Pesel,  @Telefon)", connection))
+                    using (SqlCommand command = new SqlCommand("INSERT INTO Klienci (Imie, Nazwisko, Pesel, Telefon) VALUES(@Imię, @Nazwisko, @Pesel,  @Telefon); SELECT SCOPE_IDENTITY() ", connection))
                     {
 
-                        command.Parameters.AddWithValue("@Imię", imie);
-                        command.Parameters.AddWithValue("@Nazwisko", nazwisko);
-                        command.Parameters.AddWithValue("@Pesel", pesel);
-                        command.Parameters.AddWithValue("@Telefon", nrTel);
-                        int result = command.ExecuteNonQuery();
+                        command.Parameters.AddWithValue("@Imię", Imie);
+                        command.Parameters.AddWithValue("@Nazwisko", Nazwisko);
+                        command.Parameters.AddWithValue("@Pesel", Pesel);
+                        command.Parameters.AddWithValue("@Telefon", Telefon);
+                        IDKlienta = Convert.ToInt32(command.ExecuteScalar());
 
                     }
 
                 }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand($"UPDATE Wypozyczenia  SET KlientId= @KlientId, Data_wypożyczenia = @Data_wypożyczenia, Data_zwrotu = @Data_zwrotu, Płatność= @Płatność, CzyRozliczone= @CzyRozliczone, CzyWydane = @CzyWydane Where IdWypozyczenia = @IdWypozyczenia  ", connection))
+                    {
+
+                        command.Parameters.AddWithValue("@KlientId", IDKlienta);
+                        command.Parameters.AddWithValue("@Data_Wypożyczenia", data);
+                        command.Parameters.AddWithValue("@Data_zwrotu", dataOddania);
+                        command.Parameters.AddWithValue("@Płatność", Płatność);
+                        command.Parameters.AddWithValue("@CzyRozliczone", CzyRozliczone);
+                        command.Parameters.AddWithValue("@CzyWydane", CzyWydane);
+                        command.Parameters.AddWithValue("@IdWypozyczenia", ZamowienieId);
+                        command.ExecuteNonQuery();
+                        
+
+                    }
+
+                }
+
+
+
+
 
 
             }

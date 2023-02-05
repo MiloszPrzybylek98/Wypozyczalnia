@@ -83,14 +83,46 @@ namespace Wypozyczalnia
             }
 
 
-            
-
-
-
-
-            
 
         }
+
+        //public void InsertTabela(string tabela , List<string> lista, string warunek)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        string sqlQuery = "INSERT INTO "+ tabela + " (";
+        //        foreach (string item in lista) 
+        //        {
+        //            sqlQuery += item + ",";
+
+        //        }
+        //        sqlQuery = sqlQuery.Remove(sqlQuery.Length - 1);
+        //        sqlQuery += ") VALUES(";
+
+        //        foreach (string item in lista)
+        //        {
+        //            sqlQuery += "@"+item + ", ";
+
+        //        }
+        //        sqlQuery += ") ";
+        //        sqlQuery += warunek;
+
+        //        connection.Open();
+        //        using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+        //        {
+        //            foreach (string item in lista)
+        //            {
+        //                command.Parameters.AddWithValue($"@{item}", item);
+        //            }
+
+        //            int result = command.ExecuteNonQuery();
+
+        //        }
+
+        //    }
+        //}
+
+
 
 
 
