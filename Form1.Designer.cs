@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.txtPesel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPeselK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNrKontaktowy = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -45,6 +45,8 @@
             this.dropCzasWypozyczenia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnWypozycz = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LblSumaZamowienia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -90,12 +92,13 @@
             this.txtPesel.TabIndex = 5;
             this.txtPesel.Text = "Pesel";
             // 
-            // textBox3
+            // txtPeselK
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 605);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtPeselK.Location = new System.Drawing.Point(12, 605);
+            this.txtPeselK.Name = "txtPeselK";
+            this.txtPeselK.Size = new System.Drawing.Size(164, 20);
+            this.txtPeselK.TabIndex = 4;
+            this.txtPeselK.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -112,6 +115,7 @@
             this.txtNrKontaktowy.Name = "txtNrKontaktowy";
             this.txtNrKontaktowy.Size = new System.Drawing.Size(164, 20);
             this.txtNrKontaktowy.TabIndex = 6;
+            this.txtNrKontaktowy.TextChanged += new System.EventHandler(this.txtNrKontaktowy_TextChanged);
             // 
             // dataGridView1
             // 
@@ -122,6 +126,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 110);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -150,10 +155,16 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(603, 110);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(479, 332);
             this.dataGridView2.TabIndex = 11;
@@ -205,12 +216,33 @@
             this.btnWypozycz.TabIndex = 16;
             this.btnWypozycz.Text = "Zatwierdź";
             this.btnWypozycz.UseVisualStyleBackColor = false;
+            this.btnWypozycz.Click += new System.EventHandler(this.btnWypozycz_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(603, 472);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Suma zamówienia w PLN:";
+            // 
+            // LblSumaZamowienia
+            // 
+            this.LblSumaZamowienia.AutoSize = true;
+            this.LblSumaZamowienia.Location = new System.Drawing.Point(736, 472);
+            this.LblSumaZamowienia.Name = "LblSumaZamowienia";
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(13, 13);
+            this.LblSumaZamowienia.TabIndex = 18;
+            this.LblSumaZamowienia.Text = "0";
             // 
             // formEkranKlienta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 811);
+            this.Controls.Add(this.LblSumaZamowienia);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnWypozycz);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dropCzasWypozyczenia);
@@ -223,11 +255,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNrKontaktowy);
             this.Controls.Add(this.txtPesel);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPeselK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNazwisko);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtImie);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "formEkranKlienta";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.formEkranKlienta_Load);
@@ -245,7 +278,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNazwisko;
         private System.Windows.Forms.Label txtPesel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPeselK;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNrKontaktowy;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -257,6 +290,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnWypozycz;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LblSumaZamowienia;
     }
 }
 

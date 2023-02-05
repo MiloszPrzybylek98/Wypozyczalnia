@@ -72,6 +72,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtKodPocztaP = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefonP = new System.Windows.Forms.MaskedTextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtPowHasloA = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtHasloA = new System.Windows.Forms.TextBox();
+            this.btnZmienHaslo = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.txtLoginP = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -95,13 +102,7 @@
             this.btnUsunPracownika = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvPracownicy = new System.Windows.Forms.DataGridView();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtPowHasloA = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtHasloA = new System.Windows.Forms.TextBox();
-            this.btnZmienHaslo = new System.Windows.Forms.Button();
-            this.txtTelefonP = new System.Windows.Forms.MaskedTextBox();
-            this.txtKodPocztaP = new System.Windows.Forms.MaskedTextBox();
+            this.txtHasloP = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
@@ -526,6 +527,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txtHasloP);
             this.tabPage4.Controls.Add(this.txtKodPocztaP);
             this.tabPage4.Controls.Add(this.txtTelefonP);
             this.tabPage4.Controls.Add(this.label25);
@@ -563,6 +565,67 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Pracownicy";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtKodPocztaP
+            // 
+            this.txtKodPocztaP.Location = new System.Drawing.Point(228, 492);
+            this.txtKodPocztaP.Mask = "00-000";
+            this.txtKodPocztaP.Name = "txtKodPocztaP";
+            this.txtKodPocztaP.Size = new System.Drawing.Size(100, 20);
+            this.txtKodPocztaP.TabIndex = 42;
+            // 
+            // txtTelefonP
+            // 
+            this.txtTelefonP.Location = new System.Drawing.Point(228, 557);
+            this.txtTelefonP.Mask = "000-000-000";
+            this.txtTelefonP.Name = "txtTelefonP";
+            this.txtTelefonP.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonP.TabIndex = 41;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(735, 524);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(112, 13);
+            this.label25.TabIndex = 38;
+            this.label25.Text = "Potwierdź nowe hasło";
+            // 
+            // txtPowHasloA
+            // 
+            this.txtPowHasloA.Location = new System.Drawing.Point(738, 540);
+            this.txtPowHasloA.Name = "txtPowHasloA";
+            this.txtPowHasloA.PasswordChar = '*';
+            this.txtPowHasloA.Size = new System.Drawing.Size(186, 20);
+            this.txtPowHasloA.TabIndex = 37;
+            this.txtPowHasloA.TextChanged += new System.EventHandler(this.txtPowHasloA_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(735, 474);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(93, 13);
+            this.label26.TabIndex = 36;
+            this.label26.Text = "Podaj nowe hasło";
+            // 
+            // txtHasloA
+            // 
+            this.txtHasloA.Location = new System.Drawing.Point(738, 490);
+            this.txtHasloA.Name = "txtHasloA";
+            this.txtHasloA.PasswordChar = '*';
+            this.txtHasloA.Size = new System.Drawing.Size(186, 20);
+            this.txtHasloA.TabIndex = 35;
+            // 
+            // btnZmienHaslo
+            // 
+            this.btnZmienHaslo.Location = new System.Drawing.Point(755, 576);
+            this.btnZmienHaslo.Name = "btnZmienHaslo";
+            this.btnZmienHaslo.Size = new System.Drawing.Size(156, 23);
+            this.btnZmienHaslo.TabIndex = 34;
+            this.btnZmienHaslo.Text = "Zmień Hasło";
+            this.btnZmienHaslo.UseVisualStyleBackColor = true;
+            this.btnZmienHaslo.Click += new System.EventHandler(this.btnZmienHaslo_Click);
             // 
             // label20
             // 
@@ -758,66 +821,12 @@
             this.dgvPracownicy.TabIndex = 0;
             this.dgvPracownicy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPracownicy_CellClick);
             // 
-            // label25
+            // txtHasloP
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(735, 524);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(112, 13);
-            this.label25.TabIndex = 38;
-            this.label25.Text = "Potwierdź nowe hasło";
-            // 
-            // txtPowHasloA
-            // 
-            this.txtPowHasloA.Location = new System.Drawing.Point(738, 540);
-            this.txtPowHasloA.Name = "txtPowHasloA";
-            this.txtPowHasloA.PasswordChar = '*';
-            this.txtPowHasloA.Size = new System.Drawing.Size(186, 20);
-            this.txtPowHasloA.TabIndex = 37;
-            this.txtPowHasloA.TextChanged += new System.EventHandler(this.txtPowHasloA_TextChanged);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(735, 474);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(93, 13);
-            this.label26.TabIndex = 36;
-            this.label26.Text = "Podaj nowe hasło";
-            // 
-            // txtHasloA
-            // 
-            this.txtHasloA.Location = new System.Drawing.Point(738, 490);
-            this.txtHasloA.Name = "txtHasloA";
-            this.txtHasloA.PasswordChar = '*';
-            this.txtHasloA.Size = new System.Drawing.Size(186, 20);
-            this.txtHasloA.TabIndex = 35;
-            // 
-            // btnZmienHaslo
-            // 
-            this.btnZmienHaslo.Location = new System.Drawing.Point(755, 576);
-            this.btnZmienHaslo.Name = "btnZmienHaslo";
-            this.btnZmienHaslo.Size = new System.Drawing.Size(156, 23);
-            this.btnZmienHaslo.TabIndex = 34;
-            this.btnZmienHaslo.Text = "Zmień Hasło";
-            this.btnZmienHaslo.UseVisualStyleBackColor = true;
-            this.btnZmienHaslo.Click += new System.EventHandler(this.btnZmienHaslo_Click);
-            // 
-            // txtTelefonP
-            // 
-            this.txtTelefonP.Location = new System.Drawing.Point(228, 557);
-            this.txtTelefonP.Mask = "000-000-000";
-            this.txtTelefonP.Name = "txtTelefonP";
-            this.txtTelefonP.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefonP.TabIndex = 41;
-            // 
-            // txtKodPocztaP
-            // 
-            this.txtKodPocztaP.Location = new System.Drawing.Point(228, 492);
-            this.txtKodPocztaP.Mask = "00-000";
-            this.txtKodPocztaP.Name = "txtKodPocztaP";
-            this.txtKodPocztaP.Size = new System.Drawing.Size(100, 20);
-            this.txtKodPocztaP.TabIndex = 42;
+            this.txtHasloP.Location = new System.Drawing.Point(395, 530);
+            this.txtHasloP.Name = "txtHasloP";
+            this.txtHasloP.Size = new System.Drawing.Size(100, 20);
+            this.txtHasloP.TabIndex = 43;
             // 
             // FormAdmin
             // 
@@ -925,5 +934,6 @@
         private System.Windows.Forms.Button btnZmienHaslo;
         private System.Windows.Forms.MaskedTextBox txtTelefonP;
         private System.Windows.Forms.MaskedTextBox txtKodPocztaP;
+        private System.Windows.Forms.TextBox txtHasloP;
     }
 }

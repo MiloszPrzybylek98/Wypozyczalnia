@@ -58,6 +58,40 @@ namespace Wypozyczalnia
             }
         }
 
+        public int PobierzCeneZamowieniaZWorka(int idWypozyczenia)
+        {
+            
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand($"SELECT SUM(Cena)  FROM Worek  Where WypozyczenieID = {idWypozyczenia}", connection))
+                {
+                    try
+                    {
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    catch (Exception)
+                    {
+
+                        return 0;
+                    }
+                    
+
+                }
+
+            }
+
+
+            
+
+
+
+
+            
+
+        }
+
 
 
 

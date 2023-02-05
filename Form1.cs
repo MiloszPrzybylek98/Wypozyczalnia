@@ -26,7 +26,8 @@ namespace Wypozyczalnia
 
         public void formEkranKlienta_Load(object sender, EventArgs e)
         {
-
+            object[] doby = new object[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14 };
+            dropCzasWypozyczenia.Items.AddRange(doby);
             //SqlDataAdapter adapter = new SqlDataAdapter("SELECT DISTINCT Typ  FROM SprzetNarciarski", connectionString);
             //DataTable table = new DataTable();
             //adapter.Fill(table);
@@ -71,7 +72,7 @@ namespace Wypozyczalnia
             string typ = dropKategorie.SelectedItem.ToString();
             
             Connector connector = new Connector();
-            dataGridView1.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+            dataGridView1.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
             
             
             
@@ -92,9 +93,8 @@ namespace Wypozyczalnia
 
            string typ =  dodaj() ;
            Connector connector = new Connector();
-           DataTable dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+           DataTable dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
            int selectedRow = dataGridView1.SelectedRows[0].Index;
-            //dt.AcceptChanges();
             DataTable dt2 = dt.Clone();
             foreach (DataRow dr in dt.Rows)
             {
@@ -110,6 +110,7 @@ namespace Wypozyczalnia
             string Rozmiar = dt2.Rows[0][3].ToString();
             int Regal = (int)dt2.Rows[0][4];
             int Polka = (int)dt2.Rows[0][5];
+            int Cena = (int)dt2.Rows[0][6];
 
 
             //trzeba dodać tworzenie nowego zamówienia w momencie ładowania forma i pobrać jego ID
@@ -122,7 +123,7 @@ namespace Wypozyczalnia
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("INSERT INTO Worek VALUES(@WypozyczenieID, @SprzętID, @Nazwa, @Typ, @Rozmiar, @Regał, @Półka)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO Worek VALUES(@WypozyczenieID, @SprzętID, @Nazwa, @Typ, @Rozmiar, @Regał, @Półka, @Cena)", connection))
                 {
 
                     command.Parameters.AddWithValue("@WypozyczenieID", ZamowienieId);
@@ -132,6 +133,7 @@ namespace Wypozyczalnia
                     command.Parameters.AddWithValue("@Rozmiar", Rozmiar);
                     command.Parameters.AddWithValue("@Regał", Regal);
                     command.Parameters.AddWithValue("@Półka", Polka);
+                    command.Parameters.AddWithValue("@Cena", Cena);
                     command.ExecuteNonQuery();
 
                 }
@@ -164,9 +166,11 @@ namespace Wypozyczalnia
 
             dropKategorie_SelectedValueChanged(sender, e);
 
-            dataGridView2.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar", "Worek", $"Where WypozyczenieID = {ZamowienieId}");
+            dataGridView2.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {ZamowienieId}");
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[1].Visible = false;
+
+            LblSumaZamowienia.Text= connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
 
 
 
@@ -236,11 +240,69 @@ namespace Wypozyczalnia
             dropKategorie_SelectedValueChanged(sender, e);
 
             Connector connector = new Connector();
-            dataGridView2.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar", "Worek", $"Where WypozyczenieID = {IdWypozyczenia}");
+            dataGridView2.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {IdWypozyczenia}");
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[1].Visible = false;
+            LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
 
 
+        }
+
+        private void btnWypozycz_Click(object sender, EventArgs e)
+        {
+            
+            Connector connector = new Connector();
+
+            string imie = txtImie.Text;
+            string nazwisko = txtNazwisko.Text;
+            string pesel = txtPeselK.Text;
+            string nrTel = txtNrKontaktowy.Text;
+            int dni = (int)dropCzasWypozyczenia.SelectedItem;
+            DateTime data = DateTime.Now;
+            DateTime dataOddania = data.AddDays(dni);
+            int KwotaZamowienia = connector.PobierzCeneZamowieniaZWorka(ZamowienieId);
+
+            if(pesel.Length == 11 && nrTel.Length == 9)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("INSERT INTO Klienci (Imie, Nazwisko, Pesel, Telefon) VALUES(@Imię, @Nazwisko, @Pesel,  @Telefon)", connection))
+                    {
+
+                        command.Parameters.AddWithValue("@Imię", imie);
+                        command.Parameters.AddWithValue("@Nazwisko", nazwisko);
+                        command.Parameters.AddWithValue("@Pesel", pesel);
+                        command.Parameters.AddWithValue("@Telefon", nrTel);
+                        int result = command.ExecuteNonQuery();
+
+                    }
+
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Zła długość peselu lub nr telefonu. Proszę poprawić");
+            }
+
+
+            
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            
+            Validator validator = new Validator();
+            validator.WalidujNrTxt(txtPeselK, btnWypozycz, "pesel");
+        }
+
+        private void txtNrKontaktowy_TextChanged(object sender, EventArgs e)
+        {
+           
+            Validator validator = new Validator();
+            validator.WalidujNrTxt(txtNrKontaktowy, btnWypozycz, "nr kontaktowy");
         }
     }
 }
