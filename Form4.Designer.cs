@@ -48,6 +48,7 @@
             this.btnAktualizuj = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSzukajZamowienia = new System.Windows.Forms.Button();
+            this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
             this.dgvAktywneZamP = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnWypozycz = new System.Windows.Forms.Button();
@@ -67,7 +68,10 @@
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
-            this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
@@ -86,14 +90,20 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1099, 735);
+            this.tabControl1.Size = new System.Drawing.Size(1098, 737);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.numPolkaDodaj);
             this.tabPage1.Controls.Add(this.numRegalDodaj);
             this.tabPage1.Controls.Add(this.txtRozmiarDodaj);
@@ -106,94 +116,106 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.comboTypP);
             this.tabPage1.Controls.Add(this.dgvMagazynP);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1091, 709);
+            this.tabPage1.Size = new System.Drawing.Size(1090, 711);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Magazyn";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // numPolkaDodaj
             // 
-            this.numPolkaDodaj.Location = new System.Drawing.Point(13, 564);
+            this.numPolkaDodaj.Location = new System.Drawing.Point(31, 637);
             this.numPolkaDodaj.Name = "numPolkaDodaj";
-            this.numPolkaDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numPolkaDodaj.Size = new System.Drawing.Size(136, 21);
             this.numPolkaDodaj.TabIndex = 20;
             // 
             // numRegalDodaj
             // 
-            this.numRegalDodaj.Location = new System.Drawing.Point(12, 538);
+            this.numRegalDodaj.Location = new System.Drawing.Point(32, 588);
             this.numRegalDodaj.Name = "numRegalDodaj";
-            this.numRegalDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numRegalDodaj.Size = new System.Drawing.Size(135, 21);
             this.numRegalDodaj.TabIndex = 19;
             // 
             // txtRozmiarDodaj
             // 
-            this.txtRozmiarDodaj.Location = new System.Drawing.Point(12, 512);
+            this.txtRozmiarDodaj.Location = new System.Drawing.Point(31, 537);
             this.txtRozmiarDodaj.Name = "txtRozmiarDodaj";
-            this.txtRozmiarDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtRozmiarDodaj.Size = new System.Drawing.Size(136, 21);
             this.txtRozmiarDodaj.TabIndex = 18;
             // 
             // txtNazwaDodaj
             // 
-            this.txtNazwaDodaj.Location = new System.Drawing.Point(12, 486);
+            this.txtNazwaDodaj.Location = new System.Drawing.Point(31, 487);
             this.txtNazwaDodaj.Name = "txtNazwaDodaj";
-            this.txtNazwaDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwaDodaj.Size = new System.Drawing.Size(136, 21);
             this.txtNazwaDodaj.TabIndex = 17;
             // 
             // btnUsunSprzetZmagazynu
             // 
-            this.btnUsunSprzetZmagazynu.Location = new System.Drawing.Point(780, 68);
+            this.btnUsunSprzetZmagazynu.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsunSprzetZmagazynu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUsunSprzetZmagazynu.Location = new System.Drawing.Point(790, 54);
             this.btnUsunSprzetZmagazynu.Name = "btnUsunSprzetZmagazynu";
-            this.btnUsunSprzetZmagazynu.Size = new System.Drawing.Size(148, 23);
+            this.btnUsunSprzetZmagazynu.Size = new System.Drawing.Size(166, 31);
             this.btnUsunSprzetZmagazynu.TabIndex = 16;
             this.btnUsunSprzetZmagazynu.Text = "Usuń zaznaczony sprzęt";
-            this.btnUsunSprzetZmagazynu.UseVisualStyleBackColor = true;
+            this.btnUsunSprzetZmagazynu.UseVisualStyleBackColor = false;
             // 
             // btnDodajSprzetDoMagazynu
             // 
-            this.btnDodajSprzetDoMagazynu.Location = new System.Drawing.Point(444, 616);
+            this.btnDodajSprzetDoMagazynu.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDodajSprzetDoMagazynu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajSprzetDoMagazynu.Location = new System.Drawing.Point(350, 637);
             this.btnDodajSprzetDoMagazynu.Name = "btnDodajSprzetDoMagazynu";
-            this.btnDodajSprzetDoMagazynu.Size = new System.Drawing.Size(148, 23);
+            this.btnDodajSprzetDoMagazynu.Size = new System.Drawing.Size(199, 42);
             this.btnDodajSprzetDoMagazynu.TabIndex = 15;
             this.btnDodajSprzetDoMagazynu.Text = "Dodaj sprzęt do magazynu";
-            this.btnDodajSprzetDoMagazynu.UseVisualStyleBackColor = true;
+            this.btnDodajSprzetDoMagazynu.UseVisualStyleBackColor = false;
             this.btnDodajSprzetDoMagazynu.Click += new System.EventHandler(this.btnDodajSprzetDoMagazynu_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 443);
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Location = new System.Drawing.Point(33, 427);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 14;
             this.label2.Text = "Kategoria";
             // 
             // comboTypDodaj
             // 
+            this.comboTypDodaj.BackColor = System.Drawing.Color.AliceBlue;
             this.comboTypDodaj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTypDodaj.FormattingEnabled = true;
-            this.comboTypDodaj.Location = new System.Drawing.Point(12, 459);
+            this.comboTypDodaj.Location = new System.Drawing.Point(31, 443);
             this.comboTypDodaj.Name = "comboTypDodaj";
-            this.comboTypDodaj.Size = new System.Drawing.Size(121, 21);
+            this.comboTypDodaj.Size = new System.Drawing.Size(136, 23);
             this.comboTypDodaj.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 418);
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(33, 402);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.Size = new System.Drawing.Size(174, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Dodawanie nowego sprzętu";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 9);
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Location = new System.Drawing.Point(33, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 13);
+            this.label3.Size = new System.Drawing.Size(147, 15);
             this.label3.TabIndex = 11;
             this.label3.Text = "Wybierz kategorię sprzętu";
             // 
@@ -201,9 +223,9 @@
             // 
             this.comboTypP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTypP.FormattingEnabled = true;
-            this.comboTypP.Location = new System.Drawing.Point(9, 32);
+            this.comboTypP.Location = new System.Drawing.Point(31, 31);
             this.comboTypP.Name = "comboTypP";
-            this.comboTypP.Size = new System.Drawing.Size(121, 21);
+            this.comboTypP.Size = new System.Drawing.Size(136, 23);
             this.comboTypP.TabIndex = 1;
             this.comboTypP.SelectedIndexChanged += new System.EventHandler(this.comboTypP_SelectedIndexChanged);
             // 
@@ -214,8 +236,9 @@
             this.dgvMagazynP.AllowUserToResizeColumns = false;
             this.dgvMagazynP.AllowUserToResizeRows = false;
             this.dgvMagazynP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMagazynP.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvMagazynP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazynP.Location = new System.Drawing.Point(9, 68);
+            this.dgvMagazynP.Location = new System.Drawing.Point(31, 54);
             this.dgvMagazynP.MultiSelect = false;
             this.dgvMagazynP.Name = "dgvMagazynP";
             this.dgvMagazynP.ReadOnly = true;
@@ -224,6 +247,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
             this.tabPage2.Controls.Add(this.dgvWorekZamP);
             this.tabPage2.Controls.Add(this.btnUsunZamowienie);
             this.tabPage2.Controls.Add(this.btnAktualizuj);
@@ -234,13 +258,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1091, 709);
+            this.tabPage2.Size = new System.Drawing.Size(1090, 711);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Aktywne Zamówienia";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dgvWorekZamP
             // 
+            this.dgvWorekZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvWorekZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorekZamP.Location = new System.Drawing.Point(38, 335);
             this.dgvWorekZamP.Name = "dgvWorekZamP";
@@ -249,40 +274,54 @@
             // 
             // btnUsunZamowienie
             // 
-            this.btnUsunZamowienie.Location = new System.Drawing.Point(204, 572);
+            this.btnUsunZamowienie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsunZamowienie.Location = new System.Drawing.Point(282, 572);
             this.btnUsunZamowienie.Name = "btnUsunZamowienie";
-            this.btnUsunZamowienie.Size = new System.Drawing.Size(144, 23);
+            this.btnUsunZamowienie.Size = new System.Drawing.Size(188, 36);
             this.btnUsunZamowienie.TabIndex = 5;
             this.btnUsunZamowienie.Text = "Usuń zamówienie";
-            this.btnUsunZamowienie.UseVisualStyleBackColor = true;
+            this.btnUsunZamowienie.UseVisualStyleBackColor = false;
             // 
             // btnAktualizuj
             // 
+            this.btnAktualizuj.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAktualizuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAktualizuj.Location = new System.Drawing.Point(38, 572);
             this.btnAktualizuj.Name = "btnAktualizuj";
-            this.btnAktualizuj.Size = new System.Drawing.Size(144, 23);
+            this.btnAktualizuj.Size = new System.Drawing.Size(188, 36);
             this.btnAktualizuj.TabIndex = 4;
             this.btnAktualizuj.Text = "Aktualizuj zamówienie";
-            this.btnAktualizuj.UseVisualStyleBackColor = true;
+            this.btnAktualizuj.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(790, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 13);
+            this.label4.Size = new System.Drawing.Size(240, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Wyszukiwanie zamówienia po numerze";
             // 
             // btnSzukajZamowienia
             // 
+            this.btnSzukajZamowienia.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSzukajZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSzukajZamowienia.Location = new System.Drawing.Point(793, 118);
             this.btnSzukajZamowienia.Name = "btnSzukajZamowienia";
-            this.btnSzukajZamowienia.Size = new System.Drawing.Size(100, 28);
+            this.btnSzukajZamowienia.Size = new System.Drawing.Size(188, 33);
             this.btnSzukajZamowienia.TabIndex = 2;
             this.btnSzukajZamowienia.Text = "Szukaj";
-            this.btnSzukajZamowienia.UseVisualStyleBackColor = true;
+            this.btnSzukajZamowienia.UseVisualStyleBackColor = false;
             this.btnSzukajZamowienia.Click += new System.EventHandler(this.btnSzukajZamowienia_Click);
+            // 
+            // txtWyszukajAktywne
+            // 
+            this.txtWyszukajAktywne.Location = new System.Drawing.Point(793, 75);
+            this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
+            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
+            this.txtWyszukajAktywne.TabIndex = 1;
             // 
             // dgvAktywneZamP
             // 
@@ -291,6 +330,7 @@
             this.dgvAktywneZamP.AllowUserToResizeColumns = false;
             this.dgvAktywneZamP.AllowUserToResizeRows = false;
             this.dgvAktywneZamP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAktywneZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvAktywneZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAktywneZamP.Location = new System.Drawing.Point(38, 56);
             this.dgvAktywneZamP.MultiSelect = false;
@@ -304,6 +344,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
             this.tabPage3.Controls.Add(this.btnWypozycz);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.dropCzasWypozyczenia);
@@ -324,17 +365,18 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1091, 709);
+            this.tabPage3.Size = new System.Drawing.Size(1090, 711);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tworzenie zamówienia";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnWypozycz
             // 
-            this.btnWypozycz.BackColor = System.Drawing.Color.Lime;
-            this.btnWypozycz.Location = new System.Drawing.Point(290, 531);
+            this.btnWypozycz.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnWypozycz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWypozycz.Location = new System.Drawing.Point(292, 584);
             this.btnWypozycz.Name = "btnWypozycz";
-            this.btnWypozycz.Size = new System.Drawing.Size(149, 61);
+            this.btnWypozycz.Size = new System.Drawing.Size(171, 61);
             this.btnWypozycz.TabIndex = 33;
             this.btnWypozycz.Text = "Zatwierdź";
             this.btnWypozycz.UseVisualStyleBackColor = false;
@@ -342,9 +384,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(290, 457);
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(295, 448);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 13);
+            this.label5.Size = new System.Drawing.Size(168, 15);
             this.label5.TabIndex = 32;
             this.label5.Text = "Czas wypożyczenia w dobach";
             // 
@@ -352,31 +396,36 @@
             // 
             this.dropCzasWypozyczenia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropCzasWypozyczenia.FormattingEnabled = true;
-            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(290, 476);
+            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(292, 466);
             this.dropCzasWypozyczenia.Name = "dropCzasWypozyczenia";
-            this.dropCzasWypozyczenia.Size = new System.Drawing.Size(149, 21);
+            this.dropCzasWypozyczenia.Size = new System.Drawing.Size(171, 21);
             this.dropCzasWypozyczenia.TabIndex = 31;
             // 
             // btnUsunZzamowienia
             // 
+            this.btnUsunZzamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUsunZzamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUsunZzamowienia.Location = new System.Drawing.Point(507, 265);
             this.btnUsunZzamowienia.Name = "btnUsunZzamowienia";
             this.btnUsunZzamowienia.Size = new System.Drawing.Size(75, 23);
             this.btnUsunZzamowienia.TabIndex = 30;
             this.btnUsunZzamowienia.Text = "<<<";
-            this.btnUsunZzamowienia.UseVisualStyleBackColor = true;
+            this.btnUsunZzamowienia.UseVisualStyleBackColor = false;
             // 
             // btnDodajDoZamowienia
             // 
+            this.btnDodajDoZamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDodajDoZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajDoZamowienia.Location = new System.Drawing.Point(507, 218);
             this.btnDodajDoZamowienia.Name = "btnDodajDoZamowienia";
             this.btnDodajDoZamowienia.Size = new System.Drawing.Size(75, 23);
             this.btnDodajDoZamowienia.TabIndex = 29;
             this.btnDodajDoZamowienia.Text = ">>>";
-            this.btnDodajDoZamowienia.UseVisualStyleBackColor = true;
+            this.btnDodajDoZamowienia.UseVisualStyleBackColor = false;
             // 
             // dataGridView4
             // 
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(600, 84);
             this.dataGridView4.Name = "dataGridView4";
@@ -386,14 +435,17 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 19);
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(14, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 13);
+            this.label6.Size = new System.Drawing.Size(163, 16);
             this.label6.TabIndex = 27;
             this.label6.Text = "Wybierz kategorię sprzętu";
             // 
             // dropKategorie
             // 
+            this.dropKategorie.BackColor = System.Drawing.Color.AliceBlue;
             this.dropKategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropKategorie.FormattingEnabled = true;
             this.dropKategorie.Items.AddRange(new object[] {
@@ -406,6 +458,7 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(12, 84);
             this.dataGridView5.Name = "dataGridView5";
@@ -415,82 +468,127 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 609);
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(14, 607);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(83, 15);
             this.label7.TabIndex = 24;
             this.label7.Text = "Nr kontaktowy";
             // 
             // txtNrKontaktowy
             // 
-            this.txtNrKontaktowy.Location = new System.Drawing.Point(17, 634);
+            this.txtNrKontaktowy.Location = new System.Drawing.Point(12, 625);
             this.txtNrKontaktowy.Name = "txtNrKontaktowy";
-            this.txtNrKontaktowy.Size = new System.Drawing.Size(164, 20);
+            this.txtNrKontaktowy.Size = new System.Drawing.Size(171, 20);
             this.txtNrKontaktowy.TabIndex = 23;
             // 
             // txtPesel
             // 
             this.txtPesel.AutoSize = true;
-            this.txtPesel.Location = new System.Drawing.Point(14, 555);
+            this.txtPesel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPesel.Location = new System.Drawing.Point(14, 554);
             this.txtPesel.Name = "txtPesel";
-            this.txtPesel.Size = new System.Drawing.Size(33, 13);
+            this.txtPesel.Size = new System.Drawing.Size(38, 15);
             this.txtPesel.TabIndex = 22;
             this.txtPesel.Text = "Pesel";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(17, 572);
+            this.textBox3.Location = new System.Drawing.Point(12, 572);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
+            this.textBox3.Size = new System.Drawing.Size(171, 20);
             this.textBox3.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.Location = new System.Drawing.Point(14, 502);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.Size = new System.Drawing.Size(60, 15);
             this.label8.TabIndex = 20;
             this.label8.Text = "Nazwisko";
             // 
             // txtNazwisko
             // 
-            this.txtNazwisko.Location = new System.Drawing.Point(17, 518);
+            this.txtNazwisko.Location = new System.Drawing.Point(12, 518);
             this.txtNazwisko.Name = "txtNazwisko";
-            this.txtNazwisko.Size = new System.Drawing.Size(164, 20);
+            this.txtNazwisko.Size = new System.Drawing.Size(171, 20);
             this.txtNazwisko.TabIndex = 19;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(14, 450);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 13);
+            this.label9.Size = new System.Drawing.Size(31, 15);
             this.label9.TabIndex = 18;
             this.label9.Text = "Imię";
             // 
             // txtImie
             // 
-            this.txtImie.Location = new System.Drawing.Point(17, 466);
+            this.txtImie.Location = new System.Drawing.Point(12, 466);
             this.txtImie.Name = "txtImie";
-            this.txtImie.Size = new System.Drawing.Size(164, 20);
+            this.txtImie.Size = new System.Drawing.Size(171, 20);
             this.txtImie.TabIndex = 17;
             // 
-            // txtWyszukajAktywne
+            // label10
             // 
-            this.txtWyszukajAktywne.Location = new System.Drawing.Point(793, 82);
-            this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
-            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
-            this.txtWyszukajAktywne.TabIndex = 1;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(33, 471);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 15);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Nazwa";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(33, 521);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 15);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Rozmiar";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(32, 572);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 15);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Regał";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(33, 621);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 15);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Półka";
             // 
             // formPracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 747);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(1126, 770);
             this.Controls.Add(this.tabControl1);
             this.Name = "formPracownik";
-            this.Text = "Form4";
+            this.Text = "Panel pracownika";
             this.Load += new System.EventHandler(this.formPracownik_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -552,5 +650,9 @@
         private System.Windows.Forms.NumericUpDown numPolkaDodaj;
         private System.Windows.Forms.NumericUpDown numRegalDodaj;
         private System.Windows.Forms.TextBox txtWyszukajAktywne;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

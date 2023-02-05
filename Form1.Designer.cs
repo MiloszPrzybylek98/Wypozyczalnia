@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEkranKlienta));
             this.txtImie = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,67 +54,75 @@
             // 
             // txtImie
             // 
-            this.txtImie.Location = new System.Drawing.Point(12, 491);
+            this.txtImie.Location = new System.Drawing.Point(15, 429);
             this.txtImie.Name = "txtImie";
-            this.txtImie.Size = new System.Drawing.Size(164, 20);
+            this.txtImie.Size = new System.Drawing.Size(176, 20);
             this.txtImie.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 472);
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(15, 410);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Imię";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 527);
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(15, 461);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nazwisko";
             // 
             // txtNazwisko
             // 
-            this.txtNazwisko.Location = new System.Drawing.Point(12, 546);
+            this.txtNazwisko.Location = new System.Drawing.Point(15, 480);
             this.txtNazwisko.Name = "txtNazwisko";
-            this.txtNazwisko.Size = new System.Drawing.Size(164, 20);
+            this.txtNazwisko.Size = new System.Drawing.Size(176, 20);
             this.txtNazwisko.TabIndex = 2;
             // 
             // txtPesel
             // 
             this.txtPesel.AutoSize = true;
-            this.txtPesel.Location = new System.Drawing.Point(12, 586);
+            this.txtPesel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPesel.Location = new System.Drawing.Point(15, 503);
             this.txtPesel.Name = "txtPesel";
-            this.txtPesel.Size = new System.Drawing.Size(33, 13);
+            this.txtPesel.Size = new System.Drawing.Size(38, 15);
             this.txtPesel.TabIndex = 5;
             this.txtPesel.Text = "Pesel";
             // 
             // txtPeselK
             // 
-            this.txtPeselK.Location = new System.Drawing.Point(12, 605);
+            this.txtPeselK.Location = new System.Drawing.Point(15, 524);
             this.txtPeselK.Name = "txtPeselK";
-            this.txtPeselK.Size = new System.Drawing.Size(164, 20);
+            this.txtPeselK.Size = new System.Drawing.Size(176, 20);
             this.txtPeselK.TabIndex = 4;
             this.txtPeselK.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 648);
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(15, 551);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Nr kontaktowy";
             // 
             // txtNrKontaktowy
             // 
-            this.txtNrKontaktowy.Location = new System.Drawing.Point(12, 667);
+            this.txtNrKontaktowy.Location = new System.Drawing.Point(15, 567);
             this.txtNrKontaktowy.Name = "txtNrKontaktowy";
-            this.txtNrKontaktowy.Size = new System.Drawing.Size(164, 20);
+            this.txtNrKontaktowy.Size = new System.Drawing.Size(179, 20);
             this.txtNrKontaktowy.TabIndex = 6;
             this.txtNrKontaktowy.TextChanged += new System.EventHandler(this.txtNrKontaktowy_TextChanged);
             // 
@@ -124,8 +133,9 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 67);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -135,9 +145,10 @@
             // 
             // dropKategorie
             // 
+            this.dropKategorie.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.dropKategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropKategorie.FormattingEnabled = true;
-            this.dropKategorie.Location = new System.Drawing.Point(12, 45);
+            this.dropKategorie.Location = new System.Drawing.Point(15, 31);
             this.dropKategorie.Name = "dropKategorie";
             this.dropKategorie.Size = new System.Drawing.Size(176, 21);
             this.dropKategorie.TabIndex = 9;
@@ -147,9 +158,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 29);
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(15, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 13);
+            this.label3.Size = new System.Drawing.Size(147, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "Wybierz kategorię sprzętu";
             // 
@@ -160,59 +173,67 @@
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(603, 110);
+            this.dataGridView2.Location = new System.Drawing.Point(603, 67);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(479, 332);
+            this.dataGridView2.Size = new System.Drawing.Size(506, 332);
             this.dataGridView2.TabIndex = 11;
             // 
             // btnDodajDoZamowienia
             // 
-            this.btnDodajDoZamowienia.Location = new System.Drawing.Point(510, 244);
+            this.btnDodajDoZamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDodajDoZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajDoZamowienia.Location = new System.Drawing.Point(510, 201);
             this.btnDodajDoZamowienia.Name = "btnDodajDoZamowienia";
             this.btnDodajDoZamowienia.Size = new System.Drawing.Size(75, 23);
             this.btnDodajDoZamowienia.TabIndex = 12;
             this.btnDodajDoZamowienia.Text = ">>>";
-            this.btnDodajDoZamowienia.UseVisualStyleBackColor = true;
+            this.btnDodajDoZamowienia.UseVisualStyleBackColor = false;
             this.btnDodajDoZamowienia.Click += new System.EventHandler(this.btnDodajDoZamowienia_Click);
             // 
             // btnUsunZzamowienia
             // 
-            this.btnUsunZzamowienia.Location = new System.Drawing.Point(510, 291);
+            this.btnUsunZzamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUsunZzamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUsunZzamowienia.Location = new System.Drawing.Point(510, 248);
             this.btnUsunZzamowienia.Name = "btnUsunZzamowienia";
             this.btnUsunZzamowienia.Size = new System.Drawing.Size(75, 23);
             this.btnUsunZzamowienia.TabIndex = 13;
             this.btnUsunZzamowienia.Text = "<<<";
-            this.btnUsunZzamowienia.UseVisualStyleBackColor = true;
+            this.btnUsunZzamowienia.UseVisualStyleBackColor = false;
             this.btnUsunZzamowienia.Click += new System.EventHandler(this.btnUsunZzamowienia_Click);
             // 
             // dropCzasWypozyczenia
             // 
             this.dropCzasWypozyczenia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropCzasWypozyczenia.FormattingEnabled = true;
-            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(293, 491);
+            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(263, 428);
             this.dropCzasWypozyczenia.Name = "dropCzasWypozyczenia";
-            this.dropCzasWypozyczenia.Size = new System.Drawing.Size(149, 21);
+            this.dropCzasWypozyczenia.Size = new System.Drawing.Size(179, 21);
             this.dropCzasWypozyczenia.TabIndex = 14;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(293, 472);
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(265, 410);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 13);
+            this.label5.Size = new System.Drawing.Size(168, 15);
             this.label5.TabIndex = 15;
             this.label5.Text = "Czas wypożyczenia w dobach";
             // 
             // btnWypozycz
             // 
-            this.btnWypozycz.BackColor = System.Drawing.Color.Lime;
-            this.btnWypozycz.Location = new System.Drawing.Point(293, 546);
+            this.btnWypozycz.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnWypozycz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWypozycz.Location = new System.Drawing.Point(263, 551);
             this.btnWypozycz.Name = "btnWypozycz";
-            this.btnWypozycz.Size = new System.Drawing.Size(149, 61);
+            this.btnWypozycz.Size = new System.Drawing.Size(179, 39);
             this.btnWypozycz.TabIndex = 16;
             this.btnWypozycz.Text = "Zatwierdź";
             this.btnWypozycz.UseVisualStyleBackColor = false;
@@ -221,18 +242,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(603, 472);
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(609, 410);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 13);
+            this.label6.Size = new System.Drawing.Size(161, 16);
             this.label6.TabIndex = 17;
             this.label6.Text = "Suma zamówienia w PLN:";
             // 
             // LblSumaZamowienia
             // 
             this.LblSumaZamowienia.AutoSize = true;
-            this.LblSumaZamowienia.Location = new System.Drawing.Point(736, 472);
+            this.LblSumaZamowienia.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LblSumaZamowienia.Location = new System.Drawing.Point(776, 410);
             this.LblSumaZamowienia.Name = "LblSumaZamowienia";
-            this.LblSumaZamowienia.Size = new System.Drawing.Size(13, 13);
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(15, 16);
             this.LblSumaZamowienia.TabIndex = 18;
             this.LblSumaZamowienia.Text = "0";
             // 
@@ -240,7 +265,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 811);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1140, 628);
             this.Controls.Add(this.LblSumaZamowienia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnWypozycz);
@@ -262,7 +288,7 @@
             this.Controls.Add(this.txtImie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "formEkranKlienta";
-            this.Text = "Form1";
+            this.Text = "Panel wypożyczania";
             this.Load += new System.EventHandler(this.formEkranKlienta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

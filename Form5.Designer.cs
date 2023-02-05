@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.numPolkaDodaj = new System.Windows.Forms.NumericUpDown();
             this.numRegalDodaj = new System.Windows.Forms.NumericUpDown();
             this.txtRozmiarDodaj = new System.Windows.Forms.TextBox();
@@ -72,6 +76,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtHasloP = new System.Windows.Forms.TextBox();
             this.txtKodPocztaP = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefonP = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -102,7 +108,6 @@
             this.btnUsunPracownika = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvPracownicy = new System.Windows.Forms.DataGridView();
-            this.txtHasloP = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
@@ -127,11 +132,16 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1095, 784);
+            this.tabControl1.Size = new System.Drawing.Size(1095, 749);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.numPolkaDodaj);
             this.tabPage1.Controls.Add(this.numRegalDodaj);
             this.tabPage1.Controls.Add(this.txtRozmiarDodaj);
@@ -148,91 +158,144 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1087, 758);
+            this.tabPage1.Size = new System.Drawing.Size(1087, 723);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Magazyn";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label24.Location = new System.Drawing.Point(27, 665);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(36, 13);
+            this.label24.TabIndex = 33;
+            this.label24.Text = "Półka";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label23.Location = new System.Drawing.Point(27, 613);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(40, 15);
+            this.label23.TabIndex = 32;
+            this.label23.Text = "Regał";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label22.Location = new System.Drawing.Point(27, 570);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(54, 15);
+            this.label22.TabIndex = 31;
+            this.label22.Text = "Rozmiar";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.Location = new System.Drawing.Point(27, 523);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(45, 15);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Nazwa";
+            // 
             // numPolkaDodaj
             // 
-            this.numPolkaDodaj.Location = new System.Drawing.Point(16, 650);
+            this.numPolkaDodaj.Location = new System.Drawing.Point(26, 681);
             this.numPolkaDodaj.Name = "numPolkaDodaj";
-            this.numPolkaDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numPolkaDodaj.Size = new System.Drawing.Size(142, 20);
             this.numPolkaDodaj.TabIndex = 29;
             // 
             // numRegalDodaj
             // 
-            this.numRegalDodaj.Location = new System.Drawing.Point(16, 624);
+            this.numRegalDodaj.Location = new System.Drawing.Point(26, 631);
             this.numRegalDodaj.Name = "numRegalDodaj";
-            this.numRegalDodaj.Size = new System.Drawing.Size(120, 20);
+            this.numRegalDodaj.Size = new System.Drawing.Size(142, 20);
             this.numRegalDodaj.TabIndex = 28;
             // 
             // txtRozmiarDodaj
             // 
-            this.txtRozmiarDodaj.Location = new System.Drawing.Point(16, 585);
+            this.txtRozmiarDodaj.Location = new System.Drawing.Point(26, 588);
             this.txtRozmiarDodaj.Name = "txtRozmiarDodaj";
-            this.txtRozmiarDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtRozmiarDodaj.Size = new System.Drawing.Size(142, 20);
             this.txtRozmiarDodaj.TabIndex = 27;
             // 
             // txtNazwaDodaj
             // 
-            this.txtNazwaDodaj.Location = new System.Drawing.Point(16, 548);
+            this.txtNazwaDodaj.Location = new System.Drawing.Point(26, 541);
             this.txtNazwaDodaj.Name = "txtNazwaDodaj";
-            this.txtNazwaDodaj.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwaDodaj.Size = new System.Drawing.Size(142, 20);
             this.txtNazwaDodaj.TabIndex = 26;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 32);
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(27, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 13);
+            this.label4.Size = new System.Drawing.Size(160, 15);
             this.label4.TabIndex = 25;
             this.label4.Text = "Dodawanie nowego sprzętu";
             // 
             // btnUsunSprzetZmagazynu
             // 
-            this.btnUsunSprzetZmagazynu.Location = new System.Drawing.Point(787, 84);
+            this.btnUsunSprzetZmagazynu.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsunSprzetZmagazynu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUsunSprzetZmagazynu.Location = new System.Drawing.Point(781, 57);
             this.btnUsunSprzetZmagazynu.Name = "btnUsunSprzetZmagazynu";
-            this.btnUsunSprzetZmagazynu.Size = new System.Drawing.Size(148, 23);
+            this.btnUsunSprzetZmagazynu.Size = new System.Drawing.Size(250, 27);
             this.btnUsunSprzetZmagazynu.TabIndex = 24;
             this.btnUsunSprzetZmagazynu.Text = "Usuń zaznaczony sprzęt";
-            this.btnUsunSprzetZmagazynu.UseVisualStyleBackColor = true;
+            this.btnUsunSprzetZmagazynu.UseVisualStyleBackColor = false;
             this.btnUsunSprzetZmagazynu.Click += new System.EventHandler(this.btnUsunSprzetZmagazynu_Click);
             // 
             // btnDodajSprzetDoMagazynu
             // 
-            this.btnDodajSprzetDoMagazynu.Location = new System.Drawing.Point(363, 585);
+            this.btnDodajSprzetDoMagazynu.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDodajSprzetDoMagazynu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajSprzetDoMagazynu.Location = new System.Drawing.Point(376, 675);
             this.btnDodajSprzetDoMagazynu.Name = "btnDodajSprzetDoMagazynu";
-            this.btnDodajSprzetDoMagazynu.Size = new System.Drawing.Size(148, 23);
+            this.btnDodajSprzetDoMagazynu.Size = new System.Drawing.Size(252, 27);
             this.btnDodajSprzetDoMagazynu.TabIndex = 23;
             this.btnDodajSprzetDoMagazynu.Text = "Dodaj sprzęt do magazynu";
-            this.btnDodajSprzetDoMagazynu.UseVisualStyleBackColor = true;
+            this.btnDodajSprzetDoMagazynu.UseVisualStyleBackColor = false;
             this.btnDodajSprzetDoMagazynu.Click += new System.EventHandler(this.btnDodajSprzetDoMagazynu_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 495);
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(27, 477);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 22;
             this.label2.Text = "Kategoria";
             // 
             // comboTypDodajA
             // 
             this.comboTypDodajA.FormattingEnabled = true;
-            this.comboTypDodajA.Location = new System.Drawing.Point(16, 511);
+            this.comboTypDodajA.Location = new System.Drawing.Point(26, 495);
             this.comboTypDodajA.Name = "comboTypDodajA";
-            this.comboTypDodajA.Size = new System.Drawing.Size(121, 21);
+            this.comboTypDodajA.Size = new System.Drawing.Size(142, 21);
             this.comboTypDodajA.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 470);
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(27, 451);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.Size = new System.Drawing.Size(174, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "Dodawanie nowego sprzętu";
             // 
@@ -248,22 +311,24 @@
             // comboTypA
             // 
             this.comboTypA.FormattingEnabled = true;
-            this.comboTypA.Location = new System.Drawing.Point(16, 48);
+            this.comboTypA.Location = new System.Drawing.Point(26, 29);
             this.comboTypA.Name = "comboTypA";
-            this.comboTypA.Size = new System.Drawing.Size(121, 21);
+            this.comboTypA.Size = new System.Drawing.Size(142, 21);
             this.comboTypA.TabIndex = 18;
             this.comboTypA.SelectedIndexChanged += new System.EventHandler(this.comboTypA_SelectedIndexChanged);
             // 
             // dgvMagazynA
             // 
+            this.dgvMagazynA.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvMagazynA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazynA.Location = new System.Drawing.Point(16, 84);
+            this.dgvMagazynA.Location = new System.Drawing.Point(26, 57);
             this.dgvMagazynA.Name = "dgvMagazynA";
             this.dgvMagazynA.Size = new System.Drawing.Size(731, 372);
             this.dgvMagazynA.TabIndex = 17;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
             this.tabPage2.Controls.Add(this.dataGridView3);
             this.tabPage2.Controls.Add(this.btnUsunZamowienie);
             this.tabPage2.Controls.Add(this.btnAktualizuj);
@@ -274,69 +339,79 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1087, 758);
+            this.tabPage2.Size = new System.Drawing.Size(1087, 723);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Aktywne zamówienia";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(37, 330);
+            this.dataGridView3.Location = new System.Drawing.Point(20, 299);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(704, 211);
             this.dataGridView3.TabIndex = 13;
             // 
             // btnUsunZamowienie
             // 
-            this.btnUsunZamowienie.Location = new System.Drawing.Point(203, 567);
+            this.btnUsunZamowienie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsunZamowienie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUsunZamowienie.Location = new System.Drawing.Point(234, 536);
             this.btnUsunZamowienie.Name = "btnUsunZamowienie";
-            this.btnUsunZamowienie.Size = new System.Drawing.Size(144, 23);
+            this.btnUsunZamowienie.Size = new System.Drawing.Size(188, 31);
             this.btnUsunZamowienie.TabIndex = 12;
             this.btnUsunZamowienie.Text = "Usuń zamówienie";
-            this.btnUsunZamowienie.UseVisualStyleBackColor = true;
+            this.btnUsunZamowienie.UseVisualStyleBackColor = false;
             // 
             // btnAktualizuj
             // 
-            this.btnAktualizuj.Location = new System.Drawing.Point(37, 567);
+            this.btnAktualizuj.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAktualizuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAktualizuj.Location = new System.Drawing.Point(20, 536);
             this.btnAktualizuj.Name = "btnAktualizuj";
-            this.btnAktualizuj.Size = new System.Drawing.Size(144, 23);
+            this.btnAktualizuj.Size = new System.Drawing.Size(188, 31);
             this.btnAktualizuj.TabIndex = 11;
             this.btnAktualizuj.Text = "Aktualizuj zamówienie";
-            this.btnAktualizuj.UseVisualStyleBackColor = true;
+            this.btnAktualizuj.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(789, 51);
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(768, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 13);
+            this.label5.Size = new System.Drawing.Size(223, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "Wyszukiwanie zamówienia po numerze";
             // 
             // btnSzukajZamowienia
             // 
-            this.btnSzukajZamowienia.Location = new System.Drawing.Point(792, 113);
+            this.btnSzukajZamowienia.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSzukajZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSzukajZamowienia.Location = new System.Drawing.Point(771, 62);
             this.btnSzukajZamowienia.Name = "btnSzukajZamowienia";
-            this.btnSzukajZamowienia.Size = new System.Drawing.Size(100, 28);
+            this.btnSzukajZamowienia.Size = new System.Drawing.Size(188, 31);
             this.btnSzukajZamowienia.TabIndex = 9;
             this.btnSzukajZamowienia.Text = "Szukaj";
-            this.btnSzukajZamowienia.UseVisualStyleBackColor = true;
+            this.btnSzukajZamowienia.UseVisualStyleBackColor = false;
             // 
             // txtWyszukajAktywne
             // 
-            this.txtWyszukajAktywne.Location = new System.Drawing.Point(792, 67);
+            this.txtWyszukajAktywne.Location = new System.Drawing.Point(771, 36);
             this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
-            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
+            this.txtWyszukajAktywne.Size = new System.Drawing.Size(197, 20);
             this.txtWyszukajAktywne.TabIndex = 8;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col1,
             this.Column1});
-            this.dataGridView2.Location = new System.Drawing.Point(37, 51);
+            this.dataGridView2.Location = new System.Drawing.Point(20, 20);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(704, 222);
             this.dataGridView2.TabIndex = 7;
@@ -353,6 +428,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
             this.tabPage3.Controls.Add(this.btnWypozycz);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.dropCzasWypozyczenia);
@@ -373,27 +449,31 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1087, 758);
+            this.tabPage3.Size = new System.Drawing.Size(1087, 723);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tworzenie zamówienia";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnWypozycz
             // 
-            this.btnWypozycz.BackColor = System.Drawing.Color.Lime;
-            this.btnWypozycz.Location = new System.Drawing.Point(289, 574);
+            this.btnWypozycz.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnWypozycz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWypozycz.Location = new System.Drawing.Point(289, 583);
             this.btnWypozycz.Name = "btnWypozycz";
-            this.btnWypozycz.Size = new System.Drawing.Size(149, 61);
+            this.btnWypozycz.Size = new System.Drawing.Size(176, 36);
             this.btnWypozycz.TabIndex = 50;
             this.btnWypozycz.Text = "Zatwierdź";
             this.btnWypozycz.UseVisualStyleBackColor = false;
+            this.btnWypozycz.Click += new System.EventHandler(this.btnWypozycz_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(289, 500);
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(289, 426);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 13);
+            this.label6.Size = new System.Drawing.Size(168, 15);
             this.label6.TabIndex = 49;
             this.label6.Text = "Czas wypożyczenia w dobach";
             // 
@@ -401,33 +481,39 @@
             // 
             this.dropCzasWypozyczenia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropCzasWypozyczenia.FormattingEnabled = true;
-            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(289, 519);
+            this.dropCzasWypozyczenia.Location = new System.Drawing.Point(289, 445);
             this.dropCzasWypozyczenia.Name = "dropCzasWypozyczenia";
-            this.dropCzasWypozyczenia.Size = new System.Drawing.Size(149, 21);
+            this.dropCzasWypozyczenia.Size = new System.Drawing.Size(176, 21);
             this.dropCzasWypozyczenia.TabIndex = 48;
             // 
             // btnUsunZzamowienia
             // 
-            this.btnUsunZzamowienia.Location = new System.Drawing.Point(506, 308);
+            this.btnUsunZzamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUsunZzamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUsunZzamowienia.Location = new System.Drawing.Point(490, 249);
             this.btnUsunZzamowienia.Name = "btnUsunZzamowienia";
             this.btnUsunZzamowienia.Size = new System.Drawing.Size(75, 23);
             this.btnUsunZzamowienia.TabIndex = 47;
             this.btnUsunZzamowienia.Text = "<<<";
-            this.btnUsunZzamowienia.UseVisualStyleBackColor = true;
+            this.btnUsunZzamowienia.UseVisualStyleBackColor = false;
             // 
             // btnDodajDoZamowienia
             // 
-            this.btnDodajDoZamowienia.Location = new System.Drawing.Point(506, 261);
+            this.btnDodajDoZamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDodajDoZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajDoZamowienia.Location = new System.Drawing.Point(490, 202);
             this.btnDodajDoZamowienia.Name = "btnDodajDoZamowienia";
             this.btnDodajDoZamowienia.Size = new System.Drawing.Size(75, 23);
             this.btnDodajDoZamowienia.TabIndex = 46;
             this.btnDodajDoZamowienia.Text = ">>>";
-            this.btnDodajDoZamowienia.UseVisualStyleBackColor = true;
+            this.btnDodajDoZamowienia.UseVisualStyleBackColor = false;
             // 
             // dataGridView4
             // 
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(599, 127);
+            this.dataGridView4.GridColor = System.Drawing.Color.AliceBlue;
+            this.dataGridView4.Location = new System.Drawing.Point(584, 68);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(479, 332);
             this.dataGridView4.TabIndex = 45;
@@ -435,9 +521,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 62);
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(13, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 13);
+            this.label7.Size = new System.Drawing.Size(147, 15);
             this.label7.TabIndex = 44;
             this.label7.Text = "Wybierz kategorię sprzętu";
             // 
@@ -448,85 +536,97 @@
             this.dropKategorie.Items.AddRange(new object[] {
             "szit",
             "szrot"});
-            this.dropKategorie.Location = new System.Drawing.Point(11, 78);
+            this.dropKategorie.Location = new System.Drawing.Point(11, 33);
             this.dropKategorie.Name = "dropKategorie";
             this.dropKategorie.Size = new System.Drawing.Size(176, 21);
             this.dropKategorie.TabIndex = 43;
             // 
             // dataGridView5
             // 
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(11, 127);
+            this.dataGridView5.GridColor = System.Drawing.Color.AliceBlue;
+            this.dataGridView5.Location = new System.Drawing.Point(11, 68);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(479, 332);
+            this.dataGridView5.Size = new System.Drawing.Size(454, 332);
             this.dataGridView5.TabIndex = 42;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 652);
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(13, 583);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.Size = new System.Drawing.Size(83, 15);
             this.label8.TabIndex = 41;
             this.label8.Text = "Nr kontaktowy";
             // 
             // txtNrKontaktowy
             // 
-            this.txtNrKontaktowy.Location = new System.Drawing.Point(16, 677);
+            this.txtNrKontaktowy.Location = new System.Drawing.Point(11, 599);
             this.txtNrKontaktowy.Name = "txtNrKontaktowy";
-            this.txtNrKontaktowy.Size = new System.Drawing.Size(164, 20);
+            this.txtNrKontaktowy.Size = new System.Drawing.Size(176, 20);
             this.txtNrKontaktowy.TabIndex = 40;
             // 
             // txtPesel
             // 
             this.txtPesel.AutoSize = true;
-            this.txtPesel.Location = new System.Drawing.Point(13, 598);
+            this.txtPesel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPesel.Location = new System.Drawing.Point(13, 534);
             this.txtPesel.Name = "txtPesel";
-            this.txtPesel.Size = new System.Drawing.Size(33, 13);
+            this.txtPesel.Size = new System.Drawing.Size(38, 15);
             this.txtPesel.TabIndex = 39;
             this.txtPesel.Text = "Pesel";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 615);
+            this.textBox3.Location = new System.Drawing.Point(11, 551);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
+            this.textBox3.Size = new System.Drawing.Size(176, 20);
             this.textBox3.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 545);
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(13, 481);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.Size = new System.Drawing.Size(60, 15);
             this.label9.TabIndex = 37;
             this.label9.Text = "Nazwisko";
             // 
             // txtNazwisko
             // 
-            this.txtNazwisko.Location = new System.Drawing.Point(16, 561);
+            this.txtNazwisko.Location = new System.Drawing.Point(11, 497);
             this.txtNazwisko.Name = "txtNazwisko";
-            this.txtNazwisko.Size = new System.Drawing.Size(164, 20);
+            this.txtNazwisko.Size = new System.Drawing.Size(176, 20);
             this.txtNazwisko.TabIndex = 36;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 493);
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(13, 429);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 13);
+            this.label10.Size = new System.Drawing.Size(31, 15);
             this.label10.TabIndex = 35;
             this.label10.Text = "Imię";
             // 
             // txtImie
             // 
-            this.txtImie.Location = new System.Drawing.Point(16, 509);
+            this.txtImie.Location = new System.Drawing.Point(11, 445);
             this.txtImie.Name = "txtImie";
-            this.txtImie.Size = new System.Drawing.Size(164, 20);
+            this.txtImie.Size = new System.Drawing.Size(176, 20);
             this.txtImie.TabIndex = 34;
             // 
             // tabPage4
             // 
+            this.tabPage4.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
+            this.tabPage4.Controls.Add(this.label27);
             this.tabPage4.Controls.Add(this.txtHasloP);
             this.tabPage4.Controls.Add(this.txtKodPocztaP);
             this.tabPage4.Controls.Add(this.txtTelefonP);
@@ -561,278 +661,325 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1087, 758);
+            this.tabPage4.Size = new System.Drawing.Size(1087, 723);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Pracownicy";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label27.Location = new System.Drawing.Point(679, 502);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(36, 13);
+            this.label27.TabIndex = 44;
+            this.label27.Text = "Hasło";
+            // 
+            // txtHasloP
+            // 
+            this.txtHasloP.Location = new System.Drawing.Point(675, 520);
+            this.txtHasloP.Name = "txtHasloP";
+            this.txtHasloP.Size = new System.Drawing.Size(157, 20);
+            this.txtHasloP.TabIndex = 43;
+            // 
             // txtKodPocztaP
             // 
-            this.txtKodPocztaP.Location = new System.Drawing.Point(228, 492);
+            this.txtKodPocztaP.Location = new System.Drawing.Point(238, 473);
             this.txtKodPocztaP.Mask = "00-000";
             this.txtKodPocztaP.Name = "txtKodPocztaP";
-            this.txtKodPocztaP.Size = new System.Drawing.Size(100, 20);
+            this.txtKodPocztaP.Size = new System.Drawing.Size(157, 20);
             this.txtKodPocztaP.TabIndex = 42;
             // 
             // txtTelefonP
             // 
-            this.txtTelefonP.Location = new System.Drawing.Point(228, 557);
+            this.txtTelefonP.Location = new System.Drawing.Point(238, 514);
             this.txtTelefonP.Mask = "000-000-000";
             this.txtTelefonP.Name = "txtTelefonP";
-            this.txtTelefonP.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonP.Size = new System.Drawing.Size(157, 20);
             this.txtTelefonP.TabIndex = 41;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(735, 524);
+            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.Location = new System.Drawing.Point(859, 498);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(112, 13);
+            this.label25.Size = new System.Drawing.Size(127, 15);
             this.label25.TabIndex = 38;
             this.label25.Text = "Potwierdź nowe hasło";
             // 
             // txtPowHasloA
             // 
-            this.txtPowHasloA.Location = new System.Drawing.Point(738, 540);
+            this.txtPowHasloA.Location = new System.Drawing.Point(855, 520);
             this.txtPowHasloA.Name = "txtPowHasloA";
             this.txtPowHasloA.PasswordChar = '*';
-            this.txtPowHasloA.Size = new System.Drawing.Size(186, 20);
+            this.txtPowHasloA.Size = new System.Drawing.Size(157, 20);
             this.txtPowHasloA.TabIndex = 37;
             this.txtPowHasloA.TextChanged += new System.EventHandler(this.txtPowHasloA_TextChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(735, 474);
+            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label26.Location = new System.Drawing.Point(859, 457);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(93, 13);
+            this.label26.Size = new System.Drawing.Size(105, 15);
             this.label26.TabIndex = 36;
             this.label26.Text = "Podaj nowe hasło";
             // 
             // txtHasloA
             // 
-            this.txtHasloA.Location = new System.Drawing.Point(738, 490);
+            this.txtHasloA.Location = new System.Drawing.Point(855, 475);
             this.txtHasloA.Name = "txtHasloA";
             this.txtHasloA.PasswordChar = '*';
-            this.txtHasloA.Size = new System.Drawing.Size(186, 20);
+            this.txtHasloA.Size = new System.Drawing.Size(157, 20);
             this.txtHasloA.TabIndex = 35;
             // 
             // btnZmienHaslo
             // 
-            this.btnZmienHaslo.Location = new System.Drawing.Point(755, 576);
+            this.btnZmienHaslo.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnZmienHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnZmienHaslo.Location = new System.Drawing.Point(855, 675);
             this.btnZmienHaslo.Name = "btnZmienHaslo";
-            this.btnZmienHaslo.Size = new System.Drawing.Size(156, 23);
+            this.btnZmienHaslo.Size = new System.Drawing.Size(157, 31);
             this.btnZmienHaslo.TabIndex = 34;
-            this.btnZmienHaslo.Text = "Zmień Hasło";
-            this.btnZmienHaslo.UseVisualStyleBackColor = true;
+            this.btnZmienHaslo.Text = "Zmień hasło";
+            this.btnZmienHaslo.UseVisualStyleBackColor = false;
             this.btnZmienHaslo.Click += new System.EventHandler(this.btnZmienHaslo_Click);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(392, 469);
+            this.label20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label20.Location = new System.Drawing.Point(679, 457);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 13);
+            this.label20.Size = new System.Drawing.Size(38, 15);
             this.label20.TabIndex = 24;
             this.label20.Text = "Login";
             // 
             // txtLoginP
             // 
-            this.txtLoginP.Location = new System.Drawing.Point(395, 492);
+            this.txtLoginP.Location = new System.Drawing.Point(675, 475);
             this.txtLoginP.Name = "txtLoginP";
-            this.txtLoginP.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginP.Size = new System.Drawing.Size(157, 20);
             this.txtLoginP.TabIndex = 23;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(225, 590);
+            this.label19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19.Location = new System.Drawing.Point(240, 539);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 13);
+            this.label19.Size = new System.Drawing.Size(55, 15);
             this.label19.TabIndex = 22;
             this.label19.Text = "Nr domu";
             // 
             // txtNrDomuP
             // 
-            this.txtNrDomuP.Location = new System.Drawing.Point(228, 613);
+            this.txtNrDomuP.Location = new System.Drawing.Point(238, 557);
             this.txtNrDomuP.Name = "txtNrDomuP";
-            this.txtNrDomuP.Size = new System.Drawing.Size(100, 20);
+            this.txtNrDomuP.Size = new System.Drawing.Size(157, 20);
             this.txtNrDomuP.TabIndex = 21;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(193, 37);
+            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(215, 40);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 23);
+            this.button4.Size = new System.Drawing.Size(157, 23);
             this.button4.TabIndex = 20;
             this.button4.Text = "Wyszukaj";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(54, 16);
+            this.label18.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label18.Location = new System.Drawing.Point(26, 22);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(75, 13);
+            this.label18.Size = new System.Drawing.Size(84, 15);
             this.label18.TabIndex = 19;
             this.label18.Text = "Wyszukiwanie";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(57, 39);
+            this.textBox9.Location = new System.Drawing.Point(24, 43);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.Size = new System.Drawing.Size(157, 20);
             this.textBox9.TabIndex = 18;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(225, 531);
+            this.label17.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(240, 498);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 13);
+            this.label17.Size = new System.Drawing.Size(83, 15);
             this.label17.TabIndex = 17;
             this.label17.Text = "Nr kontaktowy";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(225, 469);
+            this.label16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(241, 457);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 13);
+            this.label16.Size = new System.Drawing.Size(82, 15);
             this.label16.TabIndex = 15;
             this.label16.Text = "Kod pocztowy";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(68, 634);
+            this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(26, 623);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 13);
+            this.label15.Size = new System.Drawing.Size(35, 15);
             this.label15.TabIndex = 14;
             this.label15.Text = "Ulica";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(68, 597);
+            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(26, 584);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.Size = new System.Drawing.Size(44, 15);
             this.label14.TabIndex = 13;
             this.label14.Text = "Miasto";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(68, 557);
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(26, 541);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 13);
+            this.label13.Size = new System.Drawing.Size(38, 15);
             this.label13.TabIndex = 12;
             this.label13.Text = "Pesel";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(76, 515);
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(26, 500);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 13);
+            this.label12.Size = new System.Drawing.Size(60, 15);
             this.label12.TabIndex = 11;
             this.label12.Text = "Nazwisko";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(76, 469);
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(26, 459);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 13);
+            this.label11.Size = new System.Drawing.Size(31, 15);
             this.label11.TabIndex = 10;
             this.label11.Text = "Imię";
             // 
             // txtUlicaP
             // 
-            this.txtUlicaP.Location = new System.Drawing.Point(71, 650);
+            this.txtUlicaP.Location = new System.Drawing.Point(24, 639);
             this.txtUlicaP.Name = "txtUlicaP";
-            this.txtUlicaP.Size = new System.Drawing.Size(100, 20);
+            this.txtUlicaP.Size = new System.Drawing.Size(157, 20);
             this.txtUlicaP.TabIndex = 8;
             // 
             // txtMiastoP
             // 
-            this.txtMiastoP.Location = new System.Drawing.Point(71, 613);
+            this.txtMiastoP.Location = new System.Drawing.Point(24, 600);
             this.txtMiastoP.Name = "txtMiastoP";
-            this.txtMiastoP.Size = new System.Drawing.Size(100, 20);
+            this.txtMiastoP.Size = new System.Drawing.Size(157, 20);
             this.txtMiastoP.TabIndex = 7;
             // 
             // txtPeselP
             // 
-            this.txtPeselP.Location = new System.Drawing.Point(71, 573);
+            this.txtPeselP.Location = new System.Drawing.Point(24, 557);
             this.txtPeselP.Name = "txtPeselP";
-            this.txtPeselP.Size = new System.Drawing.Size(100, 20);
+            this.txtPeselP.Size = new System.Drawing.Size(157, 20);
             this.txtPeselP.TabIndex = 6;
             // 
             // txtNazwiskoP
             // 
-            this.txtNazwiskoP.Location = new System.Drawing.Point(71, 531);
+            this.txtNazwiskoP.Location = new System.Drawing.Point(24, 516);
             this.txtNazwiskoP.Name = "txtNazwiskoP";
-            this.txtNazwiskoP.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwiskoP.Size = new System.Drawing.Size(157, 20);
             this.txtNazwiskoP.TabIndex = 5;
             // 
             // txtImieP
             // 
-            this.txtImieP.Location = new System.Drawing.Point(71, 492);
+            this.txtImieP.Location = new System.Drawing.Point(24, 475);
             this.txtImieP.Name = "txtImieP";
-            this.txtImieP.Size = new System.Drawing.Size(100, 20);
+            this.txtImieP.Size = new System.Drawing.Size(157, 20);
             this.txtImieP.TabIndex = 4;
             // 
             // btnModifikujPracownika
             // 
-            this.btnModifikujPracownika.Location = new System.Drawing.Point(374, 676);
+            this.btnModifikujPracownika.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnModifikujPracownika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModifikujPracownika.Location = new System.Drawing.Point(423, 675);
             this.btnModifikujPracownika.Name = "btnModifikujPracownika";
-            this.btnModifikujPracownika.Size = new System.Drawing.Size(106, 23);
+            this.btnModifikujPracownika.Size = new System.Drawing.Size(157, 31);
             this.btnModifikujPracownika.TabIndex = 3;
             this.btnModifikujPracownika.Text = "Modyfikuj dane";
-            this.btnModifikujPracownika.UseVisualStyleBackColor = true;
+            this.btnModifikujPracownika.UseVisualStyleBackColor = false;
             this.btnModifikujPracownika.Click += new System.EventHandler(this.btnModifikujPracownika_Click);
             // 
             // btnUsunPracownika
             // 
-            this.btnUsunPracownika.Location = new System.Drawing.Point(222, 676);
+            this.btnUsunPracownika.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsunPracownika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUsunPracownika.Location = new System.Drawing.Point(238, 675);
             this.btnUsunPracownika.Name = "btnUsunPracownika";
-            this.btnUsunPracownika.Size = new System.Drawing.Size(106, 23);
+            this.btnUsunPracownika.Size = new System.Drawing.Size(157, 31);
             this.btnUsunPracownika.TabIndex = 2;
             this.btnUsunPracownika.Text = "Usuń pracownika";
-            this.btnUsunPracownika.UseVisualStyleBackColor = true;
+            this.btnUsunPracownika.UseVisualStyleBackColor = false;
             this.btnUsunPracownika.Click += new System.EventHandler(this.btnUsunPracownika_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(71, 676);
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(24, 675);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
+            this.button1.Size = new System.Drawing.Size(157, 31);
             this.button1.TabIndex = 1;
             this.button1.Text = "Dodaj pracownika";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvPracownicy
             // 
+            this.dgvPracownicy.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvPracownicy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPracownicy.Location = new System.Drawing.Point(51, 74);
+            this.dgvPracownicy.Location = new System.Drawing.Point(24, 75);
             this.dgvPracownicy.Name = "dgvPracownicy";
             this.dgvPracownicy.Size = new System.Drawing.Size(988, 372);
             this.dgvPracownicy.TabIndex = 0;
             this.dgvPracownicy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPracownicy_CellClick);
             // 
-            // txtHasloP
-            // 
-            this.txtHasloP.Location = new System.Drawing.Point(395, 530);
-            this.txtHasloP.Name = "txtHasloP";
-            this.txtHasloP.Size = new System.Drawing.Size(100, 20);
-            this.txtHasloP.TabIndex = 43;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 824);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(1120, 772);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormAdmin";
             this.Text = "Panel Admina";
@@ -935,5 +1082,10 @@
         private System.Windows.Forms.MaskedTextBox txtTelefonP;
         private System.Windows.Forms.MaskedTextBox txtKodPocztaP;
         private System.Windows.Forms.TextBox txtHasloP;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label27;
     }
 }
