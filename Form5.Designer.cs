@@ -72,8 +72,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtHasloP = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtLoginP = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -535,8 +533,6 @@
             this.tabPage4.Controls.Add(this.label26);
             this.tabPage4.Controls.Add(this.txtHasloA);
             this.tabPage4.Controls.Add(this.btnZmienHaslo);
-            this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.txtHasloP);
             this.tabPage4.Controls.Add(this.label20);
             this.tabPage4.Controls.Add(this.txtLoginP);
             this.tabPage4.Controls.Add(this.label19);
@@ -567,22 +563,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Pracownicy";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(392, 531);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(36, 13);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "Hasło";
-            // 
-            // txtHasloP
-            // 
-            this.txtHasloP.Location = new System.Drawing.Point(395, 554);
-            this.txtHasloP.Name = "txtHasloP";
-            this.txtHasloP.Size = new System.Drawing.Size(100, 20);
-            this.txtHasloP.TabIndex = 25;
             // 
             // label20
             // 
@@ -794,6 +774,7 @@
             this.txtPowHasloA.PasswordChar = '*';
             this.txtPowHasloA.Size = new System.Drawing.Size(186, 20);
             this.txtPowHasloA.TabIndex = 37;
+            this.txtPowHasloA.TextChanged += new System.EventHandler(this.txtPowHasloA_TextChanged);
             // 
             // label26
             // 
@@ -929,8 +910,6 @@
         private System.Windows.Forms.Button btnUsunPracownika;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvPracownicy;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtHasloP;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtLoginP;
         private System.Windows.Forms.Label label19;

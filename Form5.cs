@@ -250,15 +250,7 @@ namespace Wypozyczalnia
 
         private void btnZmienHaslo_Click(object sender, EventArgs e)
         {
-            if (txtHasloA.Text == txtPowHasloA.Text)
-            {
-                btnZmienHaslo.Enabled = true;
-            }
-            else
-            {
-                btnZmienHaslo.Enabled = false;
-                
-            }
+            
 
 
             string updateSql = "UPDATE Pracownicy SET Hasło = @haslo WHERE Login = @login";
@@ -279,6 +271,19 @@ namespace Wypozyczalnia
 
 
                 }
+            }
+        }
+
+        private void txtPowHasloA_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHasloA.Text == txtPowHasloA.Text)
+            {
+                btnZmienHaslo.Enabled = true;
+            }
+            else
+            {
+                btnZmienHaslo.Enabled = false;
+
             }
         }
     }
