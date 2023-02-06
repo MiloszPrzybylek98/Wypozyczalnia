@@ -139,6 +139,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(479, 332);
             this.dataGridView1.TabIndex = 8;
@@ -179,6 +180,7 @@
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(506, 332);
             this.dataGridView2.TabIndex = 11;
@@ -246,7 +248,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(609, 410);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 16);
+            this.label6.Size = new System.Drawing.Size(160, 16);
             this.label6.TabIndex = 17;
             this.label6.Text = "Suma zamówienia w PLN:";
             // 
@@ -257,7 +259,7 @@
             this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LblSumaZamowienia.Location = new System.Drawing.Point(776, 410);
             this.LblSumaZamowienia.Name = "LblSumaZamowienia";
-            this.LblSumaZamowienia.Size = new System.Drawing.Size(15, 16);
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(14, 16);
             this.LblSumaZamowienia.TabIndex = 18;
             this.LblSumaZamowienia.Text = "0";
             // 

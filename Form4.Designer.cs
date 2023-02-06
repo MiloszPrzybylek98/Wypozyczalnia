@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.numPolkaDodaj = new System.Windows.Forms.NumericUpDown();
             this.numRegalDodaj = new System.Windows.Forms.NumericUpDown();
             this.txtRozmiarDodaj = new System.Windows.Forms.TextBox();
@@ -68,10 +72,6 @@
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
@@ -124,6 +124,49 @@
             this.tabPage1.Size = new System.Drawing.Size(1090, 711);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Magazyn";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(33, 621);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 15);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Półka";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(32, 572);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 15);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Regał";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(33, 521);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 15);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Rozmiar";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(33, 471);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 15);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Nazwa";
             // 
             // numPolkaDodaj
             // 
@@ -203,7 +246,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(33, 402);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 16);
+            this.label1.Size = new System.Drawing.Size(173, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Dodawanie nowego sprzętu";
             // 
@@ -269,6 +312,7 @@
             this.dgvWorekZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorekZamP.Location = new System.Drawing.Point(38, 335);
             this.dgvWorekZamP.Name = "dgvWorekZamP";
+            this.dgvWorekZamP.RowHeadersVisible = false;
             this.dgvWorekZamP.Size = new System.Drawing.Size(704, 211);
             this.dgvWorekZamP.TabIndex = 6;
             // 
@@ -300,7 +344,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(790, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(240, 16);
+            this.label4.Size = new System.Drawing.Size(239, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Wyszukiwanie zamówienia po numerze";
             // 
@@ -336,6 +380,7 @@
             this.dgvAktywneZamP.MultiSelect = false;
             this.dgvAktywneZamP.Name = "dgvAktywneZamP";
             this.dgvAktywneZamP.ReadOnly = true;
+            this.dgvAktywneZamP.RowHeadersVisible = false;
             this.dgvAktywneZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAktywneZamP.Size = new System.Drawing.Size(704, 222);
             this.dgvAktywneZamP.TabIndex = 0;
@@ -429,6 +474,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(600, 84);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.Size = new System.Drawing.Size(479, 332);
             this.dataGridView4.TabIndex = 28;
             // 
@@ -439,7 +485,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(14, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(163, 16);
+            this.label6.Size = new System.Drawing.Size(162, 16);
             this.label6.TabIndex = 27;
             this.label6.Text = "Wybierz kategorię sprzętu";
             // 
@@ -462,6 +508,7 @@
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(12, 84);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersVisible = false;
             this.dataGridView5.Size = new System.Drawing.Size(479, 332);
             this.dataGridView5.TabIndex = 25;
             // 
@@ -536,49 +583,6 @@
             this.txtImie.Name = "txtImie";
             this.txtImie.Size = new System.Drawing.Size(171, 20);
             this.txtImie.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(33, 471);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 15);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Nazwa";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(33, 521);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 15);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Rozmiar";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(32, 572);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 15);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Regał";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(33, 621);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 15);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Półka";
             // 
             // formPracownik
             // 

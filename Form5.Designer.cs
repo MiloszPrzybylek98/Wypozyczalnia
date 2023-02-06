@@ -295,7 +295,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(27, 451);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 16);
+            this.label1.Size = new System.Drawing.Size(173, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "Dodawanie nowego sprzętu";
             // 
@@ -323,6 +323,7 @@
             this.dgvMagazynA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMagazynA.Location = new System.Drawing.Point(26, 57);
             this.dgvMagazynA.Name = "dgvMagazynA";
+            this.dgvMagazynA.RowHeadersVisible = false;
             this.dgvMagazynA.Size = new System.Drawing.Size(731, 372);
             this.dgvMagazynA.TabIndex = 17;
             // 
@@ -350,6 +351,7 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(20, 299);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(704, 211);
             this.dataGridView3.TabIndex = 13;
             // 
@@ -413,6 +415,7 @@
             this.Column1});
             this.dataGridView2.Location = new System.Drawing.Point(20, 20);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(704, 222);
             this.dataGridView2.TabIndex = 7;
             // 
@@ -515,6 +518,7 @@
             this.dataGridView4.GridColor = System.Drawing.Color.AliceBlue;
             this.dataGridView4.Location = new System.Drawing.Point(584, 68);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.Size = new System.Drawing.Size(479, 332);
             this.dataGridView4.TabIndex = 45;
             // 
@@ -543,11 +547,14 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AllowUserToResizeColumns = false;
+            this.dataGridView5.AllowUserToResizeRows = false;
             this.dataGridView5.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.GridColor = System.Drawing.Color.AliceBlue;
             this.dataGridView5.Location = new System.Drawing.Point(11, 68);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersVisible = false;
             this.dataGridView5.Size = new System.Drawing.Size(454, 332);
             this.dataGridView5.TabIndex = 42;
             // 
@@ -970,6 +977,7 @@
             this.dgvPracownicy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPracownicy.Location = new System.Drawing.Point(24, 75);
             this.dgvPracownicy.Name = "dgvPracownicy";
+            this.dgvPracownicy.RowHeadersVisible = false;
             this.dgvPracownicy.Size = new System.Drawing.Size(988, 372);
             this.dgvPracownicy.TabIndex = 0;
             this.dgvPracownicy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPracownicy_CellClick);
