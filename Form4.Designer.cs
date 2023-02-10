@@ -49,7 +49,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvWorekZamP = new System.Windows.Forms.DataGridView();
             this.btnUsunZamowienie = new System.Windows.Forms.Button();
-            this.btnAktualizuj = new System.Windows.Forms.Button();
+            this.btnRozlicz = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSzukajZamowienia = new System.Windows.Forms.Button();
             this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
@@ -72,6 +72,8 @@
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
+            this.btnCzyscSzukanie = new System.Windows.Forms.Button();
+            this.btnWydaj = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
@@ -291,9 +293,11 @@
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
+            this.tabPage2.Controls.Add(this.btnWydaj);
+            this.tabPage2.Controls.Add(this.btnCzyscSzukanie);
             this.tabPage2.Controls.Add(this.dgvWorekZamP);
             this.tabPage2.Controls.Add(this.btnUsunZamowienie);
-            this.tabPage2.Controls.Add(this.btnAktualizuj);
+            this.tabPage2.Controls.Add(this.btnRozlicz);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.btnSzukajZamowienia);
             this.tabPage2.Controls.Add(this.txtWyszukajAktywne);
@@ -325,23 +329,24 @@
             // btnUsunZamowienie
             // 
             this.btnUsunZamowienie.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnUsunZamowienie.Location = new System.Drawing.Point(282, 572);
+            this.btnUsunZamowienie.Location = new System.Drawing.Point(793, 629);
             this.btnUsunZamowienie.Name = "btnUsunZamowienie";
             this.btnUsunZamowienie.Size = new System.Drawing.Size(188, 36);
             this.btnUsunZamowienie.TabIndex = 5;
             this.btnUsunZamowienie.Text = "Usuń zamówienie";
             this.btnUsunZamowienie.UseVisualStyleBackColor = false;
             // 
-            // btnAktualizuj
+            // btnRozlicz
             // 
-            this.btnAktualizuj.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAktualizuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAktualizuj.Location = new System.Drawing.Point(38, 572);
-            this.btnAktualizuj.Name = "btnAktualizuj";
-            this.btnAktualizuj.Size = new System.Drawing.Size(188, 36);
-            this.btnAktualizuj.TabIndex = 4;
-            this.btnAktualizuj.Text = "Aktualizuj zamówienie";
-            this.btnAktualizuj.UseVisualStyleBackColor = false;
+            this.btnRozlicz.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnRozlicz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRozlicz.Location = new System.Drawing.Point(38, 572);
+            this.btnRozlicz.Name = "btnRozlicz";
+            this.btnRozlicz.Size = new System.Drawing.Size(188, 36);
+            this.btnRozlicz.TabIndex = 4;
+            this.btnRozlicz.Text = "Rozlicz zamówienie";
+            this.btnRozlicz.UseVisualStyleBackColor = false;
+            this.btnRozlicz.Click += new System.EventHandler(this.btnRozlicz_Click);
             // 
             // label4
             // 
@@ -385,6 +390,7 @@
             this.dgvAktywneZamP.Location = new System.Drawing.Point(38, 56);
             this.dgvAktywneZamP.MultiSelect = false;
             this.dgvAktywneZamP.Name = "dgvAktywneZamP";
+            this.dgvAktywneZamP.ReadOnly = true;
             this.dgvAktywneZamP.RowHeadersVisible = false;
             this.dgvAktywneZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAktywneZamP.Size = new System.Drawing.Size(704, 222);
@@ -589,6 +595,30 @@
             this.txtImie.Size = new System.Drawing.Size(171, 20);
             this.txtImie.TabIndex = 17;
             // 
+            // btnCzyscSzukanie
+            // 
+            this.btnCzyscSzukanie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCzyscSzukanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCzyscSzukanie.Location = new System.Drawing.Point(793, 174);
+            this.btnCzyscSzukanie.Name = "btnCzyscSzukanie";
+            this.btnCzyscSzukanie.Size = new System.Drawing.Size(188, 33);
+            this.btnCzyscSzukanie.TabIndex = 7;
+            this.btnCzyscSzukanie.Text = "Czyść szukanie";
+            this.btnCzyscSzukanie.UseVisualStyleBackColor = false;
+            this.btnCzyscSzukanie.Click += new System.EventHandler(this.btnCzyscSzukanie_Click);
+            // 
+            // btnWydaj
+            // 
+            this.btnWydaj.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnWydaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWydaj.Location = new System.Drawing.Point(252, 572);
+            this.btnWydaj.Name = "btnWydaj";
+            this.btnWydaj.Size = new System.Drawing.Size(188, 36);
+            this.btnWydaj.TabIndex = 8;
+            this.btnWydaj.Text = "Wydaj zamówienie";
+            this.btnWydaj.UseVisualStyleBackColor = false;
+            this.btnWydaj.Click += new System.EventHandler(this.btnWydaj_Click);
+            // 
             // formPracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,7 +666,7 @@
         private System.Windows.Forms.DataGridView dgvAktywneZamP;
         private System.Windows.Forms.DataGridView dgvWorekZamP;
         private System.Windows.Forms.Button btnUsunZamowienie;
-        private System.Windows.Forms.Button btnAktualizuj;
+        private System.Windows.Forms.Button btnRozlicz;
         private System.Windows.Forms.Button btnWypozycz;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox dropCzasWypozyczenia;
@@ -663,5 +693,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnCzyscSzukanie;
+        private System.Windows.Forms.Button btnWydaj;
     }
 }
