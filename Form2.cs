@@ -51,6 +51,10 @@ namespace Wypozyczalnia
                 form4.Show();
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Błędne dane logowania");
+            }
 
         }
         private string ValidateCredentials(string login, string password, string connectionString)
