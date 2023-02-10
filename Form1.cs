@@ -27,6 +27,21 @@ namespace Wypozyczalnia
 
         public void formEkranKlienta_Load(object sender, EventArgs e)
         {
+            txtImie.Clear();
+            txtNazwisko.Clear();
+            txtPeselK.Clear();
+            txtNrKontaktowy.Clear();
+            dropCzasWypozyczenia.Items.Clear();
+            //DateTime data = DateTime.Now;
+            //DateTime dataOddania = data.AddDays(dni);
+            //int KwotaZamowienia = connector.PobierzCeneZamowieniaZWorka(ZamowienieId);
+            //int Płatność = KwotaZamowienia * dni;
+            //int CzyRozliczone = 0;
+            //int CzyWydane = 0;
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource= null;
+
+
             object[] doby = new object[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14 };
             dropCzasWypozyczenia.Items.AddRange(doby);
             //SqlDataAdapter adapter = new SqlDataAdapter("SELECT DISTINCT Typ  FROM SprzetNarciarski", connectionString);
@@ -279,47 +294,58 @@ namespace Wypozyczalnia
 
             if (Pesel.Length == 11 && Telefon.Length == 9)
             {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        using (SqlCommand command = new SqlCommand("INSERT INTO Klienci (Imie, Nazwisko, Pesel, Telefon) VALUES(@Imię, @Nazwisko, @Pesel,  @Telefon); SELECT SCOPE_IDENTITY() ", connection))
+                        {
 
+                            command.Parameters.AddWithValue("@Imię", Imie);
+                            command.Parameters.AddWithValue("@Nazwisko", Nazwisko);
+                            command.Parameters.AddWithValue("@Pesel", Pesel);
+                            command.Parameters.AddWithValue("@Telefon", Telefon);
+                            IDKlienta = Convert.ToInt32(command.ExecuteScalar());
+
+                        }
+
+                    }
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        using (SqlCommand command = new SqlCommand($"UPDATE Wypozyczenia  SET KlientId= @KlientId, Data_wypożyczenia = @Data_wypożyczenia, Data_zwrotu = @Data_zwrotu, Płatność= @Płatność, CzyRozliczone= @CzyRozliczone, CzyWydane = @CzyWydane Where IdWypozyczenia = @IdWypozyczenia  ", connection))
+                        {
+
+                            command.Parameters.AddWithValue("@KlientId", IDKlienta);
+                            command.Parameters.AddWithValue("@Data_Wypożyczenia", data);
+                            command.Parameters.AddWithValue("@Data_zwrotu", dataOddania);
+                            command.Parameters.AddWithValue("@Płatność", Płatność);
+                            command.Parameters.AddWithValue("@CzyRozliczone", CzyRozliczone);
+                            command.Parameters.AddWithValue("@CzyWydane", CzyWydane);
+                            command.Parameters.AddWithValue("@IdWypozyczenia", ZamowienieId);
+                            command.ExecuteNonQuery();
+
+
+                        }
+
+                    }
+
+
+
+                    formEkranKlienta_Load(sender, e);
+                    MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Proszę podejść do stanowiska i podać numer zamówienia w celu odbioru sprzętu.");
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Błąd przy złożeniu zamówienia. Proszę spróbować ponownie");
+                    formEkranKlienta_Load(sender, e);
+
+                }
                 
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand("INSERT INTO Klienci (Imie, Nazwisko, Pesel, Telefon) VALUES(@Imię, @Nazwisko, @Pesel,  @Telefon); SELECT SCOPE_IDENTITY() ", connection))
-                    {
-
-                        command.Parameters.AddWithValue("@Imię", Imie);
-                        command.Parameters.AddWithValue("@Nazwisko", Nazwisko);
-                        command.Parameters.AddWithValue("@Pesel", Pesel);
-                        command.Parameters.AddWithValue("@Telefon", Telefon);
-                        IDKlienta = Convert.ToInt32(command.ExecuteScalar());
-
-                    }
-
-                }
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand($"UPDATE Wypozyczenia  SET KlientId= @KlientId, Data_wypożyczenia = @Data_wypożyczenia, Data_zwrotu = @Data_zwrotu, Płatność= @Płatność, CzyRozliczone= @CzyRozliczone, CzyWydane = @CzyWydane Where IdWypozyczenia = @IdWypozyczenia  ", connection))
-                    {
-
-                        command.Parameters.AddWithValue("@KlientId", IDKlienta);
-                        command.Parameters.AddWithValue("@Data_Wypożyczenia", data);
-                        command.Parameters.AddWithValue("@Data_zwrotu", dataOddania);
-                        command.Parameters.AddWithValue("@Płatność", Płatność);
-                        command.Parameters.AddWithValue("@CzyRozliczone", CzyRozliczone);
-                        command.Parameters.AddWithValue("@CzyWydane", CzyWydane);
-                        command.Parameters.AddWithValue("@IdWypozyczenia", ZamowienieId);
-                        command.ExecuteNonQuery();
-                        
-
-                    }
-
-                }
-
-
-
-
+                
 
 
             }
@@ -328,7 +354,7 @@ namespace Wypozyczalnia
                 MessageBox.Show("Zła długość peselu lub nr telefonu. Proszę poprawić");
             }
 
-
+            
             
         }
 

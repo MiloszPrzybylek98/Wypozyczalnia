@@ -308,12 +308,18 @@
             // 
             // dgvWorekZamP
             // 
+            this.dgvWorekZamP.AllowUserToAddRows = false;
+            this.dgvWorekZamP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorekZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvWorekZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorekZamP.Location = new System.Drawing.Point(38, 335);
+            this.dgvWorekZamP.MultiSelect = false;
             this.dgvWorekZamP.Name = "dgvWorekZamP";
+            this.dgvWorekZamP.ReadOnly = true;
             this.dgvWorekZamP.RowHeadersVisible = false;
+            this.dgvWorekZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWorekZamP.Size = new System.Drawing.Size(704, 211);
+            this.dgvWorekZamP.StandardTab = true;
             this.dgvWorekZamP.TabIndex = 6;
             // 
             // btnUsunZamowienie
@@ -344,9 +350,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(790, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 16);
+            this.label4.Size = new System.Drawing.Size(242, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Wyszukiwanie zamówienia po numerze";
+            this.label4.Text = "Wyszukiwanie zamówienia po nazwisku\r\n";
             // 
             // btnSzukajZamowienia
             // 
@@ -379,7 +385,6 @@
             this.dgvAktywneZamP.Location = new System.Drawing.Point(38, 56);
             this.dgvAktywneZamP.MultiSelect = false;
             this.dgvAktywneZamP.Name = "dgvAktywneZamP";
-            this.dgvAktywneZamP.ReadOnly = true;
             this.dgvAktywneZamP.RowHeadersVisible = false;
             this.dgvAktywneZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAktywneZamP.Size = new System.Drawing.Size(704, 222);

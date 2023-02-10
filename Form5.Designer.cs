@@ -384,9 +384,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(768, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 15);
+            this.label5.Size = new System.Drawing.Size(264, 15);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Wyszukiwanie zamówienia po numerze";
+            this.label5.Text = "Wyszukiwanie zamówienia po nazwisku klienta";
             // 
             // btnSzukajZamowienia
             // 

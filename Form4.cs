@@ -100,7 +100,50 @@ namespace Wypozyczalnia
 
         private void btnSzukajZamowienia_Click(object sender, EventArgs e)
         {
+            string daneKl = txtWyszukajAktywne.Text;
+            Connector connector = new Connector();
+            DataTable dt = new DataTable();
+            dt = connector.PobierzDaneDoDGV("IdKlient", "Klienci", $"WHERE Nazwisko LIKE '%{daneKl}%' ");
+            DataTable dt2 = new DataTable();
 
+            dt2 = connector.PobierzDaneDoDGV("*","Wypozyczenia",";");
+            dt2.Clear();
+
+
+            //foreach (var item in dt.Rows)
+            //{
+
+            //    foreach (DataColumn items in item. )
+            //    {
+
+            //    }
+
+
+
+            //    using (SqlConnection connection = new SqlConnection(connectionString))
+            //    {
+            //        connection.Open();
+            //        using (SqlCommand command = new SqlCommand($"SELECT * from Wypozyczenia Where KlientId = @KlientId ", connection))
+            //        {
+            //            int id = (int)item.;
+            //            command.Parameters.AddWithValue("@KlientID", item);   
+            //            DataRow dr = (DataRow)command.ExecuteScalar();
+            //            dt2.Rows.Add(dr);
+                        
+
+            //        }
+            //    }
+
+            //}
+
+            
+
+            //foreach (var item in dt.Rows)
+            //{
+            //    dt2.Rows.Add( connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", $"Where KlientId = {item}"));
+            //}
+
+            //dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "Where ");
         }
     }
 }
