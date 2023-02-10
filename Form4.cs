@@ -93,7 +93,7 @@ namespace Wypozyczalnia
                 Connector connector = new Connector();
                 dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
 
-
+                //dodać, że jeśli zamówienie nie jest wydane to nie można rozliczyć
             }
 
         }
@@ -182,7 +182,7 @@ namespace Wypozyczalnia
 
                 Connector connector = new Connector();
                 dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
-
+                //dodać, żeby z worka czyściło itemki i wracały na magazyn
 
             }
 
@@ -220,6 +220,11 @@ namespace Wypozyczalnia
 
 
             }
+        }
+
+        private void btnUsunZamowienie_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

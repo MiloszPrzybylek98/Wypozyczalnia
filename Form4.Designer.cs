@@ -335,6 +335,7 @@
             this.btnUsunZamowienie.TabIndex = 5;
             this.btnUsunZamowienie.Text = "Usuń zamówienie";
             this.btnUsunZamowienie.UseVisualStyleBackColor = false;
+            this.btnUsunZamowienie.Click += new System.EventHandler(this.btnUsunZamowienie_Click);
             // 
             // btnRozlicz
             // 
