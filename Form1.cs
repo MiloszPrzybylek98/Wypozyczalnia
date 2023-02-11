@@ -71,8 +71,7 @@ namespace Wypozyczalnia
 
 
 
-            Thread.Sleep(10000);
-            MessageBox.Show("Wyczekane");
+
 
 
 
