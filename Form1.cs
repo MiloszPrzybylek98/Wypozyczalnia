@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection.Emit;
 using System.Security.Policy;
+using System.Threading;
 
 namespace Wypozyczalnia
 {
@@ -67,10 +68,11 @@ namespace Wypozyczalnia
                 }
             }
 
-            
-            
 
-            
+
+
+            Thread.Sleep(10000);
+            MessageBox.Show("Wyczekane");
 
 
 

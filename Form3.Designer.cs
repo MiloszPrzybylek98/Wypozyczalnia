@@ -66,6 +66,7 @@
             this.Controls.Add(this.btnModKlienta);
             this.Name = "formWybor";
             this.Text = "Panel główny";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formWybor_FormClosed);
             this.ResumeLayout(false);
 
         }

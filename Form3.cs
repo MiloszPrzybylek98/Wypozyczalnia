@@ -27,9 +27,8 @@ namespace Wypozyczalnia
             //{
             //    string passy = "select";
             //}
-
+            this.Hide();
             formLogowaniePracownika form2 = new formLogowaniePracownika();
-            this.Hide(); //ogarnac to
             form2.Visible = true;
 
            
@@ -45,6 +44,11 @@ namespace Wypozyczalnia
             formEkranKlienta form1 = new formEkranKlienta();
             form1.Show();
             this.Hide();
+        }
+
+        private void formWybor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 

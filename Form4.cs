@@ -317,5 +317,18 @@ namespace Wypozyczalnia
         {
 
         }
+
+        private void formPracownik_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formWybor form = new formWybor();
+            form.Show();
+        }
+
+        private void formPracownik_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            
+           
+        }
     }
 }

@@ -59,6 +59,8 @@
             this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
             this.dgvAktywneZamP = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.LblSumaZamowienia = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnWypozycz = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dropCzasWypozyczenia = new System.Windows.Forms.ComboBox();
@@ -76,8 +78,6 @@
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.LblSumaZamowienia = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCena)).BeginInit();
@@ -480,6 +480,28 @@
             this.tabPage3.Text = "Tworzenie zamówienia";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // LblSumaZamowienia
+            // 
+            this.LblSumaZamowienia.AutoSize = true;
+            this.LblSumaZamowienia.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LblSumaZamowienia.Location = new System.Drawing.Point(752, 431);
+            this.LblSumaZamowienia.Name = "LblSumaZamowienia";
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(14, 16);
+            this.LblSumaZamowienia.TabIndex = 35;
+            this.LblSumaZamowienia.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(597, 432);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(149, 15);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Suma zamówienia w PLN";
+            // 
             // btnWypozycz
             // 
             this.btnWypozycz.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -651,28 +673,6 @@
             this.txtImie.Size = new System.Drawing.Size(171, 20);
             this.txtImie.TabIndex = 17;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(597, 432);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(149, 15);
-            this.label15.TabIndex = 34;
-            this.label15.Text = "Suma zamówienia w PLN";
-            // 
-            // LblSumaZamowienia
-            // 
-            this.LblSumaZamowienia.AutoSize = true;
-            this.LblSumaZamowienia.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LblSumaZamowienia.Location = new System.Drawing.Point(752, 431);
-            this.LblSumaZamowienia.Name = "LblSumaZamowienia";
-            this.LblSumaZamowienia.Size = new System.Drawing.Size(14, 16);
-            this.LblSumaZamowienia.TabIndex = 35;
-            this.LblSumaZamowienia.Text = "0";
-            // 
             // formPracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,6 +682,8 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "formPracownik";
             this.Text = "Panel pracownika";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPracownik_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formPracownik_FormClosed);
             this.Load += new System.EventHandler(this.formPracownik_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
