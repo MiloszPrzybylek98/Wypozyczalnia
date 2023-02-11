@@ -48,6 +48,8 @@
             this.btnWypozycz = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.LblSumaZamowienia = new System.Windows.Forms.Label();
+            this.lblCenaZamowienia = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -248,9 +250,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(609, 410);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 16);
+            this.label6.Size = new System.Drawing.Size(138, 16);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Suma zamówienia w PLN:";
+            this.label6.Text = "Cena za dobę w  PLN:";
             // 
             // LblSumaZamowienia
             // 
@@ -263,12 +265,36 @@
             this.LblSumaZamowienia.TabIndex = 18;
             this.LblSumaZamowienia.Text = "0";
             // 
+            // lblCenaZamowienia
+            // 
+            this.lblCenaZamowienia.AutoSize = true;
+            this.lblCenaZamowienia.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblCenaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCenaZamowienia.Location = new System.Drawing.Point(776, 433);
+            this.lblCenaZamowienia.Name = "lblCenaZamowienia";
+            this.lblCenaZamowienia.Size = new System.Drawing.Size(14, 16);
+            this.lblCenaZamowienia.TabIndex = 19;
+            this.lblCenaZamowienia.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(609, 433);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(163, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Suma zamówienia w  PLN:";
+            // 
             // formEkranKlienta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1140, 628);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblCenaZamowienia);
             this.Controls.Add(this.LblSumaZamowienia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnWypozycz);
@@ -320,6 +346,8 @@
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LblSumaZamowienia;
+        private System.Windows.Forms.Label lblCenaZamowienia;
+        private System.Windows.Forms.Label label7;
     }
 }
 

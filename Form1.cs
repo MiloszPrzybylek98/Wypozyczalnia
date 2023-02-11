@@ -84,11 +84,18 @@ namespace Wypozyczalnia
 
         private void dropKategorie_SelectedValueChanged(object sender, EventArgs e)
         {
-
-            string typ = dropKategorie.SelectedItem.ToString();
-            
             Connector connector = new Connector();
-            dataGridView1.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+            string typ = dropKategorie.SelectedItem.ToString();
+            if (typ=="Wszystko")
+            {
+                dataGridView1.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Cena", "SprzetNarciarski", "WHERE  Dostępność = 1");
+            }
+            else
+            {
+                
+                dataGridView1.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+            }
+            
             
             
             
@@ -107,10 +114,27 @@ namespace Wypozyczalnia
         {
 
 
-           string typ =  dodaj() ;
-           Connector connector = new Connector();
-           DataTable dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
-           int selectedRow = dataGridView1.SelectedRows[0].Index;
+            string typ =  dodaj() ;
+            Connector connector = new Connector();
+            DataTable dt = new DataTable();
+            if (typ =="Wszystko")
+            {
+                 dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE  Dostępność = 1");
+                
+            }
+            else
+            {
+                 dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+
+            }
+            
+                
+            
+
+
+           
+           
+            int selectedRow = dataGridView1.SelectedRows[0].Index;
             DataTable dt2 = dt.Clone();
             foreach (DataRow dr in dt.Rows)
             {
@@ -129,13 +153,7 @@ namespace Wypozyczalnia
             int Cena = (int)dt2.Rows[0][6];
 
 
-            //trzeba dodać tworzenie nowego zamówienia w momencie ładowania forma i pobrać jego ID
-            //w momencie dodania itemka do zamowienia: musimy zmienic dostępność przemiotu w sprzęcie na 0, dodać do worka wraz z id zamowienia i id sprzetu
-            //potem w dgv po prawo wyświetlamy zawartość worka(najłatwiej)
-            //aktualizujemy sprzety do wypozyczenia(po prostu pobrać)
-            //jesli chcemy usunac z worka to wywalamy i zmieniamy dostepnosc na 1
-            //trzeba dodac cos z pieniedzmi d bazy danych, jakies ceny produktow za dobe czy cos(też to można wyświetlać)
-            //(Imię, Nazwisko,Pesel, Miejscowość, Kod_pocztowy ,Ulica, NumerDomu, Telefon, Login, Hasło)
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -186,7 +204,9 @@ namespace Wypozyczalnia
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[1].Visible = false;
 
-            LblSumaZamowienia.Text= connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
+            LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
+            //int cenaZamowienia = connector.PobierzCeneZamowieniaZWorka(ZamowienieId) * (int)dropCzasWypozyczenia.SelectedItem;
+            //lblCenaZamowienia.Text = cenaZamowienia.ToString();
 
 
 

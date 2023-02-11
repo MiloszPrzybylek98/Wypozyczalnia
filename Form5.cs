@@ -296,5 +296,10 @@ namespace Wypozyczalnia
         {
 
         }
+
+        private void btnSzukajZamowienia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

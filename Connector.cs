@@ -52,6 +52,7 @@ namespace Wypozyczalnia
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT DISTINCT Typ  FROM SprzetNarciarski", connectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
+            dropdown.Items.Add("Wszystko");
             foreach (DataRow row in table.Rows)
             {
                 dropdown.Items.Add(row["Typ"].ToString());

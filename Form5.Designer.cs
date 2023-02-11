@@ -48,6 +48,8 @@
             this.comboTypA = new System.Windows.Forms.ComboBox();
             this.dgvMagazynA = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnWydaj = new System.Windows.Forms.Button();
+            this.btnCzyscSzukanie = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnUsunZamowienie = new System.Windows.Forms.Button();
             this.btnRozlicz = new System.Windows.Forms.Button();
@@ -108,8 +110,6 @@
             this.btnUsunPracownika = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvPracownicy = new System.Windows.Forms.DataGridView();
-            this.btnCzyscSzukanie = new System.Windows.Forms.Button();
-            this.btnWydaj = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -351,6 +351,28 @@
             this.tabPage2.Text = "Aktywne zamówienia";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnWydaj
+            // 
+            this.btnWydaj.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnWydaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWydaj.Location = new System.Drawing.Point(240, 536);
+            this.btnWydaj.Name = "btnWydaj";
+            this.btnWydaj.Size = new System.Drawing.Size(188, 31);
+            this.btnWydaj.TabIndex = 15;
+            this.btnWydaj.Text = "Wydaj zamówienie";
+            this.btnWydaj.UseVisualStyleBackColor = false;
+            // 
+            // btnCzyscSzukanie
+            // 
+            this.btnCzyscSzukanie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCzyscSzukanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCzyscSzukanie.Location = new System.Drawing.Point(771, 115);
+            this.btnCzyscSzukanie.Name = "btnCzyscSzukanie";
+            this.btnCzyscSzukanie.Size = new System.Drawing.Size(188, 31);
+            this.btnCzyscSzukanie.TabIndex = 14;
+            this.btnCzyscSzukanie.Text = "Szukaj";
+            this.btnCzyscSzukanie.UseVisualStyleBackColor = false;
+            // 
             // dataGridView3
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.AliceBlue;
@@ -390,9 +412,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(768, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(264, 15);
+            this.label5.Size = new System.Drawing.Size(186, 15);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Wyszukiwanie zamówienia po nazwisku klienta";
+            this.label5.Text = "Wyszukiwanie zamówienia po ID";
             // 
             // btnSzukajZamowienia
             // 
@@ -404,6 +426,7 @@
             this.btnSzukajZamowienia.TabIndex = 9;
             this.btnSzukajZamowienia.Text = "Szukaj";
             this.btnSzukajZamowienia.UseVisualStyleBackColor = false;
+            this.btnSzukajZamowienia.Click += new System.EventHandler(this.btnSzukajZamowienia_Click);
             // 
             // txtWyszukajAktywne
             // 
@@ -988,30 +1011,9 @@
             this.dgvPracownicy.TabIndex = 0;
             this.dgvPracownicy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPracownicy_CellClick);
             // 
-            // btnCzyscSzukanie
-            // 
-            this.btnCzyscSzukanie.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnCzyscSzukanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCzyscSzukanie.Location = new System.Drawing.Point(771, 115);
-            this.btnCzyscSzukanie.Name = "btnCzyscSzukanie";
-            this.btnCzyscSzukanie.Size = new System.Drawing.Size(188, 31);
-            this.btnCzyscSzukanie.TabIndex = 14;
-            this.btnCzyscSzukanie.Text = "Szukaj";
-            this.btnCzyscSzukanie.UseVisualStyleBackColor = false;
-            // 
-            // btnWydaj
-            // 
-            this.btnWydaj.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnWydaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWydaj.Location = new System.Drawing.Point(240, 536);
-            this.btnWydaj.Name = "btnWydaj";
-            this.btnWydaj.Size = new System.Drawing.Size(188, 31);
-            this.btnWydaj.TabIndex = 15;
-            this.btnWydaj.Text = "Wydaj zamówienie";
-            this.btnWydaj.UseVisualStyleBackColor = false;
-            // 
             // tabPage5
             // 
+            this.tabPage5.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
