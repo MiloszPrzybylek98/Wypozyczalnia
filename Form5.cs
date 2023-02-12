@@ -547,6 +547,43 @@ namespace Wypozyczalnia
         private void btnDodajDoZamowienia_Click(object sender, EventArgs e)
         {
 
+            //string typ = dodaj();
+            //Connector connector = new Connector();
+            //DataTable dt = new DataTable();
+            //if (typ == "Wszystko")
+            //{
+            //    dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE  Dostępność = 1");
+
+            //}
+            //else
+            //{
+            //    dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+
+            //}
+
+
+
+
+
+
+
+            //int selectedRow = dgvWyborSprzetuA.SelectedRows[0].Index;
+            //DataTable dt2 = dt.Clone();
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    if (dr.Table.Rows.IndexOf(dr) == selectedRow)
+            //    {
+            //        dt2.ImportRow(dr);
+            //    }
+            //}
+
+            //int IdSprzetu = (int)dt2.Rows[0][0]; // tym ID dodajemy sprzęt do worka
+            //string Nazwa = dt2.Rows[0][1].ToString();
+            //string Typ = dt2.Rows[0][2].ToString();
+            //string Rozmiar = dt2.Rows[0][3].ToString();
+            //int Regal = (int)dt2.Rows[0][4];
+            //int Polka = (int)dt2.Rows[0][5];
+            //int Cena = (int)dt2.Rows[0][6];
             string typ = dodaj();
             Connector connector = new Connector();
             DataTable dt = new DataTable();
@@ -584,6 +621,62 @@ namespace Wypozyczalnia
             int Regal = (int)dt2.Rows[0][4];
             int Polka = (int)dt2.Rows[0][5];
             int Cena = (int)dt2.Rows[0][6];
+
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("INSERT INTO Worek VALUES(@WypozyczenieID, @SprzętID, @Nazwa, @Typ, @Rozmiar, @Regał, @Półka, @Cena)", connection))
+                {
+
+                    command.Parameters.AddWithValue("@WypozyczenieID", ZamowienieId);
+                    command.Parameters.AddWithValue("@SprzętID", IdSprzetu);
+                    command.Parameters.AddWithValue("@Nazwa", Nazwa);
+                    command.Parameters.AddWithValue("@Typ", Typ);
+                    command.Parameters.AddWithValue("@Rozmiar", Rozmiar);
+                    command.Parameters.AddWithValue("@Regał", Regal);
+                    command.Parameters.AddWithValue("@Półka", Polka);
+                    command.Parameters.AddWithValue("@Cena", Cena);
+                    command.ExecuteNonQuery();
+
+                }
+
+            }
+
+            int dost = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                connection.Open();
+                using (SqlCommand command = new SqlCommand($"UPDATE SprzetNarciarski SET Dostępność = @dost WHERE IdSprzet = @IdSprzetu  ", connection))
+                {
+
+                    command.Parameters.AddWithValue("@dost", dost);
+                    command.Parameters.AddWithValue("@IdSprzetu", IdSprzetu);
+                    command.ExecuteNonQuery();
+
+                }
+
+            }
+
+
+
+
+
+
+
+            dropKategorie_SelectedValueChanged(sender, e);
+
+            dgvWorekA.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {ZamowienieId}");
+            dgvWorekA.Columns[0].Visible = false;
+            dgvWorekA.Columns[1].Visible = false;
+
+            LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
+
+
         }
 
         private void btnUsunZzamowienia_Click(object sender, EventArgs e)
