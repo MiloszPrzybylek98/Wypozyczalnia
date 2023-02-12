@@ -545,6 +545,71 @@ namespace Wypozyczalnia
                     }
 
                 }
+
+                int[] tablica = new int[dgvWorekZamA.Rows.Count];
+                List<int> list = new List<int>();
+
+                if (dgvWorekZamA.Rows.Count > 0)
+                {
+
+                    foreach (DataGridViewRow item in dgvWorekZamA.Rows)
+                    {
+                        list.Add((int)item.Cells[0].Value);
+                    }
+
+
+                }
+
+                string idiki = "'";
+                foreach (var item in list)
+                {
+                    idiki += "" + item.ToString() + ",";
+
+                }
+                idiki = idiki.Remove(idiki.Length - 1);
+                idiki += "'";
+
+
+
+
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    int dostepnosc = 1;
+                    using (SqlCommand command = new SqlCommand($"DECLARE @intArray varchar(200) SET @intArray = {idiki};  UPDATE SprzetNarciarski  SET Dostępność= @Dostępność Where IdSprzet IN (select * from STRING_SPLIT(@intArray, ',')) ; ", connection))
+                    {
+
+
+                        command.Parameters.AddWithValue("@Dostępność", dostepnosc);
+                        command.Parameters.AddWithValue("@Idiki", idiki);
+                        command.ExecuteNonQuery();
+
+
+                    }
+
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand($"DELETE FROM Worek where WypozyczenieID = @WypozyczenieID;", connection))
+                    {
+
+
+                        command.Parameters.AddWithValue("@WypozyczenieID", IndeksZbazy);
+
+                        command.ExecuteNonQuery();
+
+
+                    }
+
+                }
+
+
+
+
+
                 MessageBox.Show($"Należy pobrać od klienta: {Płatność} PLN. Płatność podstawowa:{PłatnośćPodstawowa} PLN, Nadpłata za nadgodziny: {Płatność - PłatnośćPodstawowa} PLN.");
 
                 Connector connector = new Connector();
