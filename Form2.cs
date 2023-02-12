@@ -51,7 +51,7 @@ namespace Wypozyczalnia
                 form4.Show();
                 this.Hide();
             }
-            else
+            if(isValid == "C")
             {
                 MessageBox.Show("Błędne dane logowania");
             }
