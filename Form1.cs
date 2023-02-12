@@ -206,8 +206,7 @@ namespace Wypozyczalnia
             dataGridView2.Columns[1].Visible = false;
 
             LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
-            //int cenaZamowienia = connector.PobierzCeneZamowieniaZWorka(ZamowienieId) * (int)dropCzasWypozyczenia.SelectedItem;
-            //lblCenaZamowienia.Text = cenaZamowienia.ToString();
+
 
 
 
@@ -351,17 +350,34 @@ namespace Wypozyczalnia
                         }
 
                     }
+                    
 
 
 
-                    formEkranKlienta_Load(sender, e);
                     MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Proszę podejść do stanowiska i podać numer zamówienia w celu odbioru sprzętu.");
+                    txtImie.Clear();
+                    txtNazwisko.Clear();
+                    txtPeselK.Clear();
+                    txtNrKontaktowy.Clear();
+                    dropCzasWypozyczenia.Items.Clear();
+
+                    dataGridView1.DataSource = null;
+                    dataGridView2.DataSource = null;
                 }
                 catch (Exception)
                 {
 
                     MessageBox.Show("Błąd przy złożeniu zamówienia. Proszę spróbować ponownie");
-                    formEkranKlienta_Load(sender, e);
+                    txtImie.Clear();
+                    txtNazwisko.Clear();
+                    txtPeselK.Clear();
+                    txtNrKontaktowy.Clear();
+                    dropCzasWypozyczenia.Items.Clear();
+
+                    dataGridView1.DataSource = null;
+                    dataGridView2.DataSource = null;
+
+
 
                 }
                 
@@ -379,18 +395,19 @@ namespace Wypozyczalnia
             
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            
-            Validator validator = new Validator();
-            validator.WalidujNrTxt(txtPeselK, btnWypozycz, "pesel");
-        }
+
 
         private void txtNrKontaktowy_TextChanged(object sender, EventArgs e)
         {
            
             Validator validator = new Validator();
             validator.WalidujNrTxt(txtNrKontaktowy, btnWypozycz, "nr kontaktowy");
+        }
+
+        private void txtPeselK_TextChanged(object sender, EventArgs e)
+        {
+            Validator validator = new Validator();
+            validator.WalidujNrTxt(txtPeselK, btnWypozycz, "pesel");
         }
     }
 }

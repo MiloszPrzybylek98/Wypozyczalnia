@@ -107,7 +107,7 @@
             this.txtPeselK.Name = "txtPeselK";
             this.txtPeselK.Size = new System.Drawing.Size(176, 20);
             this.txtPeselK.TabIndex = 4;
-            this.txtPeselK.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtPeselK.TextChanged += new System.EventHandler(this.txtPeselK_TextChanged);
             // 
             // label4
             // 

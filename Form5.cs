@@ -75,6 +75,11 @@ namespace Wypozyczalnia
             connector1.UzupelnijTypy(comboTypDodajA);
 
             RefreshDataGridView();
+
+            dgvWszystkieZamowienia.DataSource = connector.PobierzDaneDoDGV("*", "Wypozyczenia", "WHERE CzyWydane = 1 OR CzyWydane = 0");
+
+
+
         }
 
         private void btnDodajSprzetDoMagazynu_Click(object sender, EventArgs e)

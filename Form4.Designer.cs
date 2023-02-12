@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnWydaj = new System.Windows.Forms.Button();
+            this.btnCzyscSzukanie = new System.Windows.Forms.Button();
+            this.dgvWorekZamP = new System.Windows.Forms.DataGridView();
+            this.btnUsunZamowienie = new System.Windows.Forms.Button();
+            this.btnRozlicz = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSzukajZamowienia = new System.Windows.Forms.Button();
+            this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
+            this.dgvAktywneZamP = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.numCena = new System.Windows.Forms.NumericUpDown();
@@ -48,17 +58,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboTypP = new System.Windows.Forms.ComboBox();
             this.dgvMagazynP = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnWydaj = new System.Windows.Forms.Button();
-            this.btnCzyscSzukanie = new System.Windows.Forms.Button();
-            this.dgvWorekZamP = new System.Windows.Forms.DataGridView();
-            this.btnUsunZamowienie = new System.Windows.Forms.Button();
-            this.btnRozlicz = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSzukajZamowienia = new System.Windows.Forms.Button();
-            this.txtWyszukajAktywne = new System.Windows.Forms.TextBox();
-            this.dgvAktywneZamP = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnNoweZamowienie = new System.Windows.Forms.Button();
             this.LblSumaZamowienia = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnWypozycz = new System.Windows.Forms.Button();
@@ -72,21 +73,21 @@
             this.dgvWyborSprzetu = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNrKontaktowy = new System.Windows.Forms.TextBox();
-            this.txtPesel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblPesel = new System.Windows.Forms.Label();
+            this.txtPesel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNazwisko = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorekZamP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAktywneZamP)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCena)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynP)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWorekZamP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAktywneZamP)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWyborSprzetu)).BeginInit();
@@ -94,14 +95,147 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1098, 737);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
+            this.tabPage2.Controls.Add(this.btnWydaj);
+            this.tabPage2.Controls.Add(this.btnCzyscSzukanie);
+            this.tabPage2.Controls.Add(this.dgvWorekZamP);
+            this.tabPage2.Controls.Add(this.btnUsunZamowienie);
+            this.tabPage2.Controls.Add(this.btnRozlicz);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.btnSzukajZamowienia);
+            this.tabPage2.Controls.Add(this.txtWyszukajAktywne);
+            this.tabPage2.Controls.Add(this.dgvAktywneZamP);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1090, 711);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Aktywne Zamówienia";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnWydaj
+            // 
+            this.btnWydaj.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnWydaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWydaj.Location = new System.Drawing.Point(252, 572);
+            this.btnWydaj.Name = "btnWydaj";
+            this.btnWydaj.Size = new System.Drawing.Size(188, 36);
+            this.btnWydaj.TabIndex = 8;
+            this.btnWydaj.Text = "Wydaj zamówienie";
+            this.btnWydaj.UseVisualStyleBackColor = false;
+            this.btnWydaj.Click += new System.EventHandler(this.btnWydaj_Click);
+            // 
+            // btnCzyscSzukanie
+            // 
+            this.btnCzyscSzukanie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCzyscSzukanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCzyscSzukanie.Location = new System.Drawing.Point(793, 174);
+            this.btnCzyscSzukanie.Name = "btnCzyscSzukanie";
+            this.btnCzyscSzukanie.Size = new System.Drawing.Size(188, 33);
+            this.btnCzyscSzukanie.TabIndex = 7;
+            this.btnCzyscSzukanie.Text = "Czyść szukanie";
+            this.btnCzyscSzukanie.UseVisualStyleBackColor = false;
+            this.btnCzyscSzukanie.Click += new System.EventHandler(this.btnCzyscSzukanie_Click);
+            // 
+            // dgvWorekZamP
+            // 
+            this.dgvWorekZamP.AllowUserToAddRows = false;
+            this.dgvWorekZamP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvWorekZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvWorekZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorekZamP.Location = new System.Drawing.Point(38, 335);
+            this.dgvWorekZamP.MultiSelect = false;
+            this.dgvWorekZamP.Name = "dgvWorekZamP";
+            this.dgvWorekZamP.ReadOnly = true;
+            this.dgvWorekZamP.RowHeadersVisible = false;
+            this.dgvWorekZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvWorekZamP.Size = new System.Drawing.Size(704, 211);
+            this.dgvWorekZamP.StandardTab = true;
+            this.dgvWorekZamP.TabIndex = 6;
+            // 
+            // btnUsunZamowienie
+            // 
+            this.btnUsunZamowienie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsunZamowienie.Location = new System.Drawing.Point(793, 629);
+            this.btnUsunZamowienie.Name = "btnUsunZamowienie";
+            this.btnUsunZamowienie.Size = new System.Drawing.Size(188, 36);
+            this.btnUsunZamowienie.TabIndex = 5;
+            this.btnUsunZamowienie.Text = "Usuń zamówienie";
+            this.btnUsunZamowienie.UseVisualStyleBackColor = false;
+            this.btnUsunZamowienie.Click += new System.EventHandler(this.btnUsunZamowienie_Click);
+            // 
+            // btnRozlicz
+            // 
+            this.btnRozlicz.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnRozlicz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRozlicz.Location = new System.Drawing.Point(38, 572);
+            this.btnRozlicz.Name = "btnRozlicz";
+            this.btnRozlicz.Size = new System.Drawing.Size(188, 36);
+            this.btnRozlicz.TabIndex = 4;
+            this.btnRozlicz.Text = "Rozlicz zamówienie";
+            this.btnRozlicz.UseVisualStyleBackColor = false;
+            this.btnRozlicz.Click += new System.EventHandler(this.btnRozlicz_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(790, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(201, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Wyszukiwanie zamówienia po ID";
+            // 
+            // btnSzukajZamowienia
+            // 
+            this.btnSzukajZamowienia.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSzukajZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSzukajZamowienia.Location = new System.Drawing.Point(793, 118);
+            this.btnSzukajZamowienia.Name = "btnSzukajZamowienia";
+            this.btnSzukajZamowienia.Size = new System.Drawing.Size(188, 33);
+            this.btnSzukajZamowienia.TabIndex = 2;
+            this.btnSzukajZamowienia.Text = "Szukaj";
+            this.btnSzukajZamowienia.UseVisualStyleBackColor = false;
+            this.btnSzukajZamowienia.Click += new System.EventHandler(this.btnSzukajZamowienia_Click);
+            // 
+            // txtWyszukajAktywne
+            // 
+            this.txtWyszukajAktywne.Location = new System.Drawing.Point(793, 75);
+            this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
+            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
+            this.txtWyszukajAktywne.TabIndex = 1;
+            // 
+            // dgvAktywneZamP
+            // 
+            this.dgvAktywneZamP.AllowUserToAddRows = false;
+            this.dgvAktywneZamP.AllowUserToDeleteRows = false;
+            this.dgvAktywneZamP.AllowUserToResizeColumns = false;
+            this.dgvAktywneZamP.AllowUserToResizeRows = false;
+            this.dgvAktywneZamP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAktywneZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvAktywneZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAktywneZamP.Location = new System.Drawing.Point(38, 56);
+            this.dgvAktywneZamP.MultiSelect = false;
+            this.dgvAktywneZamP.Name = "dgvAktywneZamP";
+            this.dgvAktywneZamP.ReadOnly = true;
+            this.dgvAktywneZamP.RowHeadersVisible = false;
+            this.dgvAktywneZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAktywneZamP.Size = new System.Drawing.Size(704, 222);
+            this.dgvAktywneZamP.TabIndex = 0;
+            this.dgvAktywneZamP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAktywneZamP_CellClick);
+            this.dgvAktywneZamP.SelectionChanged += new System.EventHandler(this.dgvAktywneZamP_SelectionChanged);
             // 
             // tabPage1
             // 
@@ -313,146 +447,15 @@
             this.dgvMagazynP.MultiSelect = false;
             this.dgvMagazynP.Name = "dgvMagazynP";
             this.dgvMagazynP.ReadOnly = true;
+            this.dgvMagazynP.RowHeadersVisible = false;
             this.dgvMagazynP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMagazynP.Size = new System.Drawing.Size(731, 332);
             this.dgvMagazynP.TabIndex = 0;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
-            this.tabPage2.Controls.Add(this.btnWydaj);
-            this.tabPage2.Controls.Add(this.btnCzyscSzukanie);
-            this.tabPage2.Controls.Add(this.dgvWorekZamP);
-            this.tabPage2.Controls.Add(this.btnUsunZamowienie);
-            this.tabPage2.Controls.Add(this.btnRozlicz);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.btnSzukajZamowienia);
-            this.tabPage2.Controls.Add(this.txtWyszukajAktywne);
-            this.tabPage2.Controls.Add(this.dgvAktywneZamP);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1090, 711);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Aktywne Zamówienia";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnWydaj
-            // 
-            this.btnWydaj.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnWydaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWydaj.Location = new System.Drawing.Point(252, 572);
-            this.btnWydaj.Name = "btnWydaj";
-            this.btnWydaj.Size = new System.Drawing.Size(188, 36);
-            this.btnWydaj.TabIndex = 8;
-            this.btnWydaj.Text = "Wydaj zamówienie";
-            this.btnWydaj.UseVisualStyleBackColor = false;
-            this.btnWydaj.Click += new System.EventHandler(this.btnWydaj_Click);
-            // 
-            // btnCzyscSzukanie
-            // 
-            this.btnCzyscSzukanie.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnCzyscSzukanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCzyscSzukanie.Location = new System.Drawing.Point(793, 174);
-            this.btnCzyscSzukanie.Name = "btnCzyscSzukanie";
-            this.btnCzyscSzukanie.Size = new System.Drawing.Size(188, 33);
-            this.btnCzyscSzukanie.TabIndex = 7;
-            this.btnCzyscSzukanie.Text = "Czyść szukanie";
-            this.btnCzyscSzukanie.UseVisualStyleBackColor = false;
-            this.btnCzyscSzukanie.Click += new System.EventHandler(this.btnCzyscSzukanie_Click);
-            // 
-            // dgvWorekZamP
-            // 
-            this.dgvWorekZamP.AllowUserToAddRows = false;
-            this.dgvWorekZamP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvWorekZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.dgvWorekZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWorekZamP.Location = new System.Drawing.Point(38, 335);
-            this.dgvWorekZamP.MultiSelect = false;
-            this.dgvWorekZamP.Name = "dgvWorekZamP";
-            this.dgvWorekZamP.ReadOnly = true;
-            this.dgvWorekZamP.RowHeadersVisible = false;
-            this.dgvWorekZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWorekZamP.Size = new System.Drawing.Size(704, 211);
-            this.dgvWorekZamP.StandardTab = true;
-            this.dgvWorekZamP.TabIndex = 6;
-            // 
-            // btnUsunZamowienie
-            // 
-            this.btnUsunZamowienie.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnUsunZamowienie.Location = new System.Drawing.Point(793, 629);
-            this.btnUsunZamowienie.Name = "btnUsunZamowienie";
-            this.btnUsunZamowienie.Size = new System.Drawing.Size(188, 36);
-            this.btnUsunZamowienie.TabIndex = 5;
-            this.btnUsunZamowienie.Text = "Usuń zamówienie";
-            this.btnUsunZamowienie.UseVisualStyleBackColor = false;
-            this.btnUsunZamowienie.Click += new System.EventHandler(this.btnUsunZamowienie_Click);
-            // 
-            // btnRozlicz
-            // 
-            this.btnRozlicz.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnRozlicz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRozlicz.Location = new System.Drawing.Point(38, 572);
-            this.btnRozlicz.Name = "btnRozlicz";
-            this.btnRozlicz.Size = new System.Drawing.Size(188, 36);
-            this.btnRozlicz.TabIndex = 4;
-            this.btnRozlicz.Text = "Rozlicz zamówienie";
-            this.btnRozlicz.UseVisualStyleBackColor = false;
-            this.btnRozlicz.Click += new System.EventHandler(this.btnRozlicz_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(790, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Wyszukiwanie zamówienia po ID";
-            // 
-            // btnSzukajZamowienia
-            // 
-            this.btnSzukajZamowienia.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSzukajZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSzukajZamowienia.Location = new System.Drawing.Point(793, 118);
-            this.btnSzukajZamowienia.Name = "btnSzukajZamowienia";
-            this.btnSzukajZamowienia.Size = new System.Drawing.Size(188, 33);
-            this.btnSzukajZamowienia.TabIndex = 2;
-            this.btnSzukajZamowienia.Text = "Szukaj";
-            this.btnSzukajZamowienia.UseVisualStyleBackColor = false;
-            this.btnSzukajZamowienia.Click += new System.EventHandler(this.btnSzukajZamowienia_Click);
-            // 
-            // txtWyszukajAktywne
-            // 
-            this.txtWyszukajAktywne.Location = new System.Drawing.Point(793, 75);
-            this.txtWyszukajAktywne.Name = "txtWyszukajAktywne";
-            this.txtWyszukajAktywne.Size = new System.Drawing.Size(188, 20);
-            this.txtWyszukajAktywne.TabIndex = 1;
-            // 
-            // dgvAktywneZamP
-            // 
-            this.dgvAktywneZamP.AllowUserToAddRows = false;
-            this.dgvAktywneZamP.AllowUserToDeleteRows = false;
-            this.dgvAktywneZamP.AllowUserToResizeColumns = false;
-            this.dgvAktywneZamP.AllowUserToResizeRows = false;
-            this.dgvAktywneZamP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAktywneZamP.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.dgvAktywneZamP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAktywneZamP.Location = new System.Drawing.Point(38, 56);
-            this.dgvAktywneZamP.MultiSelect = false;
-            this.dgvAktywneZamP.Name = "dgvAktywneZamP";
-            this.dgvAktywneZamP.ReadOnly = true;
-            this.dgvAktywneZamP.RowHeadersVisible = false;
-            this.dgvAktywneZamP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAktywneZamP.Size = new System.Drawing.Size(704, 222);
-            this.dgvAktywneZamP.TabIndex = 0;
-            this.dgvAktywneZamP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAktywneZamP_CellClick);
-            this.dgvAktywneZamP.SelectionChanged += new System.EventHandler(this.dgvAktywneZamP_SelectionChanged);
-            // 
             // tabPage3
             // 
             this.tabPage3.BackgroundImage = global::Wypozyczalnia.Properties.Resources.koryaksky_volcano_g3d56b61c0_1920;
+            this.tabPage3.Controls.Add(this.btnNoweZamowienie);
             this.tabPage3.Controls.Add(this.LblSumaZamowienia);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.btnWypozycz);
@@ -466,8 +469,8 @@
             this.tabPage3.Controls.Add(this.dgvWyborSprzetu);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.txtNrKontaktowy);
+            this.tabPage3.Controls.Add(this.lblPesel);
             this.tabPage3.Controls.Add(this.txtPesel);
-            this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.txtNazwisko);
             this.tabPage3.Controls.Add(this.label9);
@@ -479,6 +482,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tworzenie zamówienia";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnNoweZamowienie
+            // 
+            this.btnNoweZamowienie.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnNoweZamowienie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNoweZamowienie.Location = new System.Drawing.Point(210, 13);
+            this.btnNoweZamowienie.Name = "btnNoweZamowienie";
+            this.btnNoweZamowienie.Size = new System.Drawing.Size(281, 61);
+            this.btnNoweZamowienie.TabIndex = 36;
+            this.btnNoweZamowienie.Text = "Stwórz nowe zamówienie";
+            this.btnNoweZamowienie.UseVisualStyleBackColor = false;
+            this.btnNoweZamowienie.Click += new System.EventHandler(this.btnNoweZamowienie_Click);
             // 
             // LblSumaZamowienia
             // 
@@ -544,6 +559,7 @@
             this.btnUsunZzamowienia.TabIndex = 30;
             this.btnUsunZzamowienia.Text = "<<<";
             this.btnUsunZzamowienia.UseVisualStyleBackColor = false;
+            this.btnUsunZzamowienia.Click += new System.EventHandler(this.btnUsunZzamowienia_Click);
             // 
             // btnDodajDoZamowienia
             // 
@@ -555,14 +571,17 @@
             this.btnDodajDoZamowienia.TabIndex = 29;
             this.btnDodajDoZamowienia.Text = ">>>";
             this.btnDodajDoZamowienia.UseVisualStyleBackColor = false;
+            this.btnDodajDoZamowienia.Click += new System.EventHandler(this.btnDodajDoZamowienia_Click);
             // 
             // dgvWorek
             // 
+            this.dgvWorek.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorek.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvWorek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorek.Location = new System.Drawing.Point(600, 84);
             this.dgvWorek.Name = "dgvWorek";
             this.dgvWorek.RowHeadersVisible = false;
+            this.dgvWorek.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWorek.Size = new System.Drawing.Size(479, 332);
             this.dgvWorek.TabIndex = 28;
             // 
@@ -582,22 +601,26 @@
             this.dropKategorie.BackColor = System.Drawing.Color.AliceBlue;
             this.dropKategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropKategorie.FormattingEnabled = true;
-            this.dropKategorie.Items.AddRange(new object[] {
-            "szit",
-            "szrot"});
             this.dropKategorie.Location = new System.Drawing.Point(12, 35);
             this.dropKategorie.Name = "dropKategorie";
             this.dropKategorie.Size = new System.Drawing.Size(176, 21);
             this.dropKategorie.TabIndex = 26;
             this.dropKategorie.SelectedIndexChanged += new System.EventHandler(this.dropKategorie_SelectedIndexChanged);
+            this.dropKategorie.SelectedValueChanged += new System.EventHandler(this.dropKategorie_SelectedValueChanged);
             // 
             // dgvWyborSprzetu
             // 
+            this.dgvWyborSprzetu.AllowUserToAddRows = false;
+            this.dgvWyborSprzetu.AllowUserToDeleteRows = false;
+            this.dgvWyborSprzetu.AllowUserToResizeColumns = false;
+            this.dgvWyborSprzetu.AllowUserToResizeRows = false;
+            this.dgvWyborSprzetu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWyborSprzetu.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvWyborSprzetu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWyborSprzetu.Location = new System.Drawing.Point(12, 84);
             this.dgvWyborSprzetu.Name = "dgvWyborSprzetu";
             this.dgvWyborSprzetu.RowHeadersVisible = false;
+            this.dgvWyborSprzetu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWyborSprzetu.Size = new System.Drawing.Size(479, 332);
             this.dgvWyborSprzetu.TabIndex = 25;
             // 
@@ -618,24 +641,26 @@
             this.txtNrKontaktowy.Name = "txtNrKontaktowy";
             this.txtNrKontaktowy.Size = new System.Drawing.Size(171, 20);
             this.txtNrKontaktowy.TabIndex = 23;
+            this.txtNrKontaktowy.TextChanged += new System.EventHandler(this.txtNrKontaktowy_TextChanged);
+            // 
+            // lblPesel
+            // 
+            this.lblPesel.AutoSize = true;
+            this.lblPesel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPesel.Location = new System.Drawing.Point(14, 554);
+            this.lblPesel.Name = "lblPesel";
+            this.lblPesel.Size = new System.Drawing.Size(38, 15);
+            this.lblPesel.TabIndex = 22;
+            this.lblPesel.Text = "Pesel";
             // 
             // txtPesel
             // 
-            this.txtPesel.AutoSize = true;
-            this.txtPesel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPesel.Location = new System.Drawing.Point(14, 554);
+            this.txtPesel.Location = new System.Drawing.Point(12, 572);
             this.txtPesel.Name = "txtPesel";
-            this.txtPesel.Size = new System.Drawing.Size(38, 15);
-            this.txtPesel.TabIndex = 22;
-            this.txtPesel.Text = "Pesel";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(12, 572);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 20);
-            this.textBox3.TabIndex = 21;
+            this.txtPesel.Size = new System.Drawing.Size(171, 20);
+            this.txtPesel.TabIndex = 21;
+            this.txtPesel.TextChanged += new System.EventHandler(this.txtPesel_TextChanged);
             // 
             // label8
             // 
@@ -686,16 +711,16 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formPracownik_FormClosed);
             this.Load += new System.EventHandler(this.formPracownik_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorekZamP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAktywneZamP)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCena)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPolkaDodaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRegalDodaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynP)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWorekZamP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAktywneZamP)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorek)).EndInit();
@@ -735,8 +760,8 @@
         private System.Windows.Forms.DataGridView dgvWyborSprzetu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNrKontaktowy;
-        private System.Windows.Forms.Label txtPesel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label lblPesel;
+        private System.Windows.Forms.TextBox txtPesel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNazwisko;
         private System.Windows.Forms.Label label9;
@@ -756,5 +781,6 @@
         private System.Windows.Forms.NumericUpDown numCena;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label LblSumaZamowienia;
+        private System.Windows.Forms.Button btnNoweZamowienie;
     }
 }
