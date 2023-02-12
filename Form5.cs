@@ -462,7 +462,7 @@ namespace Wypozyczalnia
             }
 
             // Pobierz wartość klucza głównego zaznaczonego wiersza
-            int id = (int)dgvPracownicy.SelectedRows[0].Cells["IdWypozyczenia"].Value;
+            int id = (int)dgvAktywneZamA.SelectedRows[0].Cells["IdWypozyczenia"].Value;
 
             // Skonfiguruj połączenie z bazą danych
 
@@ -471,7 +471,26 @@ namespace Wypozyczalnia
                 connection.Open();
 
                 // Skonstruuj zapytanie SQL
-                string query = "DELETE FROM Wypozyczenia WHERE IdIdWypozyczenia = @IdWypozyczenia";
+                string query = "DELETE FROM Worek WHERE WypozyczenieID = @IdWypozyczenia";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Dodaj wartość klucza głównego do parametru zapytania
+                    command.Parameters.AddWithValue("@IdWypozyczenia", id);
+
+                    // Wykonaj zapytanie
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    
+                }
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Skonstruuj zapytanie SQL
+                string query = "DELETE FROM Wypozyczenia WHERE IdWypozyczenia = @IdWypozyczenia";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

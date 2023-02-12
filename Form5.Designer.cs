@@ -897,8 +897,11 @@
             this.dgvAktywneZamA.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvAktywneZamA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAktywneZamA.Location = new System.Drawing.Point(20, 20);
+            this.dgvAktywneZamA.MultiSelect = false;
             this.dgvAktywneZamA.Name = "dgvAktywneZamA";
+            this.dgvAktywneZamA.ReadOnly = true;
             this.dgvAktywneZamA.RowHeadersVisible = false;
+            this.dgvAktywneZamA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAktywneZamA.Size = new System.Drawing.Size(704, 222);
             this.dgvAktywneZamA.TabIndex = 7;
             this.dgvAktywneZamA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAktywneZamA_CellClick);
