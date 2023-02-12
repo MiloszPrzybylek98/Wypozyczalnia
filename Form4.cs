@@ -229,7 +229,7 @@ namespace Wypozyczalnia
 
                 }
 
-                int[] tablica = new int[dgvWorekZamP.Rows.Count];
+
                 List<int> list = new List<int>();
 
                 if (dgvWorekZamP.Rows.Count > 0)
@@ -311,8 +311,7 @@ namespace Wypozyczalnia
                 int selectedRowIndex = dgvAktywneZamP.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvAktywneZamP.Rows[selectedRowIndex];
                 int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
-                //Connector connector = new Connector();
-                //dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -351,8 +350,7 @@ namespace Wypozyczalnia
                     int selectedRowIndex = dgvMagazynP.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvMagazynP.Rows[selectedRowIndex];
                     int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdSprzet"].Value);
-                    //Connector connector = new Connector();
-                    //dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+               
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
@@ -531,6 +529,8 @@ namespace Wypozyczalnia
 
         private void btnNoweZamowienie_Click(object sender, EventArgs e)
         {
+            btnDodajDoZamowienia.Enabled = true;
+            btnUsunZzamowienia.Enabled=true;
             dropKategorie.Enabled = true;
             btnWypozycz.Enabled = true;
             txtImie.Clear();
@@ -558,6 +558,7 @@ namespace Wypozyczalnia
             //    dropKategorie.Items.Add(row["Typ"].ToString());
             //}
             Connector connector = new Connector();
+            dropKategorie.Items.Clear() ;
             connector.UzupelnijTypy(dropKategorie);
 
 
@@ -573,7 +574,7 @@ namespace Wypozyczalnia
                 }
             }
 
-            //czyszczenie dropdowna trzeba dać
+      
             btnNoweZamowienie.Enabled = false;
         }
 

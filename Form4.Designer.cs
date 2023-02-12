@@ -552,6 +552,7 @@
             // btnUsunZzamowienia
             // 
             this.btnUsunZzamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUsunZzamowienia.Enabled = false;
             this.btnUsunZzamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUsunZzamowienia.Location = new System.Drawing.Point(507, 265);
             this.btnUsunZzamowienia.Name = "btnUsunZzamowienia";
@@ -564,6 +565,7 @@
             // btnDodajDoZamowienia
             // 
             this.btnDodajDoZamowienia.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDodajDoZamowienia.Enabled = false;
             this.btnDodajDoZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajDoZamowienia.Location = new System.Drawing.Point(507, 218);
             this.btnDodajDoZamowienia.Name = "btnDodajDoZamowienia";
