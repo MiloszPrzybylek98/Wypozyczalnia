@@ -455,7 +455,37 @@ namespace Wypozyczalnia
 
         private void btnUsunZamowienie_Click(object sender, EventArgs e)
         {
+            if (dgvAktywneZamA.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano żadnego.");
+                return;
+            }
 
+            // Pobierz wartość klucza głównego zaznaczonego wiersza
+            int id = (int)dgvPracownicy.SelectedRows[0].Cells["IdWypozyczenia"].Value;
+
+            // Skonfiguruj połączenie z bazą danych
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Skonstruuj zapytanie SQL
+                string query = "DELETE FROM Wypozyczenia WHERE IdIdWypozyczenia = @IdWypozyczenia";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Dodaj wartość klucza głównego do parametru zapytania
+                    command.Parameters.AddWithValue("@IdWypozyczenia", id);
+
+                    // Wykonaj zapytanie
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    Connector connector = new Connector();
+                    dgvAktywneZamA.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
+
+                }
+            }
         }
 
         private void btnRozlicz_Click(object sender, EventArgs e)
@@ -754,6 +784,20 @@ namespace Wypozyczalnia
             {
 
                 dgvWyborSprzetuA.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
+            }
+        }
+
+        private void dgvAktywneZamA_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAktywneZamA.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = dgvAktywneZamA.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgvAktywneZamA.Rows[selectedRowIndex];
+                int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
+                Connector connector = new Connector();
+                dgvWorekZamA.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+
+                //dodać, że jeśli zamówienie nie jest wydane to nie można rozliczyć
             }
         }
     }

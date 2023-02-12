@@ -858,7 +858,7 @@
             this.btnRozlicz.Name = "btnRozlicz";
             this.btnRozlicz.Size = new System.Drawing.Size(188, 31);
             this.btnRozlicz.TabIndex = 11;
-            this.btnRozlicz.Text = "Aktualizuj zamówienie";
+            this.btnRozlicz.Text = "Rozlicz";
             this.btnRozlicz.UseVisualStyleBackColor = false;
             this.btnRozlicz.Click += new System.EventHandler(this.btnRozlicz_Click);
             // 
@@ -901,6 +901,7 @@
             this.dgvAktywneZamA.RowHeadersVisible = false;
             this.dgvAktywneZamA.Size = new System.Drawing.Size(704, 222);
             this.dgvAktywneZamA.TabIndex = 7;
+            this.dgvAktywneZamA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAktywneZamA_CellClick);
             // 
             // tabPage1
             // 
