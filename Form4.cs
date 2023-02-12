@@ -515,11 +515,6 @@ namespace Wypozyczalnia
             }
 
 
-
-
-
-
-
             int selectedRow = dgvWyborSprzetu.SelectedRows[0].Index;
             DataTable dt2 = dt.Clone();
             foreach (DataRow dr in dt.Rows)
@@ -537,7 +532,6 @@ namespace Wypozyczalnia
             int Regal = (int)dt2.Rows[0][4];
             int Polka = (int)dt2.Rows[0][5];
             int Cena = (int)dt2.Rows[0][6];
-
 
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -578,12 +572,6 @@ namespace Wypozyczalnia
 
             }
 
-
-
-
-
-
-
             dropKategorie_SelectedValueChanged(sender, e);
 
             dgvWorek.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {ZamowienieId}");
@@ -591,10 +579,6 @@ namespace Wypozyczalnia
             dgvWorek.Columns[1].Visible = false;
 
             LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
-
-
-
-
 
 
 
