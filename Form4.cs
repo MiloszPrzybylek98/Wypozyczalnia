@@ -586,7 +586,7 @@ namespace Wypozyczalnia
 
             dropKategorie_SelectedValueChanged(sender, e);
 
-            dgvWyborSprzetu.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {ZamowienieId}");
+            dgvWorek.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {ZamowienieId}");
             dgvWorek.Columns[0].Visible = false;
             dgvWorek.Columns[1].Visible = false;
 
