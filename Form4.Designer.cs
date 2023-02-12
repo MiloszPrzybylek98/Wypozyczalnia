@@ -577,6 +577,10 @@
             // 
             // dgvWorek
             // 
+            this.dgvWorek.AllowUserToAddRows = false;
+            this.dgvWorek.AllowUserToDeleteRows = false;
+            this.dgvWorek.AllowUserToResizeColumns = false;
+            this.dgvWorek.AllowUserToResizeRows = false;
             this.dgvWorek.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorek.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvWorek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -620,7 +624,9 @@
             this.dgvWyborSprzetu.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvWyborSprzetu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWyborSprzetu.Location = new System.Drawing.Point(12, 84);
+            this.dgvWyborSprzetu.MultiSelect = false;
             this.dgvWyborSprzetu.Name = "dgvWyborSprzetu";
+            this.dgvWyborSprzetu.ReadOnly = true;
             this.dgvWyborSprzetu.RowHeadersVisible = false;
             this.dgvWyborSprzetu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWyborSprzetu.Size = new System.Drawing.Size(479, 332);

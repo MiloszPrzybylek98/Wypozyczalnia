@@ -32,13 +32,19 @@ namespace Wypozyczalnia
             connector.UzupelnijTypy(comboTypP);
             Connector connector1 = new Connector();
             connector1.UzupelnijTypy(comboTypDodaj);
+            comboTypDodaj.Items.RemoveAt(0);
 
             Connector connector2 = new Connector();          
             dgvMagazynP.DataSource = connector2.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
 
             dgvAktywneZamP.DataSource = connector2.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
+
+
+            if (dgvAktywneZamP.Rows.Count > 0)
+            {
+                dgvAktywneZamP.CurrentRow.Selected = false;
+            }
             
-            dgvAktywneZamP.CurrentRow.Selected = false;
             dropKategorie.Enabled= false;
             
             
@@ -115,10 +121,13 @@ namespace Wypozyczalnia
             
             numRegalDodaj.ResetText();
             numPolkaDodaj.ResetText();
+            numCena.ResetText();
+            Connector connector = new Connector();
+            connector.UzupelnijTypy(comboTypDodaj);
+            comboTypDodaj.Items.RemoveAt(0);
 
-            Connector connector1 = new Connector();
-            connector1.UzupelnijTypy(comboTypDodaj);
-            //formPracownik_Load(sender, e);
+            
+            dgvMagazynP.DataSource = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
 
 
         }
@@ -169,12 +178,21 @@ namespace Wypozyczalnia
 
         private void btnSzukajZamowienia_Click(object sender, EventArgs e)
         {
-            int IdWyp = Convert.ToInt32(txtWyszukajAktywne.Text);
-            Connector connector = new Connector();
-            
-            dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("*", "Wypozyczenia", $"WHERE IdWypozyczenia = {IdWyp} AND where CzyRozliczone = 0");
-            dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV(" IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IdWyp}");
+            try
+            {
+                int IdWyp = Convert.ToInt32(txtWyszukajAktywne.Text);
+                Connector connector = new Connector();
 
+                dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("*", "Wypozyczenia", $"WHERE IdWypozyczenia = {IdWyp} AND where CzyRozliczone = 0");
+                dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV(" IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IdWyp}");
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Podaj poprawne ID zamówienia");
+            }
+            
 
 
             //connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "Where ");
@@ -203,11 +221,20 @@ namespace Wypozyczalnia
                 TimeSpan nadgodziny = teraz - DataZwrotu;
                 int Płatność = 0 ;
                 int godz;
+                //tutaj jest rozliczenie nadgodzin
                 if (teraz > DataZwrotu)
                 {
 
                     godz = (int)nadgodziny.TotalHours;
-                    Płatność = PłatnośćPodstawowa + (godz * 5);
+                    if (godz > 0)
+                    {
+                        Płatność = PłatnośćPodstawowa + (godz * 5);
+                    }
+                    else
+                    {
+                        Płatność = PłatnośćPodstawowa;
+                    }
+
 
                 }
 
@@ -288,16 +315,19 @@ namespace Wypozyczalnia
                     }
 
                 }
+                dgvWorekZamP.DataSource = null;
+
 
                 
 
 
-
+                //tutaj tekst dla klienta ile hajsu
                 MessageBox.Show($"Należy pobrać od klienta: {Płatność} PLN. Płatność podstawowa:{PłatnośćPodstawowa} PLN, Nadpłata za nadgodziny: {Płatność - PłatnośćPodstawowa} PLN.");
 
                 Connector connector = new Connector();
+                dgvMagazynP.DataSource = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
                 dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
-                //dodać, żeby z worka czyściło itemki i wracały na magazyn
+                
 
             }
 
@@ -338,7 +368,125 @@ namespace Wypozyczalnia
 
         private void btnUsunZamowienie_Click(object sender, EventArgs e)
         {
+            //if (dgvAktywneZamP.SelectedRows.Count > 0)
+            //{
+            //    int selectedRowIndex = dgvAktywneZamP.SelectedCells[0].RowIndex;
+            //    DataGridViewRow selectedRow = dgvAktywneZamP.Rows[selectedRowIndex];
+            //    int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
+            //    int PłatnośćPodstawowa = Convert.ToInt32(selectedRow.Cells["Płatność"].Value);
+            //    //DateTime teraz = DateTime.Now;
+            //    //DateTime DataZwrotu = Convert.ToDateTime(selectedRow.Cells["Data_zwrotu"].Value);
+            //    //TimeSpan nadgodziny = teraz - DataZwrotu;
+            //    //int Płatność = 0;
+            //    //int godz;
+            //    //if (teraz > DataZwrotu)
+            //    //{
 
+            //    //    godz = (int)nadgodziny.TotalHours;
+            //    //    if (godz > 0)
+            //    //    {
+            //    //        Płatność = PłatnośćPodstawowa + (godz * 5);
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        Płatność = PłatnośćPodstawowa;
+            //    //    }
+                    
+
+            //    //}
+
+            //    using (SqlConnection connection = new SqlConnection(connectionString))
+            //    {
+            //        connection.Open();
+            //        int rozliczenie = 1;
+            //        using (SqlCommand command = new SqlCommand($"UPDATE Wypozyczenia  SET CzyRozliczone= @CzyRozliczone, Płatność = @Płatność Where IdWypozyczenia = @IdWypozyczenia  ", connection))
+            //        {
+
+
+            //            command.Parameters.AddWithValue("@CzyRozliczone", rozliczenie);
+            //            command.Parameters.AddWithValue("@IdWypozyczenia", IndeksZbazy);
+            //            command.Parameters.AddWithValue("@Płatność", Płatność);
+            //            command.ExecuteNonQuery();
+
+
+            //        }
+
+            //    }
+
+
+            //    List<int> list = new List<int>();
+
+            //    if (dgvWorekZamP.Rows.Count > 0)
+            //    {
+
+            //        foreach (DataGridViewRow item in dgvWorekZamP.Rows)
+            //        {
+            //            list.Add((int)item.Cells[0].Value);
+            //        }
+
+
+            //    }
+
+            //    string idiki = "'";
+            //    foreach (var item in list)
+            //    {
+            //        idiki += "" + item.ToString() + ",";
+
+            //    }
+            //    idiki = idiki.Remove(idiki.Length - 1);
+            //    idiki += "'";
+
+
+
+
+
+            //    using (SqlConnection connection = new SqlConnection(connectionString))
+            //    {
+            //        connection.Open();
+            //        int dostepnosc = 1;
+            //        using (SqlCommand command = new SqlCommand($"DECLARE @intArray varchar(200) SET @intArray = {idiki};  UPDATE SprzetNarciarski  SET Dostępność= @Dostępność Where IdSprzet IN (select * from STRING_SPLIT(@intArray, ',')) ; ", connection))
+            //        {
+
+
+            //            command.Parameters.AddWithValue("@Dostępność", dostepnosc);
+            //            command.Parameters.AddWithValue("@Idiki", idiki);
+            //            command.ExecuteNonQuery();
+
+
+            //        }
+
+            //    }
+
+            //    using (SqlConnection connection = new SqlConnection(connectionString))
+            //    {
+            //        connection.Open();
+            //        using (SqlCommand command = new SqlCommand($"DELETE FROM Worek where WypozyczenieID = @WypozyczenieID;", connection))
+            //        {
+
+
+            //            command.Parameters.AddWithValue("@WypozyczenieID", IndeksZbazy);
+
+            //            command.ExecuteNonQuery();
+
+
+            //        }
+
+            //    }
+            //    dgvWorekZamP.DataSource = null;
+
+
+
+
+
+
+            //    //MessageBox.Show($"Należy pobrać od klienta: {Płatność} PLN. Płatność podstawowa:{PłatnośćPodstawowa} PLN, Nadpłata za nadgodziny: {Płatność - PłatnośćPodstawowa} PLN.");
+
+            //    Connector connector = new Connector();
+            //    dgvMagazynP.DataSource = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
+            //    dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
+
+
+            //}
         }
 
         private void btnUsunSprzetZmagazynu_Click(object sender, EventArgs e)
@@ -412,6 +560,7 @@ namespace Wypozyczalnia
         private void btnWypozycz_Click(object sender, EventArgs e)
         {
             btnNoweZamowienie.Enabled = true;
+            
             Connector connector = new Connector();
 
 
@@ -471,7 +620,7 @@ namespace Wypozyczalnia
 
 
 
-                    MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Proszę podejść do stanowiska i podać numer zamówienia w celu odbioru sprzętu.");
+                    MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Poczekaj na klienta z podanym numerem.");
                     txtImie.Clear();
                     txtNazwisko.Clear();
                     txtPesel.Clear();
@@ -509,7 +658,10 @@ namespace Wypozyczalnia
             }
 
             btnWypozycz.Enabled= false;
-            //dodać odswiezenie pozostałych dgv
+            dgvMagazynP.DataSource = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
+
+            dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
+            dgvAktywneZamP.CurrentRow.Selected = false;
         }
 
         private void formPracownik_FormClosed(object sender, FormClosedEventArgs e)
@@ -704,64 +856,69 @@ namespace Wypozyczalnia
 
         private void btnUsunZzamowienia_Click(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)(dgvWorek.DataSource);
-            int selectedRow = dgvWorek.SelectedRows[0].Index;
-
-            DataTable dt2 = dt.Clone();
-            foreach (DataRow dr in dt.Rows)
+            if(dgvWorek.Rows.Count > 0)
             {
-                if (dr.Table.Rows.IndexOf(dr) == selectedRow)
+                DataTable dt = (DataTable)(dgvWorek.DataSource);
+                int selectedRow = dgvWorek.SelectedRows[0].Index;
+
+                DataTable dt2 = dt.Clone();
+                foreach (DataRow dr in dt.Rows)
                 {
-                    dt2.ImportRow(dr);
-                }
-            }
-
-            int IdWypozyczenia = (int)dt2.Rows[0][0];
-            int IdSprzetu = (int)dt2.Rows[0][1];
-
-
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand($"DELETE FROM Worek WHERE WypozyczenieID ={IdWypozyczenia} AND SprzętID ={IdSprzetu};", connection))
-                {
-
-
-                    command.ExecuteNonQuery();
-
-
-                }
-            }
-
-
-
-            int dost = 1;
-
-
-
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-
-                connection.Open();
-                using (SqlCommand command = new SqlCommand($"UPDATE SprzetNarciarski SET Dostępność = @dost WHERE IdSprzet = @IdSprzetu  ", connection))
-                {
-
-                    command.Parameters.AddWithValue("@dost", dost);
-                    command.Parameters.AddWithValue("@IdSprzetu", IdSprzetu);
-                    command.ExecuteNonQuery();
-
+                    if (dr.Table.Rows.IndexOf(dr) == selectedRow)
+                    {
+                        dt2.ImportRow(dr);
+                    }
                 }
 
-            }
-            dropKategorie_SelectedValueChanged(sender, e);
+                int IdWypozyczenia = (int)dt2.Rows[0][0];
+                int IdSprzetu = (int)dt2.Rows[0][1];
 
-            Connector connector = new Connector();
-            dgvWorek.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {IdWypozyczenia}");
-            dgvWorek.Columns[0].Visible = false;
-            dgvWorek.Columns[1].Visible = false;
-            LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
+
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand($"DELETE FROM Worek WHERE WypozyczenieID ={IdWypozyczenia} AND SprzętID ={IdSprzetu};", connection))
+                    {
+
+
+                        command.ExecuteNonQuery();
+
+
+                    }
+                }
+
+
+
+                int dost = 1;
+
+
+
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand($"UPDATE SprzetNarciarski SET Dostępność = @dost WHERE IdSprzet = @IdSprzetu  ", connection))
+                    {
+
+                        command.Parameters.AddWithValue("@dost", dost);
+                        command.Parameters.AddWithValue("@IdSprzetu", IdSprzetu);
+                        command.ExecuteNonQuery();
+
+                    }
+
+                }
+                dropKategorie_SelectedValueChanged(sender, e);
+
+                Connector connector = new Connector();
+                dgvWorek.DataSource = connector.PobierzDaneDoDGV("WypozyczenieID, SprzętID,Nazwa, Typ, Rozmiar, Cena", "Worek", $"Where WypozyczenieID = {IdWypozyczenia}");
+                dgvWorek.Columns[0].Visible = false;
+                dgvWorek.Columns[1].Visible = false;
+                LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
+            }
+
+            
 
         }
     }
