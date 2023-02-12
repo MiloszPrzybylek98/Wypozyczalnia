@@ -135,10 +135,34 @@ namespace Wypozyczalnia
                 DataGridViewRow selectedRow = dgvAktywneZamP.Rows[selectedRowIndex];
                 int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
                 Connector connector = new Connector();
-                dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+                dgvWorekZamP.DataSource = connector.PobierzDaneDoDGV("SprzętID,Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
 
                 //dodać, że jeśli zamówienie nie jest wydane to nie można rozliczyć
             }
+
+            int[] tablica = new int[dgvWorekZamP.Rows.Count];
+            List<int> list = new List<int>();
+
+            if (dgvWorekZamP.Rows.Count > 0)
+            {
+                
+                foreach (DataGridViewRow item in dgvWorekZamP.Rows)
+                {
+                    list.Add((int)item.Cells[0].Value);
+                }
+
+
+            }
+
+            string idiki = "(";
+            foreach (var item in list)
+            {
+                idiki += item.ToString()+",";
+
+            }
+            idiki = idiki.Remove(idiki.Length - 1);
+            idiki += ")";
+
 
         }
 
@@ -203,6 +227,61 @@ namespace Wypozyczalnia
                     }
 
                 }
+
+                int[] tablica = new int[dgvWorekZamP.Rows.Count];
+                List<int> list = new List<int>();
+
+                if (dgvWorekZamP.Rows.Count > 0)
+                {
+
+                    foreach (DataGridViewRow item in dgvWorekZamP.Rows)
+                    {
+                        list.Add((int)item.Cells[0].Value);
+                    }
+
+
+                }
+
+                string idiki = "(";
+                foreach (var item in list)
+                {
+                    idiki += item.ToString() + ",";
+
+                }
+                idiki = idiki.Remove(idiki.Length - 1);
+                idiki += ")";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    int dostepnosc = 1;
+                    using (SqlCommand command = new SqlCommand($"UPDATE SprzetNarciarski  SET Dostępność= @Dostępność Where IdSprzet IN @Idiki   ", connection))
+                    {
+
+
+                        command.Parameters.AddWithValue("@Dostępność", dostepnosc);
+                        command.Parameters.AddWithValue("@Idiki", idiki);
+                        command.ExecuteNonQuery();
+
+
+                    }
+
+                    using (SqlCommand command = new SqlCommand($"DELETE FROM Worek where WypozyczenieID = @WypozyczenieID", connection))
+                    {
+
+
+                        command.Parameters.AddWithValue("@WypozyczenieID", IndeksZbazy);
+
+                        command.ExecuteNonQuery();
+
+
+                    }
+
+                }
+
+
+
+
                 MessageBox.Show($"Należy pobrać od klienta: {Płatność} PLN. Płatność podstawowa:{PłatnośćPodstawowa} PLN, Nadpłata za nadgodziny: {Płatność - PłatnośćPodstawowa} PLN.");
 
                 Connector connector = new Connector();
@@ -421,6 +500,7 @@ namespace Wypozyczalnia
             }
 
             btnWypozycz.Enabled= false;
+            //dodać odswiezenie pozostałych dgv
         }
 
         private void formPracownik_FormClosed(object sender, FormClosedEventArgs e)
