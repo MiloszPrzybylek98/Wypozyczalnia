@@ -39,6 +39,7 @@ namespace Wypozyczalnia
             dgvAktywneZamP.DataSource = connector2.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
             
             dgvAktywneZamP.CurrentRow.Selected = false;
+            dropKategorie.Enabled= false;
             
             
         }
@@ -242,20 +243,24 @@ namespace Wypozyczalnia
 
                 }
 
-                string idiki = "(";
+                string idiki = "'";
                 foreach (var item in list)
                 {
-                    idiki += item.ToString() + ",";
+                    idiki += ""+item.ToString() + ",";
 
                 }
                 idiki = idiki.Remove(idiki.Length - 1);
-                idiki += ")";
+                idiki += "'";
+
+
+
+
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     int dostepnosc = 1;
-                    using (SqlCommand command = new SqlCommand($"UPDATE SprzetNarciarski  SET Dostępność= @Dostępność Where IdSprzet IN @Idiki   ", connection))
+                    using (SqlCommand command = new SqlCommand($"DECLARE @intArray varchar(200) SET @intArray = {idiki};  UPDATE SprzetNarciarski  SET Dostępność= @Dostępność Where IdSprzet IN (select * from STRING_SPLIT(@intArray, ',')) ; ", connection))
                     {
 
 
@@ -266,7 +271,12 @@ namespace Wypozyczalnia
 
                     }
 
-                    using (SqlCommand command = new SqlCommand($"DELETE FROM Worek where WypozyczenieID = @WypozyczenieID", connection))
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand($"DELETE FROM Worek where WypozyczenieID = @WypozyczenieID;", connection))
                     {
 
 
@@ -279,6 +289,7 @@ namespace Wypozyczalnia
 
                 }
 
+                
 
 
 
@@ -402,7 +413,7 @@ namespace Wypozyczalnia
 
         private void btnWypozycz_Click(object sender, EventArgs e)
         {
-
+            btnNoweZamowienie.Enabled = true;
             Connector connector = new Connector();
 
 
@@ -520,7 +531,7 @@ namespace Wypozyczalnia
 
         private void btnNoweZamowienie_Click(object sender, EventArgs e)
         {
-
+            dropKategorie.Enabled = true;
             btnWypozycz.Enabled = true;
             txtImie.Clear();
             txtNazwisko.Clear();
@@ -561,6 +572,9 @@ namespace Wypozyczalnia
 
                 }
             }
+
+            //czyszczenie dropdowna trzeba dać
+            btnNoweZamowienie.Enabled = false;
         }
 
         private void txtPesel_TextChanged(object sender, EventArgs e)
