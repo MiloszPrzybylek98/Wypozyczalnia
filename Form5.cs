@@ -397,6 +397,7 @@ namespace Wypozyczalnia
             }
 
             btnWypozycz.Enabled = false;
+            LblSumaZamowienia.Text = Płatność.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)

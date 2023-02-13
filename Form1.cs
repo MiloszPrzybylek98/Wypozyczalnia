@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Reflection.Emit;
 using System.Security.Policy;
 using System.Threading;
+using System.Net;
 
 namespace Wypozyczalnia
 {
@@ -206,6 +207,7 @@ namespace Wypozyczalnia
             dataGridView2.Columns[1].Visible = false;
 
             LblSumaZamowienia.Text = connector.PobierzCeneZamowieniaZWorka(ZamowienieId).ToString();
+            
 
 
 
@@ -350,9 +352,11 @@ namespace Wypozyczalnia
                         }
 
                     }
+
+
                     
-
-
+                    
+                    //lblCenaZamowienia.Text = Płatność.ToString();
 
                     MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Proszę podejść do stanowiska i podać numer zamówienia w celu odbioru sprzętu.");
                     txtImie.Clear();
@@ -380,9 +384,10 @@ namespace Wypozyczalnia
 
 
                 }
-                
+                lblCenaZamowienia.Text = Płatność.ToString();
 
-                
+
+
 
 
             }

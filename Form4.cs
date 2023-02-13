@@ -662,6 +662,8 @@ namespace Wypozyczalnia
 
             dgvAktywneZamP.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
             dgvAktywneZamP.CurrentRow.Selected = false;
+
+            LblSumaZamowienia.Text = Płatność.ToString();
         }
 
         private void formPracownik_FormClosed(object sender, FormClosedEventArgs e)
