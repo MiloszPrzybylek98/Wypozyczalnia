@@ -70,6 +70,7 @@ namespace Wypozyczalnia
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            btnWypozycz.Enabled = false;
             Connector connector = new Connector();
             dgvPracownicy.DataSource = connector.PobierzDaneDoDGV("*", "Pracownicy", "");
             Connector connector1 = new Connector();
@@ -84,7 +85,12 @@ namespace Wypozyczalnia
 
             dgvAktywneZamA.DataSource = connector2.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
 
+            //if (dgvAktywneZamA.Rows.Count > 0)
+            //{
+            //    dgvAktywneZamA.CurrentRow.Selected = false;
+            //}
 
+            //dropKategorie.Enabled = false;
 
         }
 
@@ -300,6 +306,8 @@ namespace Wypozyczalnia
 
         private void btnWypozycz_Click(object sender, EventArgs e)
         {
+            btnNoweZamowienie.Enabled = true;
+
             Connector connector = new Connector();
 
 
@@ -359,7 +367,7 @@ namespace Wypozyczalnia
 
 
 
-                    MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Proszę podejść do stanowiska i podać numer zamówienia w celu odbioru sprzętu.");
+                    MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Poczekaj na klienta z podanym numerem.");
                     txtImie.Clear();
                     txtNazwisko.Clear();
                     textBox3.Clear();
@@ -397,6 +405,11 @@ namespace Wypozyczalnia
             }
 
             btnWypozycz.Enabled = false;
+            dgvMagazynA.DataSource = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
+
+            dgvAktywneZamA.DataSource = connector.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
+            //dgvAktywneZamA.CurrentRow.Selected = false;
+
             LblSumaZamowienia.Text = Płatność.ToString();
         }
 
@@ -417,6 +430,9 @@ namespace Wypozyczalnia
 
         private void btnNoweZamowienie_Click(object sender, EventArgs e)
         {
+            btnDodajDoZamowienia.Enabled = true;
+            btnUsunZzamowienia.Enabled = true;
+            dropKategorie.Enabled = true;
             btnWypozycz.Enabled = true;
             txtImie.Clear();
             txtNazwisko.Clear();
@@ -443,7 +459,24 @@ namespace Wypozyczalnia
             //    dropKategorie.Items.Add(row["Typ"].ToString());
             //}
             Connector connector = new Connector();
+            dropKategorie.Items.Clear();
             connector.UzupelnijTypy(dropKategorie);
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("INSERT INTO Wypozyczenia DEFAULT VALUES; SELECT SCOPE_IDENTITY()", connection))
+                {
+
+                    ZamowienieId = Convert.ToInt32(command.ExecuteScalar());
+                    //ten using dodaje nam nowe wypozyczenie do tabeli i zwraca nam IdWypozyczenia
+
+                }
+            }
+
+
+            btnNoweZamowienie.Enabled = false;
         }
 
         private void btnCzyscSzukanie_Click(object sender, EventArgs e)
@@ -662,43 +695,6 @@ namespace Wypozyczalnia
         private void btnDodajDoZamowienia_Click(object sender, EventArgs e)
         {
 
-            //string typ = dodaj();
-            //Connector connector = new Connector();
-            //DataTable dt = new DataTable();
-            //if (typ == "Wszystko")
-            //{
-            //    dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE  Dostępność = 1");
-
-            //}
-            //else
-            //{
-            //    dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
-
-            //}
-
-
-
-
-
-
-
-            //int selectedRow = dgvWyborSprzetuA.SelectedRows[0].Index;
-            //DataTable dt2 = dt.Clone();
-            //foreach (DataRow dr in dt.Rows)
-            //{
-            //    if (dr.Table.Rows.IndexOf(dr) == selectedRow)
-            //    {
-            //        dt2.ImportRow(dr);
-            //    }
-            //}
-
-            //int IdSprzetu = (int)dt2.Rows[0][0]; // tym ID dodajemy sprzęt do worka
-            //string Nazwa = dt2.Rows[0][1].ToString();
-            //string Typ = dt2.Rows[0][2].ToString();
-            //string Rozmiar = dt2.Rows[0][3].ToString();
-            //int Regal = (int)dt2.Rows[0][4];
-            //int Polka = (int)dt2.Rows[0][5];
-            //int Cena = (int)dt2.Rows[0][6];
             string typ = dodaj();
             Connector connector = new Connector();
             DataTable dt = new DataTable();
@@ -712,11 +708,6 @@ namespace Wypozyczalnia
                 dt = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'" + "AND Dostępność = 1");
 
             }
-
-
-
-
-
 
 
             int selectedRow = dgvWyborSprzetuA.SelectedRows[0].Index;
@@ -736,7 +727,6 @@ namespace Wypozyczalnia
             int Regal = (int)dt2.Rows[0][4];
             int Polka = (int)dt2.Rows[0][5];
             int Cena = (int)dt2.Rows[0][6];
-
 
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -776,12 +766,6 @@ namespace Wypozyczalnia
                 }
 
             }
-
-
-
-
-
-
 
             dropKategorie_SelectedValueChanged(sender, e);
 
@@ -880,10 +864,46 @@ namespace Wypozyczalnia
                 DataGridViewRow selectedRow = dgvAktywneZamA.Rows[selectedRowIndex];
                 int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
                 Connector connector = new Connector();
-                dgvWorekZamA.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+                dgvWorekZamA.DataSource = connector.PobierzDaneDoDGV("SprzętID,Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
 
                 //dodać, że jeśli zamówienie nie jest wydane to nie można rozliczyć
             }
+        }
+
+        private void dropKategorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string typ = dropKategorie.SelectedItem.ToString();
+                if (typ == "Wszystko")
+                {
+                    Connector connector2 = new Connector();
+                    dgvMagazynA.DataSource = connector2.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", ";");
+                }
+                else
+                {
+                    Connector connector = new Connector();
+                    dgvMagazynA.DataSource = connector.PobierzDaneDoDGV("IdSprzet, Nazwa, Typ, Rozmiar, Dostępność, Regał, Półka, Cena", "SprzetNarciarski", "WHERE Typ = '" + typ + "'");
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            Validator validator = new Validator();
+            validator.WalidujNrTxt(textBox3, btnWypozycz, "pesel");
+        }
+
+        private void txtNrKontaktowy_TextChanged(object sender, EventArgs e)
+        {
+            Validator validator = new Validator();
+            validator.WalidujNrTxt(txtNrKontaktowy, btnWypozycz, "nr kontaktowy");
         }
     }
 }

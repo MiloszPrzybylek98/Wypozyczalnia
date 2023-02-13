@@ -40,10 +40,7 @@ namespace Wypozyczalnia
             dgvAktywneZamP.DataSource = connector2.PobierzDaneDoDGV("IdWypozyczenia, KlientId, Data_Wypożyczenia, Data_zwrotu, Płatność, CzyRozliczone, CzyWydane", " Wypozyczenia", "where CzyRozliczone = 0");
 
 
-            if (dgvAktywneZamP.Rows.Count > 0)
-            {
-                dgvAktywneZamP.CurrentRow.Selected = false;
-            }
+            
             
             dropKategorie.Enabled= false;
             
