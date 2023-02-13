@@ -314,7 +314,7 @@ namespace Wypozyczalnia
 
             string Imie = txtImie.Text;
             string Nazwisko = txtNazwisko.Text;
-            string Pesel = txtPesel.Text;
+            string Pesel = textBox3.Text;
             string Telefon = txtNrKontaktowy.Text;
             int dni = (int)dropCzasWypozyczenia.SelectedItem;
             DateTime data = DateTime.Now;
