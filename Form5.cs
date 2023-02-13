@@ -880,7 +880,7 @@ namespace Wypozyczalnia
                 DataGridViewRow selectedRow = dgvAktywneZamA.Rows[selectedRowIndex];
                 int IndeksZbazy = Convert.ToInt32(selectedRow.Cells["IdWypozyczenia"].Value);
                 Connector connector = new Connector();
-                dgvWorekZamA.DataSource = connector.PobierzDaneDoDGV("Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
+                dgvWorekZamA.DataSource = connector.PobierzDaneDoDGV("SprzętID,Nazwa, Typ, Rozmiar, Regał, Półka, Cena", "Worek", $"Where WypozyczenieID = {IndeksZbazy}");
 
                 //dodać, że jeśli zamówienie nie jest wydane to nie można rozliczyć
             }
