@@ -194,7 +194,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(790, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 16);
+            this.label4.Size = new System.Drawing.Size(202, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Wyszukiwanie zamówienia po ID";
             // 
@@ -408,7 +408,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(33, 402);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 16);
+            this.label1.Size = new System.Drawing.Size(174, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Dodawanie nowego sprzętu";
             // 
@@ -502,7 +502,7 @@
             this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LblSumaZamowienia.Location = new System.Drawing.Point(752, 431);
             this.LblSumaZamowienia.Name = "LblSumaZamowienia";
-            this.LblSumaZamowienia.Size = new System.Drawing.Size(14, 16);
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(15, 16);
             this.LblSumaZamowienia.TabIndex = 35;
             this.LblSumaZamowienia.Text = "0";
             // 
@@ -598,7 +598,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(14, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 16);
+            this.label6.Size = new System.Drawing.Size(163, 16);
             this.label6.TabIndex = 27;
             this.label6.Text = "Wybierz kategorię sprzętu";
             // 

@@ -603,7 +603,7 @@
             this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LblSumaZamowienia.Location = new System.Drawing.Point(760, 425);
             this.LblSumaZamowienia.Name = "LblSumaZamowienia";
-            this.LblSumaZamowienia.Size = new System.Drawing.Size(14, 16);
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(15, 16);
             this.LblSumaZamowienia.TabIndex = 53;
             this.LblSumaZamowienia.Text = "0";
             // 
@@ -1091,7 +1091,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(27, 451);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 16);
+            this.label1.Size = new System.Drawing.Size(174, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "Dodawanie nowego sprzętu";
             // 

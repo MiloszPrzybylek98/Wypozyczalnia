@@ -250,7 +250,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(609, 410);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 16);
+            this.label6.Size = new System.Drawing.Size(139, 16);
             this.label6.TabIndex = 17;
             this.label6.Text = "Cena za dobę w  PLN:";
             // 
@@ -261,7 +261,7 @@
             this.LblSumaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LblSumaZamowienia.Location = new System.Drawing.Point(776, 410);
             this.LblSumaZamowienia.Name = "LblSumaZamowienia";
-            this.LblSumaZamowienia.Size = new System.Drawing.Size(14, 16);
+            this.LblSumaZamowienia.Size = new System.Drawing.Size(15, 16);
             this.LblSumaZamowienia.TabIndex = 18;
             this.LblSumaZamowienia.Text = "0";
             // 
@@ -272,7 +272,7 @@
             this.lblCenaZamowienia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCenaZamowienia.Location = new System.Drawing.Point(776, 433);
             this.lblCenaZamowienia.Name = "lblCenaZamowienia";
-            this.lblCenaZamowienia.Size = new System.Drawing.Size(14, 16);
+            this.lblCenaZamowienia.Size = new System.Drawing.Size(15, 16);
             this.lblCenaZamowienia.TabIndex = 19;
             this.lblCenaZamowienia.Text = "0";
             // 
@@ -283,7 +283,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(609, 433);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(163, 16);
+            this.label7.Size = new System.Drawing.Size(164, 16);
             this.label7.TabIndex = 20;
             this.label7.Text = "Suma zamówienia w  PLN:";
             // 
