@@ -30,13 +30,6 @@ namespace Wypozyczalnia
             this.Hide();
             formLogowaniePracownika form2 = new formLogowaniePracownika();
             form2.Visible = true;
-
-           
-
-
-
-
-
         }
 
         private void btnModKlienta_Click(object sender, EventArgs e)
@@ -51,5 +44,4 @@ namespace Wypozyczalnia
             Application.Exit();
         }
     }
-
 }
