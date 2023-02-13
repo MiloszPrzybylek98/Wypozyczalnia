@@ -356,7 +356,7 @@ namespace Wypozyczalnia
 
                     
                     
-                    //lblCenaZamowienia.Text = Płatność.ToString();
+                    
 
                     MessageBox.Show($"Twój numer zamówienia to: {ZamowienieId}. Proszę podejść do stanowiska i podać numer zamówienia w celu odbioru sprzętu.");
                     txtImie.Clear();
