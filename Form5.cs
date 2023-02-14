@@ -62,6 +62,18 @@ namespace Wypozyczalnia
                     int result = command.ExecuteNonQuery();
                 }
             }
+            txtImieP.Clear();
+            txtNazwiskoP.Clear();
+            txtPeselP.Clear();
+            txtMiastoP.Clear(); ;
+            txtUlicaP.Clear();
+            txtKodPocztaP.Clear();
+            txtTelefonP.Clear(); ;
+            txtNrDomuP.Clear();
+            txtLoginP.Clear();
+            txtHasloP.Clear();
+            txtHasloA.Clear();
+            txtPowHasloA.Clear();
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
@@ -165,13 +177,14 @@ namespace Wypozyczalnia
             //txtLoginA.Text = dgvPracownicy.Rows[e.RowIndex].Cells[8].Value.ToString();
             txtImieP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtNazwiskoP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //txtPeselP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtMiastoP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtUlicaP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtKodPocztaP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtTelefonP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtNrDomuP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtLoginP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[8].Value.ToString();
+            txtPeselP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtMiastoP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtUlicaP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtKodPocztaP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtTelefonP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[8].Value.ToString();
+            txtNrDomuP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[7].Value.ToString();
+            txtLoginP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[9].Value.ToString();
+            txtHasloP.Text = dgvPracownicy.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
 
         private void btnModifikujPracownika_Click(object sender, EventArgs e)
@@ -184,7 +197,7 @@ namespace Wypozyczalnia
 
             string imie = txtImieP.Text;
             string nazwisko = txtNazwiskoP.Text;
-            //string pesel = txtPeselP.Text;
+            string pesel = txtPeselP.Text;
             string miasto = txtMiastoP.Text;
             string ulica = txtUlicaP.Text;
             string kodPoczt = txtKodPocztaP.Text;
@@ -196,12 +209,12 @@ namespace Wypozyczalnia
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE Pracownicy SET Imię = @Imię, Nazwisko = @Nazwisko, Miejscowość = @Miejscowość, Kod_pocztowy = @Kod_pocztowy, Ulica = @Ulica, NumerDomu = @NumerDomu, Telefon = @Telefon, Login = @Login WHERE IdPracownik = @IdPracownik", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE Pracownicy SET Imię = @Imię, Nazwisko = @Nazwisko,Pesel = @Pesel, Miejscowość = @Miejscowość, Kod_pocztowy = @Kod_pocztowy, Ulica = @Ulica, NumerDomu = @NumerDomu, Telefon = @Telefon, Login = @Login WHERE IdPracownik = @IdPracownik", connection))
                 {
                     command.Parameters.AddWithValue("@IdPracownik", id);
                     command.Parameters.AddWithValue("@Imię", imie);
                     command.Parameters.AddWithValue("@Nazwisko", nazwisko);
-                    //command.Parameters.AddWithValue("@Pesel", pesel);
+                    command.Parameters.AddWithValue("@Pesel", pesel);
                     command.Parameters.AddWithValue("@Miejscowość", miasto);
                     command.Parameters.AddWithValue("@Kod_pocztowy", kodPoczt);
                     command.Parameters.AddWithValue("@Ulica", ulica);
@@ -215,6 +228,18 @@ namespace Wypozyczalnia
                     dgvPracownicy.DataSource = connector.PobierzDaneDoDGV("*", "Pracownicy", "");
                 }
             }
+            txtImieP.Clear();
+            txtNazwiskoP.Clear();
+            txtPeselP.Clear();
+            txtMiastoP.Clear(); ;
+            txtUlicaP.Clear();
+            txtKodPocztaP.Clear();
+            txtTelefonP.Clear(); ;
+            txtNrDomuP.Clear();
+            txtLoginP.Clear();
+            txtHasloP.Clear();
+            txtHasloA.Clear();
+            txtPowHasloA.Clear();
         }
 
         private void btnUsunPracownika_Click(object sender, EventArgs e)
@@ -249,6 +274,18 @@ namespace Wypozyczalnia
                     dgvPracownicy.DataSource = connector.PobierzDaneDoDGV("*", "Pracownicy", "");
                 }
             }
+            txtImieP.Clear();
+            txtNazwiskoP.Clear();
+            txtPeselP.Clear();
+            txtMiastoP.Clear(); ;
+            txtUlicaP.Clear();
+            txtKodPocztaP.Clear();
+            txtTelefonP.Clear(); ;
+            txtNrDomuP.Clear();
+            txtLoginP.Clear();
+            txtHasloP.Clear();
+            txtHasloA.Clear();
+            txtPowHasloA.Clear();
         }
 
         private void btnZmienHaslo_Click(object sender, EventArgs e)
@@ -270,6 +307,18 @@ namespace Wypozyczalnia
                     dgvPracownicy.DataSource = connector.PobierzDaneDoDGV("*", "Pracownicy", "");
                 }
             }
+            txtImieP.Clear();
+            txtNazwiskoP.Clear();
+            txtPeselP.Clear();
+            txtMiastoP.Clear(); ;
+            txtUlicaP.Clear();
+            txtKodPocztaP.Clear();
+            txtTelefonP.Clear(); ;
+            txtNrDomuP.Clear();
+            txtLoginP.Clear();
+            txtHasloP.Clear();
+            txtHasloA.Clear();
+            txtPowHasloA.Clear();
         }
 
         private void txtPowHasloA_TextChanged(object sender, EventArgs e)
